@@ -1,28 +1,27 @@
-== README
+# WaiterUp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[waiterup.com](http://waiterup.com/)
 
-Things you may want to cover:
+## Minimum Viable Product
 
-* Ruby version
+WaiterUp is partially a clone of Yelp built on Rails and Backbone. There are two types of users: providers and clients.
 
-* System dependencies
+Clients can:
 
-* Configuration
+- [ ] Create accounts (new client)
+- [ ] Create sessions (log in)
+- [ ] Enter payment information
+- [ ] Search places (restaurants, coffee shops, etc)
+- [ ] Create comments for category items
+- [ ] Upvote/downvote category items
+- [ ] Order category item
 
-* Database creation
+Providers can:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- [ ] Create accounts (new provider)
+- [ ] Create sessions (log in)
+- [ ] Enter payment information
+- [ ] Create places
+- [ ] Create menus
+- [ ] Create categories
+- [ ] Create category items
