@@ -39,3 +39,4 @@ column name | data type | details
 id          | integer   | not null, primary key
 category_id    | integer   | not null, foreign key (references categories)
 title       | string    | not null
+image_url       | string    |

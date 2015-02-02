@@ -25,9 +25,11 @@
 ### Collections
 * Categories
 * MenuItems
+* MenuItemForm
 
 ### Views
 * CategoryShow
 * MenuItemShow
 
 ## Gems/Libraries
+* Filepicker
