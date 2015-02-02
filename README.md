@@ -14,7 +14,6 @@ Clients can:
 - [ ] Search places (restaurants, coffee shops, etc)
 - [ ] Create comments for category items
 - [ ] Upvote/downvote category items
-- [ ] Place order for category item
 
 Providers can:
 
@@ -37,7 +36,7 @@ Providers can:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Places and Menus (~1 day)
-Implement authentication as was taught at App Academy. Providers will be able to create a place and a menu. Clients will be able to view a list of all places without the need to log in.
+Implement authentication as was taught at App Academy. Providers will be able to create a place and a menu. Clients will be able to view a list of all places without the need to log in. Add navbar and footer.
 
 [Details][phase-one]
 
@@ -73,6 +72,7 @@ Use `acts_as_votable`, a third-party library, to implement upvote/downvote featu
 - [ ] add maps
 - [ ] ask clients for their current location in the browser
 - [ ] allow users to upload pictures of their food
+- [ ] Place order for category item
 
 
 

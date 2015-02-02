@@ -25,6 +25,8 @@
 ### Collections
 
 ### Views
+* navbar
+* footer
 
 ## Gems/Libraries
 * bootstrap
