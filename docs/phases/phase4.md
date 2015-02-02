@@ -1,4 +1,4 @@
-# Phase 4: Edit and Display Comments for MenuItems
+# Phase 6: Edit and Display Comments for MenuItems
 ## Rails
 ### Models
 * Category

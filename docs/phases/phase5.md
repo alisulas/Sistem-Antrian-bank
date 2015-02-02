@@ -1,4 +1,4 @@
-# Phase 5: Searching Places
+# Phase 4: Searching Places
 ## Rails
 ### Models
 

@@ -1,4 +1,4 @@
-# Phase 6: Add upvotes/downvotes to MenuItems
+# Phase 5: Add upvotes/downvotes to MenuItems
 ## Rails
 ### Models
 
