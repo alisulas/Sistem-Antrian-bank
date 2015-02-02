@@ -15,16 +15,19 @@
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* places/new.html.erb
-* places/show.html.erb
-* menus/show.html.erb
 
 ## Backbone
 ### Models
+* Place
+* Menu
 
 ### Collections
+* Places
+* Menus
 
 ### Views
+* PlaceShow
+* MenuShow
 * navbar
 * footer
 
