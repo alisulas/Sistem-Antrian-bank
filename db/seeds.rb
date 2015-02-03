@@ -25,3 +25,12 @@ place = provider2.places.create(title: "Workshop Cafe",
         country: "United States",
         longitude: 37.790815,
         latitude: -122.402144)
+provider3 = User.create(email: "provider3", password: "awesome", provider: true)
+place = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
+        street_address: "8 6th Street",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94103",
+        country: "United States",
+        longitude: 37.7818066,
+        latitude: -122.4104021)
