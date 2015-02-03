@@ -1,0 +1,15 @@
+<div class='places-index-title'>
+  <h3>Places</h3>
+</div>
+
+<ul class='places'>
+  <% places.each(function (place) { %>
+    <li>
+      <a href="#/places/<%= place.id %>">
+        <span class='details'>
+          <%= place.escape("title") %>
+        </span>
+      </a>
+    </li>
+  <% }); %>
+</ul>

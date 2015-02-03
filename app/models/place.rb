@@ -3,7 +3,7 @@
 # Table name: places
 #
 #  id             :integer          not null, primary key
-#  ownder_id      :string           not null
+#  owner_id      :string           not null
 #  title          :string           not null
 #  street_address :string           not null
 #  city           :string           not null
@@ -17,12 +17,12 @@
 #
 
 class Place < ActiveRecord::Base
-  validates :owner, :title, :street_address, :city,
-            :state, :zipcode, :country, :longitude, :latitude
 
   belongs_to :owner,
               class_name:  :User,
               foreign_key: :owner_id,
               primary_key: :id
 
+  validates :owner_id, :title, :street_address, :city,
+            :state, :zipcode, :country, :longitude, :latitude, presence: true
 end
