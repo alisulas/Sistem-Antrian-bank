@@ -107,10 +107,6 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
   // },
 
   showMarkerInfo: function (event, marker) {
-    // This event will be triggered when a marker is clicked. Right now it simply
-    // opens an info window with the title of the marker. However, you could get
-    // fancier if you wanted (maybe use a template for the content of the window?)
-
     var infoWindow = new google.maps.InfoWindow({
       content: marker.title
     });
@@ -118,11 +114,19 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
     infoWindow.open(this._map, marker);
   },
 
-  toggleBounce: function (marker) {
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
+  // toggleBounce: function (marker) {
+  //   if (marker.getAnimation() != null) {
+  //     marker.setAnimation(null);
+  //   } else {
+  //     marker.setAnimation(google.maps.Animation.BOUNCE);
+  //   }
+  // },
+
+  startBounce: function (marker) {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  },
+
+  endBounce: function (marker) {
+    marker.setAnimation(null);
   }
 });

@@ -223,7 +223,7 @@ body {
   -webkit-transform: translate3d(0,0,0);
 }
 
-.map { height: 400px; }
+.map { height: 600px; }
 
 #map-canvas { height: 100%; }
 
@@ -243,3 +243,5 @@ ul.places { padding: 0; }
   }
 
 }
+
+.container { width: 100%; }

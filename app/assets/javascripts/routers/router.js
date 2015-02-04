@@ -1,6 +1,13 @@
 WaiterUp.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl= $('#main')
+    this.collection = WaiterUp.Collections.places
+    this.collection.fetch();
+
+    var mapView = WaiterUp.mapView = new WaiterUp.Views.MapShow({
+      collection: this.collection
+    });
+    $('.map').html(mapView.$el);
   },
 
   routes: {
@@ -9,10 +16,9 @@ WaiterUp.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-    WaiterUp.Collections.places.fetch();
 
     var view = new WaiterUp.Views.PlacesIndex({
-      collection: WaiterUp.Collections.places
+      collection: this.collection
     });
 
     this._swapView(view);

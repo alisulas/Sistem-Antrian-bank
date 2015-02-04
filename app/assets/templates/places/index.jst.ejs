@@ -1,12 +1,12 @@
-<div class="map"></div>
+<!-- <div class="map"></div> -->
 
 <div class='places-index-title'>
-  <h3>Places</h3>
+  <!-- <h3>Places</h3> -->
 </div>
 
 <ul class='places'>
   <% places.each(function (place) { %>
-      <a href="#/places/<%= place.id %>">
+      <a href="#/places/<%= place.id %>" data-place-id="<%= place.id %>">
     <li>
         <span class='details'>
           <strong><%= place.escape("title") %></strong>

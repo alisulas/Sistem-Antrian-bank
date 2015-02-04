@@ -5,20 +5,44 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
-    this.mapView = new WaiterUp.Views.MapShow({
-      collection: this.collection
-    });
+  },
 
+  events: {
+    'mouseenter .places a': 'startAnimatePlace',
+    'mouseleave .places a': 'endAnimatePlace'
+  },
+
+  startAnimatePlace: function (event) {
+    var placeId = $(event.currentTarget).data('place-id');
+    var marker = WaiterUp.mapView._markers[placeId];
+    WaiterUp.mapView.startBounce(marker);
+  },
+
+  endAnimatePlace: function (event) {
+    var placeId = $(event.currentTarget).data('place-id');
+    var marker = WaiterUp.mapView._markers[placeId];
+    WaiterUp.mapView.endBounce(marker);
+  },
+
+  destroyPlace: function (event) {
+    var placeId = $(event.currentTarget).data('place-id');
+    var place = this.collection.get(placeId);
+
+    place.destroy();
   },
 
   render: function () {
     var content = this.template({ places: this.collection });
     this.$el.html(content);
-    this.attachMap();
+
     return this;
   },
 
-  attachMap: function () {
-    this.$('.map').html(this.mapView.$el);
-  },
+  remove: function () {
+    Backbone.View.prototype.remove.call(this);
+    this.collection.each( function (place) {
+      var marker = WaiterUp.mapView._markers[place.id];
+      WaiterUp.mapView.endBounce(marker);
+    })
+  }
 });
