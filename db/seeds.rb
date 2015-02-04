@@ -9,6 +9,7 @@
 user = User.create(email: "user", password: "awesome")
 provider = User.create(email: "provider", password: "awesome", provider: true)
 place = provider.places.create(title: "Starbucks",
+        description: "Iconic Seattle-base coffeehouse chain",
         street_address: "865 Market Street C26a",
         city: "San Francisco",
         state: "CA",
@@ -18,6 +19,7 @@ place = provider.places.create(title: "Starbucks",
         longitude: -122.4073459)
 provider2 = User.create(email: "provider2", password: "awesome", provider: true)
 place2 = provider2.places.create(title: "Workshop Cafe",
+        description: "Coffee shop catering to laptop workers",
         street_address: "180 Montgomery Street #100",
         city: "San Francisco",
         state: "CA",

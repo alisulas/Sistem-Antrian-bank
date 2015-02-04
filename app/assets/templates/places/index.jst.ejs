@@ -6,12 +6,15 @@
 
 <ul class='places'>
   <% places.each(function (place) { %>
-    <li>
       <a href="#/places/<%= place.id %>">
+    <li>
         <span class='details'>
-          <%= place.escape("title") %>
+          <strong><%= place.escape("title") %></strong>
         </span>
-      </a>
+        <div class='place-description'>
+          <%= place.escape('description') %>
+        </div>
     </li>
+      </a>
   <% }); %>
 </ul>
