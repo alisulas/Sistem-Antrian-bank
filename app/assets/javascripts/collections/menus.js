@@ -1,12 +1,11 @@
-WaiterUp.Collections.Places = Backbone.Collection.extend({
-  url: 'api/places',
-  model: WaiterUp.Models.Place,
+WaiterUp.Collections.Menus = Backbone.Collection.extend({
+  model: WaiterUp.Models.Menu,
 
   getOrFetch: function (id) {
     var place = this.get(id);
 
     if(!place) {
-      place = new WaiterUp.Models.Place({ id: id });
+      place = new WaiterUp.Models.Places({ id: id });
       place.fetch({
         success: function () {
           this.add(place);
@@ -22,4 +21,4 @@ WaiterUp.Collections.Places = Backbone.Collection.extend({
 });
 
 
-WaiterUp.Collections.places = new WaiterUp.Collections.Places
+WaiterUp.Collections.menus = new WaiterUp.Collections.Menus

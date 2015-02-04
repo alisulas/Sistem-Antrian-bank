@@ -16,6 +16,7 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ // @import "jquery.raty.css"
 
  $gray-medium-light: #eaeaea;
 
@@ -119,4 +120,23 @@ input { height: auto !important; }
   margin-top: -10px;
   margin-bottom: 10px;
   span { margin-left: 20px; font-weight: normal; }
+}
+
+.menus { }
+
+.categories {
+  background-color: #eee;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.menu-items {
+  margin: 10px;
+  .menu-item-show {
+    background-color: #fff;
+    padding: 10px;
+    margin: 2px;
+    height: 50px;
+  }
 }

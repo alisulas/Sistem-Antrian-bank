@@ -7,8 +7,9 @@ module Api
     end
 
     def show
-      @place = Place.find(params[:id])
-      render json: @place
+      @place = Place.includes(menus: {categories: :menu_items})
+                    .find(params[:id])
+      render :show
     end
 
     def create
