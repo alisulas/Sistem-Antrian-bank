@@ -81,7 +81,7 @@
  footer {
    margin-top: 45px;
    padding-top: 5px;
-   border-top: 1px solid $gray-lighter;
+   border-top: 1px solid #ddd;
    color: black;
  }
 
@@ -156,11 +156,17 @@ input { height: auto !important; }
       background: -moz-linear-gradient(left, #fff 0%, #F7FaFf 5%, #fff 100%);
       background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(5%, #F7FaFf), color-stop(100%, #fff));
     }
+    &:hover strong { font-size: 13px; color: black; }
   }
 }
 
 body {
   background-color: #f3f3f4;
+  // background-image: url(http://ironsummitmedia.github.io/startbootstrap-stylish-portfolio/img/bg.jpg);
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 100%;
   color: #676A6C;
 }
 .category-heading {
@@ -194,5 +200,25 @@ body {
     height: 38px;
     vertical-align: middle;
     width: 38px;
+    &:hover {
+      -webkit-filter: blur(3px) contrast(0.4) brightness(1.4);
+      -moz-filter: blur(3px) contrast(0.4) brightness(1.4);
+      -o-filter: blur(3px) contrast(0.4) brightness(1.4);
+      -ms-filter: blur(3px) contrast(0.4) brightness(1.4);
+      clip: rect(520px 573px 516px 351px);
+      transition: all 0.5s ease-in-out;
+      -webkit-transform: translate3d(0,0,0);
+
+    }
   }
+}
+
+.blur {
+  -webkit-filter: blur(8px) contrast(0.4) brightness(1.4);
+  -moz-filter: blur(8px) contrast(0.4) brightness(1.4);
+  -o-filter: blur(8px) contrast(0.4) brightness(1.4);
+  -ms-filter: blur(8px) contrast(0.4) brightness(1.4);
+  clip: rect(520px 573px 516px 351px);
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translate3d(0,0,0);
 }
