@@ -1,6 +1,9 @@
 <div class="menu-item-heading menu-item-display" data-menu-item-id="<%= menu_item.id %>">
-  <%= menu_item.escape('title') %>
-</div>
+<% if (menu_item.escape('image_url')) { %>
+  <div class="menu-item-image pull-left"><img src="<%= menu_item.escape('image_url') %>"></div>
 
-<div class="voting">
+<% } %>
+  <div class="rating pull-right">* * * * *</div>
+  <strong><%= menu_item.escape('title') %></strong><br>
+  <%= menu_item.escape('description') %>
 </div>

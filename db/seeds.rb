@@ -40,10 +40,13 @@ workshop_drinks = workshop_menu.categories.create(title: "Drinks")
 workshop_lunch = workshop_menu.categories.create(title: "Lunch")
 workshop_dinner = workshop_menu.categories.create(title: "Dinner")
 
-workshop_drinks.menu_items.create(title: "Latte", image_url: nil)
-workshop_drinks.menu_items.create(title: "Cappucchino", image_url: nil)
-workshop_drinks.menu_items.create(title: "Black Coffee", image_url: nil)
+workshop_drinks.menu_items.create(title: "Latte", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg", description: "tasty stuff")
+workshop_drinks.menu_items.create(title: "Cappucchino", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q", description: "Like latte but with less milk")
+workshop_drinks.menu_items.create(title: "Black Coffee", image_url: nil, description: "What you need to finish your final project")
 workshop_drinks.menu_items.create(title: "Caramel Latte", image_url: nil)
 workshop_drinks.menu_items.create(title: "Tea", image_url: nil)
 workshop_lunch.menu_items.create(title: "Club Sandwich", image_url: nil)
-workshop_lunch.menu_items.create(title: "BLT Salad", image_url: nil)
+workshop_lunch.menu_items.create(
+  title: "BLT Salad",
+  image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
+  description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.")
