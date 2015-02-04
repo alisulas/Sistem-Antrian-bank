@@ -25,7 +25,7 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
 
   // attachMapListeners: function () {
   //   google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
-  //   google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
+  //   google.maps.event.addListener(this._map, 'click', this.createPlace.bind(this));
   // },
 
   // Here is an alternate approach to adding listeners--just a
@@ -40,7 +40,7 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
   //
   // mapEvents: {
   //   'idle': function () { this.search.bind(this) },
-  //   'click': function () { this.createListing.bind(this) }
+  //   'click': function () { this.createPlace.bind(this) }
   // },
 
   // Event handlers
@@ -61,13 +61,15 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
     });
 
     google.maps.event.addListener(marker, 'click', function (event) {
-      view.showMarkerInfo(event, marker);
+      Backbone.history.navigate("/places/" + place.id, { trigger: true })
+      // view.showMarkerInfo(event, marker);
     });
 
     this._markers[place.id] = marker;
+    marker.setIcon('http://mt.google.com/vt/icon?color=ff004C13&name=icons/spotlight/spotlight-waypoint-a.png');
   },
 
-  // createListing: function (event) {
+  // createPlace: function (event) {
   //   var lat = event.latLng.lat();
   //   var lng = event.latLng.lng();
   //   var place = new WaiterUp.Models.Listing({
@@ -124,6 +126,8 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
 
   startBounce: function (marker) {
     marker.setAnimation(google.maps.Animation.BOUNCE);
+    // if you only want it to bounce once. Then you don't need to call endBounce
+    // setTimeout(function(){ marker.setAnimation(null); }, 700);
   },
 
   endBounce: function (marker) {
