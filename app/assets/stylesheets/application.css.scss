@@ -222,3 +222,9 @@ body {
   transition: all 0.5s ease-in-out;
   -webkit-transform: translate3d(0,0,0);
 }
+
+.map {
+  height: 400px;
+}
+
+#map-canvas { height: 100%; }

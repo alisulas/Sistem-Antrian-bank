@@ -2,15 +2,26 @@
 <html>
 <head>
   <title>WaiterUp</title>
+  <% if Rails.env.production? %>
+    <% api_key = "key=" + ENV['google_maps_key'] %>
+  <% else %>
+    <% api_key = '' %>
+  <% end %>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vYTae_GpOuNdjgPs1JkKzMFVBIHs7EE">
+  </script>
 </head>
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <!-- <div class="col-md-8 col-md-offset-2"> -->
+      <div>
         <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
         <% end %>

@@ -16,6 +16,7 @@ WaiterUp.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+
   show: function(id) {
     var place = WaiterUp.Collections.places.getOrFetch(id);
 
