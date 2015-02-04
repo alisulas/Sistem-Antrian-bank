@@ -14,8 +14,8 @@ place = provider.places.create(title: "Starbucks",
         state: "CA",
         zipcode: "94103",
         country: "United States",
-        longitude: 37.783921,
-        latitude: -122.4073459)
+        latitude: 37.783921,
+        longitude: -122.4073459)
 provider2 = User.create(email: "provider2", password: "awesome", provider: true)
 place2 = provider2.places.create(title: "Workshop Cafe",
         street_address: "180 Montgomery Street #100",
@@ -23,8 +23,8 @@ place2 = provider2.places.create(title: "Workshop Cafe",
         state: "CA",
         zipcode: "94104",
         country: "United States",
-        longitude: 37.790815,
-        latitude: -122.402144)
+        latitude: 37.790815,
+        longitude: -122.402144)
 provider3 = User.create(email: "provider3", password: "awesome", provider: true)
 place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         street_address: "8 6th Street",
@@ -32,8 +32,26 @@ place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         state: "CA",
         zipcode: "94103",
         country: "United States",
-        longitude: 37.7818066,
-        latitude: -122.4104021)
+        latitude: 37.7818066,
+        longitude: -122.4104021)
+
+provider3.places.create(title: "Toast Eatery",
+        street_address: "1601 Polk Street",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94109",
+        country: "United States",
+        latitude: 37.7903671,
+        longitude: -122.4201642)
+
+provider3.places.create(title: "Sweet Maple",
+        street_address: "2101 Sutter Street",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94115",
+        country: "United States",
+        latitude: 37.7852098,
+        longitude: -122.4315502)
 
 workshop_menu = place2.menus.create(title: "Workshop Cafe's Menu")
 workshop_drinks = workshop_menu.categories.create(title: "Drinks")
