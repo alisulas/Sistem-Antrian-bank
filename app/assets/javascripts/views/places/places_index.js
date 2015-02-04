@@ -6,7 +6,7 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.mapView = new WaiterUp.Views.MapShow({
-      collection: this
+      collection: this.collection
     });
 
   },

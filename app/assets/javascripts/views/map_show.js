@@ -15,18 +15,18 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
   installMap: function () {
     var mapOptions = {
       center: { lat: 37.7833, lng: -122.4167},
-      zoom: 12
+      zoom: 13
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
-    // this.collection.each(this.addMarker.bind(this));
-    this.attachMapListeners();
+    this.collection.each(this.addMarker.bind(this));
+    // this.attachMapListeners();
   },
 
-  attachMapListeners: function () {
-    // google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
-    // google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
-  },
+  // attachMapListeners: function () {
+  //   google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
+  //   google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
+  // },
 
   // Here is an alternate approach to adding listeners--just a
   // convenience to make adding Google Maps events more "Backbone-esque".
@@ -44,28 +44,28 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
   // },
 
   // Event handlers
-  // addMarker: function (place) {
-  //   if (this._markers[place.id]) { return };
-  //   var view = this;
-  //
-  //   var latLng = new google.maps.LatLng(
-  //     place.get('lat'),
-  //     place.get('lng')
-  //   );
-  //
-  //   var marker = new google.maps.Marker({
-  //     animation: google.maps.Animation.DROP,
-  //     position: latLng,
-  //     map: this._map,
-  //     title: place.get('name')
-  //   });
-  //
-  //   google.maps.event.addListener(marker, 'click', function (event) {
-  //     view.showMarkerInfo(event, marker);
-  //   });
-  //
-  //   this._markers[place.id] = marker;
-  // },
+  addMarker: function (place) {
+    if (this._markers[place.id]) { return };
+    var view = this;
+
+    var latLng = new google.maps.LatLng(
+      place.get('latitude'),
+      place.get('longitude')
+    );
+
+    var marker = new google.maps.Marker({
+      animation: google.maps.Animation.DROP,
+      position: latLng,
+      map: this._map,
+      title: place.get('title')
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+      view.showMarkerInfo(event, marker);
+    });
+
+    this._markers[place.id] = marker;
+  },
 
   // createListing: function (event) {
   //   var lat = event.latLng.lat();
