@@ -1,0 +1,17 @@
+<% method = provider.persisted? ? "PATCH" : "POST" %>
+<% placeholder = provider.persisted? ? provider.email : "e.g. name@example.com" %>
+<% btn_msg = provider.persisted? ? "Update #{provider.email}" : "Create Account" %>
+
+
+<%= form_for(provider, url: provider_url) do |f| %>
+<input  type="hidden" name="_method" value="<%= method %>">
+<%= f.label :email %>
+<%= f.text_field :email, placeholder: placeholder,
+class: 'form-control' %>
+
+<%= f.label :password %>
+<%= f.password_field :password, class: 'form-control' %>
+
+<br>
+<%= f.submit btn_msg, class: "btn btn-primary" %>
+<% end %>
