@@ -6,4 +6,7 @@
   </div>
 </div>
 
-<script>$(WaiterUp.initialize);</script>
+<script>
+CURRENT_USER = JSON.parse('<%=current_user.to_json.html_safe%>');
+$(WaiterUp.initialize);
+</script>

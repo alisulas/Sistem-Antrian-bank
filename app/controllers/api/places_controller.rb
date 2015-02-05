@@ -3,6 +3,10 @@ module Api
 
     def index
       @places = Place.all
+      parameters = { term: params[:term], limit: 16 }
+      # fail
+      # render json: Yelp.client.search('San Francisco', parameters)
+
       render json: @places
     end
 
@@ -37,11 +41,16 @@ module Api
       render :new
     end
 
+    def search
+      parameters = { term: params[:term], limit: 16 }
+      render json: Yelp.client.search('San Francisco', parameters)
+    end
+
     private
 
       def place_params
         params.require(:place).permit(:owner_id, :title, :street_address,
-                                      :city, :state, :zipcode, :country)
+                                      :city, :state, :zipcode, :country, :term)
       end
   end
 end
