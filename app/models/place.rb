@@ -10,10 +10,11 @@
 #  state          :string           not null
 #  zipcode        :integer          not null
 #  country        :string           not null
-#  longitude      :integer          not null
-#  latitude       :integer          not null
+#  longitude      :decimal(, )      not null
+#  latitude       :decimal(, )      not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  description    :text
 #
 
 class Place < ActiveRecord::Base

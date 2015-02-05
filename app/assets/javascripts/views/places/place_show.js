@@ -13,8 +13,8 @@ WaiterUp.Views.PlaceShow = Backbone.CompositeView.extend({
     var view = this;
     setTimeout(function () {
       var marker = WaiterUp.mapView._markers[view.model.id];
-      // marker && WaiterUp.mapView.startBounce(marker);
-      marker.setIcon('http://mt.google.com/vt/icon?psize=30&font=fonts/arialuni_t.ttf&color=ff00ff00&name=icons/spotlight/spotlight-waypoint-a.png&ax=43&ay=48&text=%E2%80%A2')
+      marker && WaiterUp.mapView.startBounce(marker);
+      marker && marker.setIcon('http://mt.google.com/vt/icon?psize=30&font=fonts/arialuni_t.ttf&color=ff00ff00&name=icons/spotlight/spotlight-waypoint-a.png&ax=43&ay=48&text=%E2%80%A2')
     }, 0);
 
     var content = this.template({ place: this.model });

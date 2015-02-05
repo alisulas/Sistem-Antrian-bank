@@ -13,7 +13,6 @@
 
 class MenuItem < ActiveRecord::Base
   validates :title, :category_id, presence: true
-  validates :title, uniqueness: true
 
   belongs_to :category
 end

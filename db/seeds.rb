@@ -37,7 +37,7 @@ place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         latitude: 37.7818066,
         longitude: -122.4104021)
 
-provider3.places.create(title: "Toast Eatery",
+place4 = provider3.places.create(title: "Toast Eatery",
         street_address: "1601 Polk Street",
         city: "San Francisco",
         state: "CA",
@@ -46,7 +46,7 @@ provider3.places.create(title: "Toast Eatery",
         latitude: 37.7903671,
         longitude: -122.4201642)
 
-provider3.places.create(title: "Sweet Maple",
+place5 = provider3.places.create(title: "Sweet Maple",
         street_address: "2101 Sutter Street",
         city: "San Francisco",
         state: "CA",
@@ -55,9 +55,9 @@ provider3.places.create(title: "Sweet Maple",
         latitude: 37.7852098,
         longitude: -122.4315502)
 
-workshop_menu = place2.menus.create(title: "Workshop Cafe's Menu")
+workshop_menu =   place2.menus.create(title: "Workshop Cafe's Menu")
 workshop_drinks = workshop_menu.categories.create(title: "Drinks")
-workshop_lunch = workshop_menu.categories.create(title: "Lunch")
+workshop_lunch =  workshop_menu.categories.create(title: "Lunch")
 workshop_dinner = workshop_menu.categories.create(title: "Dinner")
 
 workshop_drinks.menu_items.create(title: "Latte", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg", description: "tasty stuff")
@@ -65,35 +65,38 @@ workshop_drinks.menu_items.create(title: "Cappucchino", image_url: "https://encr
 workshop_drinks.menu_items.create(title: "Black Coffee", image_url: nil, description: "What you need to finish your final project")
 workshop_drinks.menu_items.create(title: "Caramel Latte", image_url: nil)
 workshop_drinks.menu_items.create(title: "Tea", image_url: nil)
+
 workshop_lunch.menu_items.create(title: "Club Sandwich", image_url: nil)
-workshop_lunch.menu_items.create(
-  title: "BLT Salad",
-  image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
+workshop_lunch.menu_items.create(title: "BLT Salad", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
   description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.")
-tu_lan_menu = place3.menus.create(title: "Menu")
-tu_lan_br = tu_lan_menu.categories.create(title: "Breakfast")
-tu_lan_lunch = tu_lan_menu.categories.create(title: "Lunch")
+
+tu_lan_menu =   place3.menus.create(title: "Menu")
+tu_lan_br =     tu_lan_menu.categories.create(title: "Breakfast")
+tu_lan_lunch =  tu_lan_menu.categories.create(title: "Lunch")
 tu_lan_dinner = tu_lan_menu.categories.create(title: "Dinner")
-tu_lan_br.menu_items.create(title: "Eggs and Bacon")
-tu_lan_br.menu_items.create(title: "Toast")
-tu_lan_br.menu_items.create(title: "Grits")
-tu_lan_br.menu_items.create(title: "Hashbrowns")
-tu_lan_br.menu_items.create(title: "Oats")
-tu_lan_lunch.menu_items.create(title: "Fried Calamari")
-tu_lan_lunch.menu_items.create(title: "Fried Mozzarella")
-tu_lan_lunch.menu_items.create(title: "Chicken Wings")
-tu_lan_lunch.menu_items.create(title: "Spinach Pie", description: "Most delicious meal you've ever had.")
-tu_lan_dinner.menu_items.create(title: "Crab Cakes")
-tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon")
 
+tu_lan_br.menu_items.create(title: "Eggs and Bacon", image_url: nil)
+tu_lan_br.menu_items.create(title: "Toast", image_url: nil)
+tu_lan_br.menu_items.create(title: "Grits", image_url: nil)
+tu_lan_br.menu_items.create(title: "Hashbrowns", image_url: nil)
+tu_lan_br.menu_items.create(title: "Oats", image_url: nil)
 
-place4_menu = place4.menus.create(title: "Menu")
-place4_br = place4_menu.categories.create(title: "Breakfast")
-place4_lunch = place4_menu.categories.create(title: "Lunch")
+tu_lan_lunch.menu_items.create(title: "Fried Calamari", image_url: nil)
+tu_lan_lunch.menu_items.create(title: "Fried Mozzarella", image_url: nil)
+tu_lan_lunch.menu_items.create(title: "Chicken Wings", image_url: nil)
+tu_lan_lunch.menu_items.create(title: "Spinach Pie", description: "Most delicious meal you've ever had.", image_url: nil)
+
+tu_lan_dinner.menu_items.create(title: "Crab Cakes", image_url: nil)
+tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil)
+
+place4_menu =   place4.menus.create(title: "Menu")
+place4_br =     place4_menu.categories.create(title: "Breakfast")
+place4_lunch =  place4_menu.categories.create(title: "Lunch")
 place4_dinner = place4_menu.categories.create(title: "Dinner")
-place4_br.menu_items.create(title: "Hashbrowns")
-place4_br.menu_items.create(title: "Toast")
-place4_br.menu_items.create(title: "Grits")
-place4_br.menu_items.create(title: "Oats")
-place4_dinner.menu_items.create(title: "Crab Cakes")
-place4_dinner.menu_items.create(title: "Potato Crusted Salmon")
+
+place4_br.menu_items.create(title: "Hashbrowns", image_url: nil)
+place4_br.menu_items.create(title: "Toast", image_url: nil)
+place4_br.menu_items.create(title: "Grits", image_url: nil)
+place4_br.menu_items.create(title: "Oats", image_url: nil)
+place4_dinner.menu_items.create(title: "Crab Cakes", image_url: nil)
+place4_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil)

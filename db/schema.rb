@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204190545) do
+ActiveRecord::Schema.define(version: 20150205003239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20150204190545) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "categories", ["title"], name: "index_categories_on_title", unique: true, using: :btree
-
   create_table "menu_items", force: true do |t|
     t.string   "title",       null: false
     t.string   "category_id", null: false
@@ -34,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150204190545) do
     t.text     "description"
   end
 
-  add_index "menu_items", ["title"], name: "index_menu_items_on_title", unique: true, using: :btree
+  add_index "menu_items", ["title", "category_id"], name: "index_menu_items_on_title_and_category_id", unique: true, using: :btree
 
   create_table "menus", force: true do |t|
     t.string   "title",      null: false
