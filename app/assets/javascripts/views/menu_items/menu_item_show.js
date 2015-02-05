@@ -19,7 +19,8 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
       this.$('.rating').raty({
         path: 'assets',
         half: true,
-        // score: 3
+        noRatedMsg: 'Not rated yet!',
+        score: this.model.get('avg_rating')
       });
     }.bind(this))
 
@@ -27,18 +28,26 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
   },
 
   createRating: function () {
-    this.rating = this.$('.rating').find('input').val();
-    console.log(this.rating);
+    this.rating = this.$('.rating').raty('score');
     var newRating = new WaiterUp.Models.Rating({
       menu_item_id: this.model.id,
       score: this.rating
     });
 
-    newRating.save({
+    newRating.save({}, {
       success: function () {
-        // var score =
-
-      }
+        this.model.fetch();
+      }.bind(this),
+      error: function (model, response) {
+        var error = response.responseJSON.error;
+        debugger
+        if (error === "rated") {
+          alert("Already rated!");
+        } else {
+          alert("Must login first!");
+        }
+        this.render();
+      }.bind(this),
     });
   }
 

@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20150205005312) do
   add_index "places", ["title"], name: "index_places_on_title", using: :btree
 
   create_table "ratings", force: true do |t|
-    t.string   "menu_item_id", null: false
-    t.string   "rater_id",     null: false
+    t.integer  "menu_item_id", null: false
+    t.integer  "rater_id",     null: false
     t.decimal  "score",        null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

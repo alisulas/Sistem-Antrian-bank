@@ -15,8 +15,8 @@ class Rating < ActiveRecord::Base
 
   belongs_to :menu_item
   belongs_to :rater,
-    class_name: :MenuItem,
-    foreign_key: :menu_item_id,
+    class_name: :User,
+    foreign_key: :rater_id,
     primary_key: :id
 
 end

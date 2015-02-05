@@ -18,6 +18,6 @@ class MenuItem < ActiveRecord::Base
   has_one :rating
 
   def avg_rating
-    #code
+    Rating.where('menu_item_id = ?', self.id).average('score').to_f
   end
 end

@@ -6,5 +6,7 @@ WaiterUp::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :places, only: [:index, :show, :create]
+    resources :menu_items, only: [:show]
+    resource :rating
   end
 end

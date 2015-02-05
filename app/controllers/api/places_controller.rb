@@ -1,5 +1,5 @@
 module Api
-  class PlacesController < ApplicationController
+  class PlacesController < ApiController
 
     def index
       @places = Place.all

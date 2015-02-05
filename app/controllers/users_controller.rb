@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :verify_logged_in, only: [:show, :edit, :update]
 
   def new

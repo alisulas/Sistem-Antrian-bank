@@ -6,7 +6,9 @@ json.menus @place.menus do |menu|
     json.extract! category, :title, :id
 
     json.menu_items category.menu_items do |item|
-      json.extract! item, :title, :id, :image_url, :description, :avg_rating
+      # json.extract! item, :title, :id, :image_url, :description, :avg_rating
+      json.partial! 'api/menu_items/menu_item', menu_item: item, as: :item
     end
+    # json.menu_items category.menu_items, partial: 'menu_items/show', as: :item
   end
 end
