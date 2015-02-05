@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.raty.js
 //= require underscore
 //= require backbone
 //= require waiter_up
@@ -23,5 +24,3 @@
 //= require_tree ./routers
 //= require_tree .
 //= require bootstrap
-// require jquery.raty.js
-// require jquery.raty.min

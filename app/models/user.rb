@@ -19,6 +19,12 @@ class User < ActiveRecord::Base
             foreign_key: :owner_id,
             primary_key: :id
 
+  has_many :ratings,
+    class_name:  :Rating,
+    foreign_key: :rater_id,
+    primary_key: :id
+
+
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 

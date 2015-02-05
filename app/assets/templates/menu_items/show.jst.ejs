@@ -3,7 +3,7 @@
   <div class="menu-item-image pull-left"><img src="<%= menu_item.escape('image_url') %>"></div>
 
 <% } %>
-  <div class="rating pull-right">* * * * *</div>
+  <div class="rating pull-right" data-score="<%= menu_item.escape('rating') %>"></div>
   <strong><%= menu_item.escape('title') %></strong><br>
   <%= menu_item.escape('description') %>
 </div>

@@ -15,4 +15,9 @@ class MenuItem < ActiveRecord::Base
   validates :title, :category_id, presence: true
 
   belongs_to :category
+  has_one :rating
+
+  def avg_rating
+    #code
+  end
 end

@@ -14,8 +14,8 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
 
   installMap: function () {
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167},
-      zoom: 13
+      center: { lat: 37.770274, lng: -122.4144611},
+      zoom: 14
     };
 
     this._map = new google.maps.Map(this.el, mapOptions);
