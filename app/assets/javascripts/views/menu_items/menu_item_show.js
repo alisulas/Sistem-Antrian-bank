@@ -44,7 +44,7 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
         if (error === "rated") {
           alert("Already rated!");
         } else {
-          alert("Must login first!");
+          alert("Must be logged in as a user!");
         }
         this.render();
       }.bind(this),

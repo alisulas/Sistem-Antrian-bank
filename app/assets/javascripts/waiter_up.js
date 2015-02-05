@@ -5,10 +5,11 @@ window.WaiterUp = {
   Routers: {},
   Utils: {},
   initialize: function() {
-    // if(CURRENT_USER.provider){
-
+    if(CURRENT_USER.provider){
+      new WaiterUp.ProviderRouters.Router();
+    } else {
       new WaiterUp.Routers.Router();
-    // }
+    }
     Backbone.history.start();
   }
 };
