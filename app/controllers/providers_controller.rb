@@ -11,6 +11,8 @@ class ProvidersController < ApplicationController
     @provider = User.new(provider_params)
     @provider.provider = true
 
+    place_attrs = params[:user]["places_attributes"].first
+
     if @provider.save
       flash.now[:notice] = "Success!"
       log_in!(@provider)
@@ -51,7 +53,8 @@ class ProvidersController < ApplicationController
   private
 
   def provider_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password,
+      places_attributes: [:title, :street_address, :zipcode, :state, :city, :country])
   end
 
 end

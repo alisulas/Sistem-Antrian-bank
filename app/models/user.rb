@@ -14,16 +14,17 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  has_many :places,
-            class_name:  :Place,
-            foreign_key: :owner_id,
-            primary_key: :id
+  has_many :places, inverse_of: :owner,
+    class_name:  :Place,
+    foreign_key: :owner_id,
+    primary_key: :id
 
   has_many :ratings,
     class_name:  :Rating,
     foreign_key: :rater_id,
     primary_key: :id
 
+  accepts_nested_attributes_for :places #, reject_if :place_already_exists
 
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true

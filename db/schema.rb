@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205005312) do
+ActiveRecord::Schema.define(version: 20150206011331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20150205005312) do
     t.string   "state",          null: false
     t.integer  "zipcode",        null: false
     t.string   "country",        null: false
-    t.decimal  "longitude",      null: false
-    t.decimal  "latitude",       null: false
+    t.float    "longitude",      null: false
+    t.float    "latitude",       null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.text     "description"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150205005312) do
   create_table "ratings", force: true do |t|
     t.integer  "menu_item_id", null: false
     t.integer  "rater_id",     null: false
-    t.decimal  "score",        null: false
+    t.float    "score",        null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

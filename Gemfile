@@ -24,6 +24,7 @@ gem 'newrelic_rpm'
 gem 'figaro'
 gem 'pusher'
 gem 'yelp', require: 'yelp'
+gem 'geocoder'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
