@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     foreign_key: :rater_id,
     primary_key: :id
 
-  accepts_nested_attributes_for :places #, reject_if :place_already_exists
+  accepts_nested_attributes_for :places #, reject_if :place_already_exists #=> to be implemented
 
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
