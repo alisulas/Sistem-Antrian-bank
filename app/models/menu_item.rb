@@ -16,6 +16,7 @@ class MenuItem < ActiveRecord::Base
 
   belongs_to :category
   has_one :rating
+  has_many :comments
 
   def avg_rating
     Rating.where('menu_item_id = ?', self.id).average('score').to_f

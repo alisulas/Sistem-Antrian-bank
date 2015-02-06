@@ -8,22 +8,22 @@ WaiterUp is partially a clone of Yelp built on Rails and Backbone. There are two
 
 Clients can:
 
-- [ ] Create accounts (new client)
-- [ ] Create sessions (log in)
+- [x] Create accounts (new client)
+- [x] Create sessions (log in)
 - [ ] Enter payment information
 - [ ] Search places (restaurants, coffee shops, etc)
 - [ ] Create comments for category items
-- [ ] Upvote/downvote category items
+- [x] Rating category items
 
 Providers can:
 
-- [ ] Create accounts (new provider)
-- [ ] Create sessions (log in)
+- [x] Create accounts (new provider)
+- [x] Create sessions (log in)
 - [ ] Enter payment information
-- [ ] Create places
-- [ ] Create menus
-- [ ] Create categories
-- [ ] Create category items
+- [x] Create places
+- [x] Create menus
+- [x] Create categories
+- [x] Create category items
 
 
 ## Design Docs
@@ -68,7 +68,7 @@ Add API route comments. Change MenuItemShow to composite view, then create views
 [Details][phase-four]
 
 ### Bonus Features (TBD)
-- [ ] Clients can upvote/downvote category items ONLY if they're logged in and have purchased that item before
+- [x] Customers can rate category items ONLY if they're logged in and have purchased that item before
 - [ ] ask clients for their current location in the browser
 - [ ] allow users to upload pictures of their food
 - [ ] Place order for category item

@@ -5,7 +5,7 @@
 #  id           :integer          not null, primary key
 #  menu_item_id :integer          not null
 #  rater_id     :integer          not null
-#  score        :decimal(, )      not null
+#  score        :float            not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
