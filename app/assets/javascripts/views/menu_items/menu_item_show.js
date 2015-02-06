@@ -5,10 +5,17 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model.comments(), 'add', this.addComment);
+    this.renderComments();
   },
 
   events: {
-    'click .rating': 'createRating'
+    'click .rating': 'createRating',
+    'click .comments-heading': 'toggleComments'
+  },
+
+  toggleComments: function () {
+    this.$(".comments").toggle();
   },
 
   render: function () {
@@ -22,9 +29,19 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
         noRatedMsg: 'Not rated yet!',
         score: this.model.get('avg_rating')
       });
-    }.bind(this))
+    }.bind(this));
+    this.$('.comments').hide();
 
     return this;
+  },
+
+  addComment: function (comment) {
+    var view = new WaiterUp.Views.CommentShow({ model: comment })
+    this.addSubview('.comments', view);
+  },
+
+  renderComments: function () {
+    this.model.comments().each(this.addComment.bind(this));
   },
 
   createRating: function () {

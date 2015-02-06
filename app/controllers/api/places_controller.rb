@@ -3,15 +3,14 @@ module Api
 
     def index
       @places = Place.all
-      parameters = { term: params[:term], limit: 16 }
-      # fail
+      # parameters = { term: params[:term], limit: 16 }
       # render json: Yelp.client.search('San Francisco', parameters)
 
       render json: @places
     end
 
     def show
-      @place = Place.includes(menus: {categories: :menu_items})
+      @place = Place.includes(menus: {categories: {menu_items: :comments} })
                     .find(params[:id])
       render :show
     end
@@ -41,10 +40,10 @@ module Api
       render :new
     end
 
-    def search
-      parameters = { term: params[:term], limit: 16 }
-      render json: Yelp.client.search('San Francisco', parameters)
-    end
+    # def search
+    #   parameters = { term: params[:term], limit: 16 }
+    #   render json: Yelp.client.search('San Francisco', parameters)
+    # end
 
     private
 

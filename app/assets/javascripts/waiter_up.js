@@ -5,7 +5,6 @@ window.WaiterUp = {
   Routers: {},
   Utils: {},
   initialize: function() {
-      console.log(CURRENT_USER);
     if (CURRENT_USER && CURRENT_USER.provider) {
       new WaiterUp.ProviderRouters.Router();
     } else {

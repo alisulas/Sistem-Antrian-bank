@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150206165115) do
 
   create_table "comments", force: true do |t|
     t.string   "menu_item_id", null: false
+    t.string   "user_id",      null: false
     t.text     "body",         null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
