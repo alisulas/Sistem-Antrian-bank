@@ -1,6 +1,10 @@
 WaiterUp.Collections.MenuItems = Backbone.Collection.extend({
   model: WaiterUp.Models.MenuItem,
 
+  comparator: function () {
+      return 5 - this.get("avg_rating");
+  },
+
   getOrFetch: function (id) {
     var category = this.get(id);
 
