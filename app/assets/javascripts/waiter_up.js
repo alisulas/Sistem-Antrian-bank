@@ -10,6 +10,7 @@ window.WaiterUp = {
     } else {
       new WaiterUp.Routers.Router();
     }
+
     Backbone.history.start();
   }
 };

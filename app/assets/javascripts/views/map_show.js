@@ -126,7 +126,7 @@ WaiterUp.Views.MapShow = Backbone.View.extend({
 
   startBounce: function (marker) {
     marker.setAnimation(google.maps.Animation.BOUNCE);
-    // if you only want it to bounce once. Then you don't need to call endBounce
+    // If you only want it to bounce once, then you can remove all endBounce
     // setTimeout(function(){ marker.setAnimation(null); }, 700);
   },
 

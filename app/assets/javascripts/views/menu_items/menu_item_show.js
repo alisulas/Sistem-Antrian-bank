@@ -10,7 +10,6 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    // 'click .rating': 'createRating',
     'click .comments-heading a': 'toggleComments',
     'click .add-comment a': 'renderCommentForm'
   },
@@ -22,7 +21,6 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ menu_item: this.model });
     this.$el.html(content);
-    // this.$el.data('list-id', this.model.id);
     setTimeout( function () {
       this.$('.rating').raty({
         click: this.createRating.bind(this),
@@ -40,11 +38,13 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
 
   addComment: function (comment) {
     var maybeRender = false;
+
     if (this.subviews('.comments').length === 0) {
       maybeRender = true;
     }
     var view = new WaiterUp.Views.CommentShow({ model: comment })
     this.addSubview('.comments', view);
+
     if (maybeRender) { this.render(); }
     this.$('.comments').show();
   },
@@ -62,7 +62,6 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
 
   createRating: function (score, event) {
     var view = this;
-
     this.rating = score;
     var newRating = new WaiterUp.Models.Rating({
       menu_item_id: this.model.id,
@@ -71,9 +70,9 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
 
     newRating.save({}, {
       success: function () {
-        this.model.fetch();
-        // this.model.trigger("rating");
+        this.model.fetch()
       }.bind(this),
+
       error: function (model, response) {
         var error = response.responseJSON.error;
         if (error === "rated") {

@@ -18,7 +18,6 @@ WaiterUp.Collections.Places = Backbone.Collection.extend({
 
     return place;
   }
-
 });
 
 

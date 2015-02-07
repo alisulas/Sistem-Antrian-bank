@@ -14,6 +14,7 @@ WaiterUp.Views.CommentForm = Backbone.View.extend({
       body: this.$('textarea').val(),
       menu_item_id: this.model.id
     });
+
     newComment.save({}, {
       success: function () {
         this.model.comments().add(newComment);
@@ -25,13 +26,14 @@ WaiterUp.Views.CommentForm = Backbone.View.extend({
 
   render: function () {
     var content = this.template();
+
     if (this.formShowing) {
       this.$el.html(content);
     } else {
       this.$el.empty();
     }
-
     this.delegateEvents();
+
     return this;
   },
 

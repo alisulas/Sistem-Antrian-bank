@@ -1,9 +1,9 @@
 WaiterUp.Models.Category = Backbone.Model.extend({
   menu_items: function () {
     if(!this._menu_items) {
-      this._menu_items = new WaiterUp.Collections.MenuItems(
-        [], { category: this }
-      );
+      this._menu_items = new WaiterUp.Collections.MenuItems([], {
+        category: this
+      });
     }
 
     return this._menu_items;

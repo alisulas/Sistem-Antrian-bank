@@ -3,9 +3,9 @@ WaiterUp.Models.MenuItem = Backbone.Model.extend({
 
   comments: function () {
     if(!this._comments) {
-      this._comments = new WaiterUp.Collections.Comments(
-        [], { category: this }
-      );
+      this._comments = new WaiterUp.Collections.Comments([], {
+        category: this
+      });
     }
 
     return this._comments;

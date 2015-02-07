@@ -1,20 +1,21 @@
 <!-- <div class="map"></div> -->
 
-<div class='places-index-title'>
-  <!-- <h3>Places</h3> -->
-</div>
+<div class='places-index-title'></div>
 
 <ul class='places'>
   <% places.each(function (place) { %>
-      <a href="#/places/<%= place.id %>" data-place-id="<%= place.id %>">
-    <li>
+    <a href="#/places/<%= place.id %>" data-place-id="<%= place.id %>">
+      <li>
+
         <span class='details'>
           <strong><%= place.escape("title") %></strong>
         </span>
+
         <div class='place-description'>
           <%= place.escape('description') %>
         </div>
-    </li>
-      </a>
+
+      </li>
+    </a>
   <% }); %>
 </ul>

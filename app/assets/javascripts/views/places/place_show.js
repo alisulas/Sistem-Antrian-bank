@@ -20,6 +20,7 @@ WaiterUp.Views.PlaceShow = Backbone.CompositeView.extend({
     var content = this.template({ place: this.model });
     this.$el.html(content);
     this.renderMenus();
+
     return this;
   },
 

@@ -18,7 +18,6 @@ WaiterUp.Collections.Comments = Backbone.Collection.extend({
 
     return category;
   }
-
 });
 
 

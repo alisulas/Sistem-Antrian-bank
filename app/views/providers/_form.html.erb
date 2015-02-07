@@ -1,55 +1,67 @@
 <% method = provider.persisted? ? "PATCH" : "POST" %>
-<% placeholder = provider.persisted? ? provider.email : "e.g. name@example.com" %>
+<% placeholder = provider.persisted? ? provider.email : "name@example.com" %>
 <% btn_msg = provider.persisted? ? "Update #{provider.email}" : "Create Account" %>
 
 
 <%= form_for(provider, url: provider_url) do |f| %>
 <input  type="hidden" name="_method" value="<%= method %>">
-<%= f.label :email %>
-<%= f.text_field :email, placeholder: placeholder,
-class: 'form-control' %>
 
-<%= f.label :password %>
-<%= f.password_field :password, class: 'form-control' %>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: placeholder,
+  class: 'form-control' %>
 
-<label>Listing Name
-  <input type="text"
-         name="user[places_attributes][][title]"
-         class="form-control">
-</label>
-<label>Street Address
-  <input type="text"
-         name="user[places_attributes][][street_address]"
-         class="form-control">
-</label>
-<label>City
-  <input type="text"
-         name="user[places_attributes][][city]"
-         class="form-control">
-</label>
-<label>State
-  <select class="form-control" name="user[places_attributes][][state]">
-    <% us_states.each do |state| %>
-    <% if state[1] == "CA" %>
-        <option value="<%= state[0] %>" selected><%= state[1] %></option>
-      <% else %>
-        <option value="<%= state[0] %>"><%= state[1] %></option>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <label>Listing Name
+
+    <input type="text"
+           name="user[places_attributes][][title]"
+           class="form-control">
+  </label>
+
+  <label>Street Address
+
+    <input type="text"
+           name="user[places_attributes][][street_address]"
+           class="form-control">
+  </label>
+
+  <label>City
+
+    <input type="text"
+           name="user[places_attributes][][city]"
+           class="form-control">
+  </label>
+
+  <label>State
+
+    <select class="form-control" name="user[places_attributes][][state]">
+      <% us_states.each do |state| %>
+      <% if state[1] == "CA" %>
+          <option value="<%= state[0] %>" selected><%= state[1] %></option>
+        <% else %>
+          <option value="<%= state[0] %>"><%= state[1] %></option>
+        <% end %>
       <% end %>
-    <% end %>
-  </select>
-</label>
+    </select>
+  </label>
 
-<label>Zipcode
-  <input type="number"
-         name="user[places_attributes][][zipcode]"
-         class="form-control">
-</label>
-<label>Country
-  <input type="text"
-         name="user[places_attributes][][country]"
-         class="form-control" value="United States">
-</label>
+  <label>Zipcode
 
-<br>
-<%= f.submit btn_msg, class: "btn btn-primary" %>
+    <input type="number"
+           name="user[places_attributes][][zipcode]"
+           class="form-control">
+  </label>
+
+  <label>Country
+
+    <input type="text"
+           name="user[places_attributes][][country]"
+           class="form-control"
+           value="United States">
+  </label>
+
+  <br>
+  <%= f.submit btn_msg, class: "btn btn-primary" %>
 <% end %>

@@ -4,14 +4,15 @@
 
 
 <%= form_for(user, url: user_url) do |f| %>
-<input  type="hidden" name="_method" value="<%= method %>">
-<%= f.label :email %>
-<%= f.text_field :email, placeholder: placeholder,
-class: 'form-control' %>
+  <input  type="hidden" name="_method" value="<%= method %>">
 
-<%= f.label :password %>
-<%= f.password_field :password, class: 'form-control' %>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: placeholder,
+                           class: 'form-control' %>
 
-<br>
-<%= f.submit btn_msg, class: "btn btn-primary" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <br>
+  <%= f.submit btn_msg, class: "btn btn-primary" %>
 <% end %>

@@ -21,7 +21,6 @@ WaiterUp.Collections.MenuItems = Backbone.Collection.extend({
 
     return category;
   }
-
 });
 
 

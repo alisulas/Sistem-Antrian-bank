@@ -1,24 +1,35 @@
-<div class="menu-item-heading menu-item-display" data-menu-item-id="<%= menu_item.id %>">
-<% if (menu_item.escape('image_url')) { %>
-  <div class="menu-item-image pull-left"><img src="<%= menu_item.escape('image_url') %>"></div>
+<div class="menu-item-heading menu-item-display"
+     data-menu-item-id="<%= menu_item.id %>">
 
-<% } %>
-  <div class="rating pull-right" data-score="<%= menu_item.escape('rating') %>"></div>
-  <strong><%= menu_item.escape('title') %></strong><br>
+  <% if (menu_item.escape('image_url')) { %>
+    <div class="menu-item-image pull-left">
+      <img src="<%= menu_item.escape('image_url') %>">
+    </div>
+  <% } %>
+
+  <div class="rating pull-right"
+       data-score="<%= menu_item.escape('rating') %>">
+  </div>
+
+  <strong><%= menu_item.escape('title') %></strong>
+  <br>
   <%= menu_item.escape('description') %>
 </div>
+
 
 <% if (!(menu_item.comments().length === 0)) { %>
   <div class="comments-window">
     <div class="comments-heading">
       <a href="javascript:void(0)">Comments</a>
     </div>
-    <div class="comments">
 
-    </div>
+    <div class="comments"></div>
+
   </div>
 <% } %>
+
 <div class="add-comment">
   <a href="javascript:void(0)">Add Comment</a>
+
   <div id="comment-form"></div>
 </div>
