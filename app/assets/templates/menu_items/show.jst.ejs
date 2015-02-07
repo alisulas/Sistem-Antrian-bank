@@ -8,7 +8,6 @@
   <%= menu_item.escape('description') %>
 </div>
 
-
 <% if (!(menu_item.comments().length === 0)) { %>
   <div class="comments-window">
     <div class="comments-heading">
@@ -19,3 +18,7 @@
     </div>
   </div>
 <% } %>
+<div class="add-comment">
+  <a href="javascript:void(0)">Add Comment</a>
+  <div id="comment-form"></div>
+</div>

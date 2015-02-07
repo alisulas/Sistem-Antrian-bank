@@ -1,4 +1,5 @@
 WaiterUp.Collections.Comments = Backbone.Collection.extend({
+  url: 'api/comments',
   model: WaiterUp.Models.Comment,
 
   getOrFetch: function (id) {
