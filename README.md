@@ -12,7 +12,7 @@ Clients can:
 - [x] Create sessions (log in)
 - [ ] Enter payment information
 - [ ] Search places (restaurants, coffee shops, etc)
-- [ ] Create comments for category items
+- [x] Create comments for category items
 - [x] Rating category items
 
 Providers can:
