@@ -1,6 +1,7 @@
 WaiterUp.Views.MapShow = Backbone.View.extend({
+  // Initialization
   attributes: {
-    id: "map-canvas"
+    id: "searchbar"
   },
 
   initialize: function () {

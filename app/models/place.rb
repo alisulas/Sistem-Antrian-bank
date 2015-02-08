@@ -19,7 +19,7 @@
 
 class Place < ActiveRecord::Base
   searchable do
-    text :title
+    text :title, :street_address
     # text :comments do
     #   comments.map { |comment| comment.body }
     # end
@@ -35,6 +35,8 @@ class Place < ActiveRecord::Base
     # string  :sort_title do
     #   title.downcase.gsub(/^(an?|the)/, '')
     # end
+
+    # latlon(:lonlat) { Sunspot::Util::Coordinates.new(latitude, longitude) }
   end
 
 

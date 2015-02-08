@@ -7,9 +7,15 @@ module Api
       # render json: Yelp.client.search('San Francisco', parameters)
 
       @search = Place.search do
-        fulltext params[:search]
+        fulltext params[:search] do
+        end
+        # order_by_geodist(:location, *Geocoder.coordinates(params[:loc]))
       end
-      # debugger
+
+      # @search = Place.search(include: [:title, :street_address]) do
+      #   keywords(params[:search])
+      # end
+
       render json: @search.results
 
 
@@ -51,13 +57,13 @@ module Api
     #   parameters = { term: params[:term], limit: 16 }
     #   render json: Yelp.client.search('San Francisco', parameters)
     # end
-    def search
-      @search = Place.search(include: [:title, :street_address]) do
-        keywords(params[:q])
-      end
-      # fail
-      render :search
-    end
+    # def search
+    #   @search = Place.search(include: [:title, :street_address]) do
+    #     keywords(params[:q])
+    #   end
+    #   # fail
+    #   render :search
+    # end
 
     private
 
