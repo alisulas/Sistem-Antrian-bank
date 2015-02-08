@@ -13,6 +13,7 @@
 /tmp
 
 .DS_Store
+solr/data
 
 # Ignore application configuration
 /config/application.yml

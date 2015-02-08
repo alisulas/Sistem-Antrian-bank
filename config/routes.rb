@@ -6,7 +6,9 @@ WaiterUp::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
-    resources :places, only: [:index, :show, :create]
+    resources :places, only: [:index, :show, :create] do
+      get 'search', on: :collection
+    end
     resources :menu_items, only: [:show]
     resource :rating, only: [:create]
     resources :comments, only: [:create, :destroy]

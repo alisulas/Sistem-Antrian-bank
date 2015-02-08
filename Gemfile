@@ -25,6 +25,10 @@ gem 'figaro'
 gem 'pusher'
 gem 'yelp', require: 'yelp'
 gem 'geocoder'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
