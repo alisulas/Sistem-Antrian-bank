@@ -16,10 +16,10 @@ module Api
       #   keywords(params[:search])
       # end
 
-      render json: @search.results
+      # render json: @search.results
+      # @places = @search.results
 
-
-      # render json: @places
+      render json: @places
     end
 
     def show
