@@ -1,13 +1,13 @@
-<header class="navbar transparent navbar-default navbar-static-top">
+<header class="navbar navbar-fixed-top navbar-default navbar-static-top">
   <div class="container">
-    <!-- <%= link_to "<span style='color:steelblue'>Waiter</span><span>Up</span>".html_safe, "/#", id: "logo" %> -->
+    <%= link_to "<div></div>".html_safe, "/#", id: "logo" %>
 
-    <div id="logo">
-    </div>
+    <!-- <div id="logo">
+    </div> -->
     <nav>
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
-          <li><%= link_to "Account", user_url %></li>
+          <!-- <li><%= link_to "Account", user_url %></li> -->
           <li><%= link_to "Logout", session_url, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_url %></li>

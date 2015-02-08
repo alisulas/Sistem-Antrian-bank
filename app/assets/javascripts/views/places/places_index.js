@@ -5,12 +5,15 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.runFilter);
   },
 
   events: {
-    'mouseenter .places a': 'startAnimatePlace',
-    'mouseleave .places a': 'endAnimatePlace',
-    'click .searchbar button': 'runFilter'
+    'mouseenter .places a':    'startAnimatePlace',
+    'mouseleave .places a':    'endAnimatePlace',
+    // 'click .searchbar button': 'runFilter',
+    // $('input').on('change', function (event) { this.collection.fetch({ data: { search: $(event.currentTarget).val() }}) }),
+    'change .searchbar input': 'fetchCollection'
   },
 
   startAnimatePlace: function (event) {
@@ -32,10 +35,12 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
     place.destroy();
   },
 
-  runFilter: function(event){
+  fetchCollection: function(event){
     event.preventDefault();
 
-    this.filter = this.$('.searchbar input').val();
+    // var filter = this.$('.searchbar input').val();
+    var filter = $(event.currentTarget).val();
+    this.collection.fetch({ data: { search: filter } });
     this.render();
   },
 
