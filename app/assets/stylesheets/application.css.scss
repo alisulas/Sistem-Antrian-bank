@@ -219,6 +219,7 @@ input { height: auto !important; }
 
 .all-content { margin-top: 15px; }
 
+.all-content, .map { top: 50px; }
 #map-canvas { height: 100%; }
 
 .place-index { margin-top: 20px; }
@@ -294,9 +295,3 @@ ul.places, .category-show {
   }
   button { width: 15%; }
 }
-
-// .navbar.transparent.navbar-default.navbar-static-top {
-//   width: 100%;
-//   position: absolute;
-//   background: rgba(230, 230, 230, 0.9);
-// }
