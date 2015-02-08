@@ -17,7 +17,7 @@ module Api
       # end
 
       # render json: @search.results
-      # @places = @search.results
+      @places = @search.results
 
       render json: @places
     end
