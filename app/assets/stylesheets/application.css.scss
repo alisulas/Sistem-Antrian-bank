@@ -70,15 +70,25 @@
  /* header */
 
  #logo {
+   background: image-url("waiterup_icon.png") no-repeat;
+   background-size: 100px 40px;
    float: left;
-   margin-right: 10px;
-   font-size: 1.7em;
-   color: #333;
-   text-transform: uppercase;
-   letter-spacing: -1px;
-   padding-top: 9px;
-   font-weight: bold;
-   &:hover { color: #111; text-decoration: none; }
+   height: 40px;
+   width: 100px;
+   margin: 5px 0;
+   padding: 0;
+  //  height: 40px;
+  //  width: 100px;
+  //  background-repeat: none;
+  //  float: left;
+  //  margin-right: 10px;
+  //  font-size: 1.7em;
+  //  color: #333;
+  //  text-transform: uppercase;
+  //  letter-spacing: -1px;
+  //  padding-top: 9px;
+  //  font-weight: bold;
+  //  &:hover { color: #111; text-decoration: none; }
  }
 
 
@@ -275,3 +285,18 @@ ul.places, .category-show {
   background-image: -moz-linear-gradient(left, #def, transparent);
   background-image: -o-linear-gradient(left, #def, transparent);
 }
+
+.searchbar {
+  input {
+    width: 80%;
+    float: left;
+    margin-right: 23px
+  }
+  button { width: 15%; }
+}
+
+// .navbar.transparent.navbar-default.navbar-static-top {
+//   width: 100%;
+//   position: absolute;
+//   background: rgba(230, 230, 230, 0.9);
+// }
