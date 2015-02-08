@@ -9,7 +9,8 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
 
   events: {
     'mouseenter .places a': 'startAnimatePlace',
-    'mouseleave .places a': 'endAnimatePlace'
+    'mouseleave .places a': 'endAnimatePlace',
+    'click .searchbar button': 'runFilter'
   },
 
   startAnimatePlace: function (event) {
@@ -31,7 +32,17 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
     place.destroy();
   },
 
+  runFilter: function(event){
+    event.preventDefault();
+
+    this.filter = this.$('.searchbar input').val();
+    this.render();
+  },
+
   render: function () {
+    // var filteredList = this.collection.where({ title: this.filter });
+    // this.collection.reset(filteredList);
+
     var content = this.template({ places: this.collection });
     this.$el.html(content);
 
@@ -44,5 +55,6 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
       var marker = WaiterUp.mapView._markers[place.id];
       WaiterUp.mapView.endBounce(marker);
     })
-  }
+  },
+
 });
