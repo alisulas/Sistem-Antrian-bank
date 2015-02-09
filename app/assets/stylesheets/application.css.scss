@@ -33,14 +33,17 @@
  textarea { resize: vertical; }
  body {
   //  background-color: #f3f3f4;
-   background: image-url("login_bg.jpg") no-repeat;
+   background: image-url("login_bg.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
    background-size: cover;
-   display: table;
+   display:  table;
    position: relative;
-   width: 100%;
-   height: 100%;
-   color: #676A6C;
-   top: 50px;
+   width:    100%;
+   height:   100%;
+   color:    #676A6C;
+   top:      50px;
  }
 
  // .login-body { top: 50px; }
@@ -57,15 +60,15 @@
  h1 {
    font-size: 3em;
    letter-spacing: -2px;
-   margin-bottom: 30px;
-   text-align: center;
+   margin-bottom:  30px;
+   text-align:     center;
  }
 
  h2 {
    font-size: 1.2em;
    letter-spacing: -1px;
-   margin-bottom: 30px;
-   text-align: center;
+   margin-bottom:  30px;
+   text-align:  center;
    font-weight: normal;
    color: $gray-light;
  }
@@ -77,10 +80,10 @@
  #logo {
    background: image-url("waiterup_icon.png") no-repeat;
    background-size: 100px 40px;
-   float: left;
-   height: 40px;
-   width: 100px;
-   margin: 5px 0;
+   float:   left;
+   height:  40px;
+   width:   100px;
+   margin:  5px 0;
    padding: 0;
  }
 
@@ -89,10 +92,7 @@
    left: 60px;
  }
 
- .form-control {
-   margin-bottom: 20px;
- }
-
+ .form-control { margin-bottom: 20px; }
 
  /* footer */
 
@@ -126,7 +126,10 @@ input { height: auto !important; }
 
 #error_explanation {
   color: red;
-  ul { color: red; margin: 0 0 30px 0; }
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
 }
 
 .field_with_errors {
@@ -137,14 +140,13 @@ input { height: auto !important; }
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
-  span { margin-left: 20px; font-weight: normal; }
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
 }
 
-.menus { }
-
-.categories {
-  width: 100%;
-}
+.categories { width: 100%; }
 
 .menu-items {
   color: inherit;
@@ -160,8 +162,14 @@ input { height: auto !important; }
     padding: 10px;
     border-bottom: 1px solid #e7eaec;
     &:hover {
-      background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 5%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(5%, #fff), color-stop(100%, rgba(255, 255, 255, 0)));
+      background: -moz-linear-gradient(left,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 5%,
+        rgba(255, 255, 255, 0) 100%);
+      background: -webkit-gradient(linear, left top, right top,
+        color-stop(0%, rgba(255, 255, 255, 0)),
+        color-stop(5%, #fff),
+        color-stop(100%, rgba(255, 255, 255, 0)));
     }
     strong { color: #333; }
     &:hover strong { color: black; }
@@ -216,7 +224,11 @@ input { height: auto !important; }
 .map {
   height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .all-content { margin-top: 15px; }
@@ -252,7 +264,6 @@ ul.places, .category-show {
 
 .container { width: 100%; }
 .navbar { margin-bottom: 0; }
-// .place-show > a { position: absolute; }
 
 .comments-heading {
   margin-top: 10px;
