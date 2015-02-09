@@ -9,9 +9,9 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
   },
 
   create: function (event) {
-    // event.preventDefault();
+    event.preventDefault();
     var newComment = new WaiterUp.Models.Comment({
-      body: this.$('textarea').val(),
+      body: this.$('input').val(),
       menu_item_id: this.model.id
     });
 

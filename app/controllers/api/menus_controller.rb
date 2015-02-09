@@ -32,11 +32,11 @@ module Api
         status: :unprocessable_entity
       end
     end
-    #
-    # def new
-    #   @menu = Menu.new
-    #   render :new
-    # end
+
+    def new
+      @menu = Menu.new
+      render :new
+    end
 
     private
 

@@ -1,10 +1,6 @@
 <% if (menus.length === 0) { %>
-  <a href="/#" class="btn btn-primary">Create Menu</a>
 <% } else { %>
-  <!-- <% menus.each( function (menu) { %>
-    <div class="menu">
-      <%= menu.escape('title') %>
-    </div>
-  <% }) %> -->
+  <a href="javascript:void(0)" class="btn btn-primary add-menu">Create Menu</a>
+  <div id="menu-form"></div>
   <div class="provider-menus"></div>
 <% } %>
