@@ -11,11 +11,10 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vYTae_GpOuNdjgPs1JkKzMFVBIHs7EE">
   </script>
 </head>
-<body>
+<body class="login-body">
   <%= render 'layouts/header' %>
   <div class="container">
     <div class="row">
-      <!-- <div class="col-md-8 col-md-offset-2"> -->
       <div>
         <% if flash[:notice] %>
         <p><%= flash[:notice] %></p>
@@ -32,7 +31,7 @@
         <%= yield %>
       </div>
     </div>
-    <%= render 'layouts/footer' %>
+    <!-- <%#= render 'layouts/footer' %> -->
   </div>
 </body>
 </html>

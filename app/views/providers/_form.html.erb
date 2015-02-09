@@ -13,14 +13,14 @@
   <%= f.label :password %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <label>Listing Name
+  <label style="display: block">Listing Name
 
     <input type="text"
            name="user[places_attributes][][title]"
            class="form-control">
   </label>
 
-  <label>Street Address
+  <label style="display: block">Street Address
 
     <input type="text"
            name="user[places_attributes][][street_address]"
@@ -63,5 +63,5 @@
   </label>
 
   <br>
-  <%= f.submit btn_msg, class: "btn btn-primary" %>
+  <%= f.submit btn_msg, class: "btn btn-primary", style: "width: 100%" %>
 <% end %>
