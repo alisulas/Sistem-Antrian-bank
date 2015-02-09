@@ -23,7 +23,6 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
     this.collection.fetch({ data: { search: filter } });
     this.filter = filter;
     this.$('.searchbar input').focus();
-    // this.render();
   },
 
   render: function () {

@@ -1,21 +1,22 @@
 WaiterUp.Collections.Menus = Backbone.Collection.extend({
+  url: 'api/menus',
   model: WaiterUp.Models.Menu,
 
   getOrFetch: function (id) {
-    var place = this.get(id);
+    var menu = this.get(id);
 
-    if(!place) {
-      place = new WaiterUp.Models.Places({ id: id });
-      place.fetch({
+    if(!menu) {
+      menu = new WaiterUp.Models.Menus({ id: id });
+      menu.fetch({
         success: function () {
-          this.add(place);
+          this.add(menu);
         }.bind(this)
       });
     } else {
-      place.fetch();
+      menu.fetch();
     }
 
-    return place;
+    return menu;
   }
 });
 

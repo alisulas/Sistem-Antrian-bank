@@ -19,7 +19,13 @@
 
 class Place < ActiveRecord::Base
   searchable do
-    text :title, :street_address
+    text :title, :street_address, :zipcode
+
+    # join(:menu_title,
+    #   target: Menu,
+    #   type: :text,
+    #   join: { from: :place_id, to: :id })
+
     # text :comments do
     #   comments.map { |comment| comment.body }
     # end

@@ -10,6 +10,7 @@
 #
 
 class Category < ActiveRecord::Base
+
   validates :title, :menu_id, presence: true
 
   belongs_to :menu
