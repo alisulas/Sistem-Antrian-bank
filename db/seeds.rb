@@ -2,13 +2,13 @@ user = User.create(email: "user", password: "awesome")
 provider = User.create(email: "provider", password: "awesome", provider: true)
 place = provider.places.create(title: "Starbucks",
         description: "Iconic Seattle-base coffeehouse chain",
-        street_address: "865 Market Street C26a",
+        street_address: "1231 Market Street",
         city: "San Francisco",
         state: "CA",
         zipcode: "94103",
         country: "United States",
-        latitude: 37.783921,
-        longitude: -122.4073459)
+        latitude: 37.7814707,
+        longitude: -122.4079559)
 provider2 = User.create(email: "provider2", password: "awesome", provider: true)
 place2 = provider2.places.create(title: "Workshop Cafe",
         description: "Coffee shop catering to laptop workers",
@@ -46,6 +46,24 @@ place5 = provider3.places.create(title: "Sweet Maple",
         country: "United States",
         latitude: 37.7852098,
         longitude: -122.4315502)
+
+place6 = provider3.places.create(title: "Cafe Flore",
+        street_address: "2298 Market Street",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94114",
+        country: "United States",
+        latitude: 37.764656,
+        longitude: -122.4329428)
+
+place7 = provider3.places.create(title: "App Academy",
+        street_address: "1061 Market St",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94103",
+        country: "United States",
+        latitude: 37.7810556,
+        longitude: -122.4114551)
 
 workshop_menu =   place2.menus.create(title: "Workshop Cafe's Menu")
 workshop_drinks = workshop_menu.categories.create(title: "Drinks")
