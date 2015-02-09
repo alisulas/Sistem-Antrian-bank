@@ -15,6 +15,6 @@
 </div>
 
 <script>
-CURRENT_USER = JSON.parse('<%=current_user.to_json.html_safe%>');
+CURRENT_USER = JSON.parse('<%= current_user.to_json(includes: :places).html_safe %>');
 $(WaiterUp.initialize);
 </script>

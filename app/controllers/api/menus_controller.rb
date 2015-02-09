@@ -8,7 +8,8 @@ module Api
     end
 
     def show
-      @menu = Menu.find(params[:id])
+      @menu = Menu.includes(categories: {menu_items: :comments} )
+                  .find(params[:id])
       render :show
     end
 

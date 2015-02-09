@@ -17,7 +17,6 @@ WaiterUp.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-
     var view = new WaiterUp.Views.PlacesIndex({
       collection: this.collection
     });

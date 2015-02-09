@@ -1,4 +1,5 @@
 WaiterUp.Models.Menu = Backbone.Model.extend({
+  urlRoot: 'api/menus',
   categories: function () {
     if(!this._categories) {
       this._categories = new WaiterUp.Collections.Categories([], {

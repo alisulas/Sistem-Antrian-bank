@@ -14,4 +14,10 @@ class Menu < ActiveRecord::Base
 
   belongs_to :place
   has_many :categories
+
+  # searchable do
+  #   integer :place_id
+  #   text :title
+    # join(:title, type: :string, :join_string => "from=place_id to=id")
+  # end
 end

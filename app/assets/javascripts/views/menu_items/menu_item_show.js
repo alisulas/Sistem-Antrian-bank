@@ -70,6 +70,7 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
 
     newRating.save({}, {
       success: function () {
+        debugger
         this.model.fetch()
       }.bind(this),
 

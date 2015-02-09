@@ -20,6 +20,8 @@
 class Place < ActiveRecord::Base
   searchable do
     text :title, :street_address, :zipcode
+    # join(:title, type: :string, :join_string => "from=place_id to=id")
+    # join(:title, :target => Menu, :type => :string, :join => { from: :place_id, to: :id })
 
     # join(:menu_title,
     #   target: Menu,

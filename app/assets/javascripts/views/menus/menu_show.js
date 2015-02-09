@@ -13,6 +13,7 @@ WaiterUp.Views.MenuShow = Backbone.CompositeView.extend({
     var content = this.template({ menu: this.model });
     this.$el.html(content);
     this.$el.data('list-id', this.model.id);
+    this.attachSubviews();
 
     return this;
   },
