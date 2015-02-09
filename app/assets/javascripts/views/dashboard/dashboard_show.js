@@ -12,7 +12,7 @@ WaiterUp.Views.DashboardShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var view = this;
+    var view = this; 
 
     var content = this.template({ menus: this.model.menus() });
     this.$el.html(content);

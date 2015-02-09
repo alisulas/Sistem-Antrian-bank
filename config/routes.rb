@@ -12,6 +12,6 @@ WaiterUp::Application.routes.draw do
     resources :menu_items, only: [:show]
     resource :rating, only: [:create]
     resources :comments, only: [:create, :destroy]
-    resources :menus, only: [:index, :show, :create, :update, :destroy]
+    resources :menus
   end
 end

@@ -15,6 +15,8 @@ module Api
 
     def create
       @menu = Menu.new(menu_params)
+      @place = Place.find(current_user.places.first)
+      @menu.place_id = @place.id
       if @menu.save
         render json: @menu
       else

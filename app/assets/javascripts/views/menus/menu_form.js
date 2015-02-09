@@ -4,22 +4,23 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
   template: JST['menus/form'],
 
   events: {
-    'submit' : 'create',
+    'click button' : 'create',
     'click .close': 'hideForm',
   },
 
   create: function (event) {
     event.preventDefault();
-    var newComment = new WaiterUp.Models.Comment({
-      body: this.$('input').val(),
-      menu_item_id: this.model.id
+    var newMenu = new WaiterUp.Models.Menu({
+      title: this.$('input').val()
     });
-
-    newComment.save({}, {
+    newMenu.save({}, {
       success: function () {
-        this.model.comments().add(newComment);
+        this.model.menus().add(newMenu);
         this.hideForm();
-      }.bind(this)
+      }.bind(this),
+      error: function (model, response) {
+        debugger;
+      }
     })
 
   },
