@@ -4,6 +4,7 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
   className: 'place-index',
 
   initialize: function () {
+    this.filter = '';
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'sync', this.runFilter);
   },
@@ -11,9 +12,27 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
   events: {
     'mouseenter .places a':    'startAnimatePlace',
     'mouseleave .places a':    'endAnimatePlace',
-    // 'click .searchbar button': 'runFilter',
-    // $('input').on('change', function (event) { this.collection.fetch({ data: { search: $(event.currentTarget).val() }}) }),
-    'change .searchbar input': 'fetchCollection'
+    'change .searchbar input': 'fetchCollection',
+    // 'keyup .searchbar input': 'fetchCollection'
+  },
+
+  fetchCollection: function(event){
+    event.preventDefault();
+
+    var filter = this.$('.searchbar input').val();
+    this.collection.fetch({ data: { search: filter } });
+    this.filter = filter;
+    this.$('.searchbar input').focus();
+    // this.render();
+  },
+
+  render: function () {
+    var content = this.template({ places: this.collection });
+    this.$el.html(content);
+    this.$('.searchbar input').val(this.filter);
+    this.$('.searchbar input').focus();
+
+    return this;
   },
 
   startAnimatePlace: function (event) {
@@ -33,22 +52,6 @@ WaiterUp.Views.PlacesIndex = Backbone.View.extend({
     var place = this.collection.get(placeId);
 
     place.destroy();
-  },
-
-  fetchCollection: function(event){
-    event.preventDefault();
-
-    // var filter = this.$('.searchbar input').val();
-    var filter = $(event.currentTarget).val();
-    this.collection.fetch({ data: { search: filter } });
-    this.render();
-  },
-
-  render: function () {
-    var content = this.template({ places: this.collection });
-    this.$el.html(content);
-
-    return this;
   },
 
   remove: function () {
