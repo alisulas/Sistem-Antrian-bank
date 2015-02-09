@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206165115) do
+ActiveRecord::Schema.define(version: 20150209232449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "title",      null: false
-    t.string   "menu_id",    null: false
+    t.integer  "menu_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: true do |t|
-    t.string   "menu_item_id", null: false
-    t.string   "user_id",      null: false
+    t.integer  "menu_item_id", null: false
+    t.integer  "user_id",      null: false
     t.text     "body",         null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150206165115) do
 
   create_table "menu_items", force: true do |t|
     t.string   "title",       null: false
-    t.string   "category_id", null: false
+    t.integer  "category_id", null: false
     t.string   "image_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20150206165115) do
 
   create_table "menus", force: true do |t|
     t.string   "title",      null: false
-    t.string   "place_id",   null: false
+    t.integer  "place_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "places", force: true do |t|
-    t.string   "owner_id",       null: false
+    t.integer  "owner_id",       null: false
     t.string   "title",          null: false
     t.string   "street_address", null: false
     t.string   "city",           null: false
