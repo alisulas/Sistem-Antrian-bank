@@ -6,7 +6,7 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
   events: {
     'click button': 'create',
     'click .close': 'hideForm',
-    'click [type="checkbox"]': 'clicked',
+    'click [type="checkbox"]': 'toggleCheckbox',
   },
 
   initialize: function () {
@@ -27,7 +27,15 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
         debugger;
       }
     })
+  },
 
+  toggleCheckbox: function (event) {
+    var checkbox = $(event.currentTarget);
+    if (checkbox.prop('checked')){
+      alert("checked") ;
+    } else {
+      alert("Unchecked")
+    }
   },
 
   render: function () {
