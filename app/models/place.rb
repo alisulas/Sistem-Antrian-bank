@@ -20,36 +20,13 @@
 class Place < ActiveRecord::Base
   searchable do
     text :title, :street_address, :zipcode
-    # join(:title, type: :string, :join_string => "from=place_id to=id")
-    # join(:title, :target => Menu, :type => :string, :join => { from: :place_id, to: :id })
-
-    # join(:menu_title,
-    #   target: Menu,
-    #   type: :text,
-    #   join: { from: :place_id, to: :id })
-
-    # text :comments do
-    #   comments.map { |comment| comment.body }
-    # end
-    #
-    # boolean :featured
-    # integer :blog_id
-    # integer :author_id
-    # integer :category_ids, :multiple => true
-    # double  :average_rating
-    # time    :published_at
-    # time    :expired_at
-    #
-    # string  :sort_title do
-    #   title.downcase.gsub(/^(an?|the)/, '')
-    # end
-
-    # latlon(:lonlat) { Sunspot::Util::Coordinates.new(latitude, longitude) }
+    text :categories do
+      categories.map { |category| category.title }
+    end
+    text :menu_items do
+      menu_items.map { |menu| menu.title }
+    end
   end
-
-
-
-
 
   geocoded_by :address
   before_validation :geocode
@@ -60,6 +37,8 @@ class Place < ActiveRecord::Base
               primary_key: :id
 
   has_many :menus
+  has_many :categories, through: :menus, source: :categories
+  has_many :menu_items, through: :categories, source: :menu_items
 
   validates :owner, :title, :street_address, :city,
             :state, :zipcode, :country, :longitude, :latitude, presence: true
