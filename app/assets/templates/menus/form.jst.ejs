@@ -2,29 +2,12 @@
 
   <div class="form-group">
     <input class="form-control" placeholder="Menu Title">
-
-    <% var categories = ["Drinks", "Breakfast", "Lunch",
-                         "Dinner", "Appetizers", "Dessers"]; %>
-
-    <% _(categories).each(function (category) { %>
-      <div class="checkbox-category">
-        <input type="checkbox" value="<%= category %>"> <%= category %>
-        <div class="checkbox-add-menu-item"></div>
-      </div>
-    <% }) %>
-    <div class="checkbox-category">
+    <!-- <div class="checkbox-category">
       <input type="button" class="form-control" value="Add Category">Category
-    </div>
+    </div> -->
   </div>
 
-  <button class="btn btn-success">Done</button>
+  <button class="btn btn-success create-menu">Next</button>
 
-  <a href="javascript:void(0)" class="close close-lg">&times;</a>
+  <a href="javascript:void(0)" class="close close-lg create-menu">&times;</a>
 </form>
-
-
-<!--
-1. checkboxes
-  - if checked, show add item button
-2. create category button
- -->

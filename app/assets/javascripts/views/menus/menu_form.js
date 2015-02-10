@@ -4,12 +4,14 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   template: JST['menus/form'],
 
   events: {
-    'click button': 'create',
+    'click button.create-menu': 'create',
     'click .close': 'hideForm',
     'click [type="checkbox"]': 'toggleCheckbox',
+    'blur input.exists': 'updateMenu',
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.menus = options.menus;
     this.listenTo(this.model, 'sync', this.render)
   },
 
@@ -20,8 +22,11 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     });
     newMenu.save({}, {
       success: function () {
-        this.model.menus().add(newMenu);
-        this.hideForm();
+        this.menus.add(newMenu);
+        // this.hideForm();
+        this.renderCategoriesForm(event);
+        this.$('input').addClass('exists');
+        this.$('.create-menu').hide();
       }.bind(this)
     })
   },
@@ -29,15 +34,34 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   toggleCheckbox: function (event) {
     var checkbox = $(event.currentTarget);
     if (checkbox.prop('checked')) {
-      // generate menu item form
-      var menuItemView = new WaiterUp.Views.MenuItemForm({
-        model: this.model
-      });
-      this.addSubview(checkbox.next(), menuItemView);
+      checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-primary add-menu-item">add menu item</a>'))
     } else {
-      // remove all present menu items and menu item forms
       this.$(checkbox.next()).empty();
     }
+  },
+
+  updateMenu: function (event) {
+    debugger
+  },
+
+  renderCategoriesForm: function (event) {
+    var $target = $(event.currentTarget);
+
+    var categories = ["Drinks", "Breakfast", "Lunch",
+    "Dinner", "Appetizers", "Dessers"];
+
+    _(categories).each(function (category) {
+      var categoryView;
+
+      var categoryView = new WaiterUp.Views.CategoryForm({
+        model: new WaiterUp.Models.Category({
+          menu_id: this.model.id,
+          title: category
+        })
+      });
+
+      this.addSubview($target.parent(), categoryView);
+    }.bind(this));
   },
 
   render: function () {
@@ -49,7 +73,7 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
       this.$el.empty();
     }
     this.delegateEvents();
-
+    this.attachSubviews();
     return this;
   },
 

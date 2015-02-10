@@ -22,12 +22,14 @@ WaiterUp.Views.DashboardShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderMenus();
     this.attachSubviews();
-
     return this;
   },
 
   addMenu: function (menu) {
-    var view = new WaiterUp.Views.MenuShow({ model: menu });
+    var view = new WaiterUp.Views.MenuShow({
+      model: menu,
+      menus: this.model.menus()
+    });
     this.addSubview('.provider-menus', view);
   },
 
@@ -36,7 +38,12 @@ WaiterUp.Views.DashboardShow = Backbone.CompositeView.extend({
   },
 
   renderMenuForm: function (menu) {
-    var view = new WaiterUp.Views.MenuForm({ model: this.model });
+    var view = new WaiterUp.Views.MenuForm({
+      model: new WaiterUp.Models.Menu({
+        place_id: this.model.id
+      }),
+      menus: this.model.menus()
+    });
     this.$('a.add-menu').hide();
     this.addSubview('#menu-form', view);
   }
