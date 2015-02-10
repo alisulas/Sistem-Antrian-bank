@@ -23,8 +23,9 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     this.model.save({}, {
       success: function () {
         this.menus.add(this.model);
-        _.once(this.renderCategoriesForm(event));
+        this.renderCategoriesForm(event);
         this.$('input').addClass('exists');
+        this.$('.create-menu')[0].disabled = true;
         this.$('.create-menu').hide();
       }.bind(this)
     })
@@ -34,14 +35,23 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     var checkbox = $(event.currentTarget);
     if (checkbox.prop('checked')) {
       checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-primary add-menu-item">add menu item</a>'))
+
     } else {
+
       this.$(checkbox.next()).empty();
     }
   },
 
+  createCategory: function () {
+
+  },
+
+  destroyCategory: function () {
+
+  },
+
   updateMenu: function (event) {
     event.preventDefault();
-
     this.model.set({ title: $(event.currentTarget).val() });
     this.model.save();
   },
