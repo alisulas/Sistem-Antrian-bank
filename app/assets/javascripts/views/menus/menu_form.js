@@ -4,8 +4,13 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
   template: JST['menus/form'],
 
   events: {
-    'click button' : 'create',
+    'click button': 'create',
     'click .close': 'hideForm',
+    'click [type="checkbox"]': 'clicked',
+  },
+
+  initialize: function () {
+    this.listenTo(this.model, 'sync', this.render)
   },
 
   create: function (event) {

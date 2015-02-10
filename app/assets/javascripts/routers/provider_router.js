@@ -2,16 +2,14 @@ WaiterUp.Routers.ProviderRouter = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl= $('#main')
     this.collection = WaiterUp.Collections.places;
-    // this.model = new WaiterUp.Models.Place();
-    // this.model = this.collection.getOrFetch();
-    this.collection.fetch({
-      success: function () {
-        this.model = this.collection.where({
-          owner_id: CURRENT_USER.id.toString()
-        })[0];
-        this.index();
-      }.bind(this)
-    });
+    // this.collection.fetch({
+    //   success: function () {
+    //     this.model = this.collection.where({
+    //       owner_id: CURRENT_USER.id.toString()
+    //     })[0];
+    //     this.index();
+    //   }.bind(this)
+    // });
   },
 
   routes: {
@@ -20,7 +18,7 @@ WaiterUp.Routers.ProviderRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    if (!this.model) { return; }
+    this.model = new WaiterUp.Models.Place({ id: 0 });
     this.model.fetch();
 
     var view = new WaiterUp.Views.DashboardShow({

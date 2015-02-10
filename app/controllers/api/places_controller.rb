@@ -23,8 +23,15 @@ module Api
     end
 
     def show
-      @place = Place.includes(menus: {categories: {menu_items: :comments} })
-                    .find(params[:id])
+      if params[:id] == "0"
+        @place = current_user
+          .places
+          .includes(menus: {categories: {menu_items: :comments} })
+          .first
+      else
+        @place = Place.includes(menus: {categories: {menu_items: :comments} })
+                  .find(params[:id])
+      end
       render :show
     end
 
