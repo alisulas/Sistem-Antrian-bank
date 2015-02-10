@@ -17,14 +17,13 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
 
   create: function (event) {
     event.preventDefault();
-    var newMenu = new WaiterUp.Models.Menu({
+    this.model = new WaiterUp.Models.Menu({
       title: this.$('input').val()
     });
-    newMenu.save({}, {
+    this.model.save({}, {
       success: function () {
-        this.menus.add(newMenu);
-        // this.hideForm();
-        this.renderCategoriesForm(event);
+        this.menus.add(this.model);
+        _.once(this.renderCategoriesForm(event));
         this.$('input').addClass('exists');
         this.$('.create-menu').hide();
       }.bind(this)
@@ -41,7 +40,10 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   },
 
   updateMenu: function (event) {
-    debugger
+    event.preventDefault();
+
+    this.model.set({ title: $(event.currentTarget).val() });
+    this.model.save();
   },
 
   renderCategoriesForm: function (event) {
