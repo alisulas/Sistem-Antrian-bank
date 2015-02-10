@@ -1,4 +1,4 @@
-WaiterUp.Views.MenuForm = Backbone.View.extend({
+WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   formShowing: true,
 
   template: JST['menus/form'],
@@ -28,10 +28,15 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
 
   toggleCheckbox: function (event) {
     var checkbox = $(event.currentTarget);
-    if (checkbox.prop('checked')){
-      alert("checked") ;
+    if (checkbox.prop('checked')) {
+      // generate menu item form
+      var menuItemView = new WaiterUp.Views.MenuItemForm({
+        model: this.model
+      });
+      this.addSubview(checkbox.next(), menuItemView);
     } else {
-      alert("Unchecked")
+      // remove all present menu items and menu item forms
+      this.$(checkbox.next()).empty();
     }
   },
 
