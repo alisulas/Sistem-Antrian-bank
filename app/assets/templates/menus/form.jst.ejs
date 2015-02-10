@@ -3,13 +3,17 @@
   <div class="form-group">
     <input class="form-control" placeholder="Menu Title">
 
-    <input type="checkbox" value="Drinks">Drinks<br>
-    <input type="checkbox" value="Breakfast">Breakfast<br>
-    <input type="checkbox" value="Lunch">Lunch<br>
-    <input type="checkbox" value="Dinner">Dinner<br>
-    <input type="checkbox" value="Appetizers">Appetizers<br>
-    <input type="checkbox" value="Dessers">Dessers<br>
-    <input type="button" class="form-control" value="Add Category">Category<br>
+    <% var categories = ["Drinks", "Breakfast", "Lunch",
+                         "Dinner", "Appetizers", "Dessers"]; %>
+
+    <% _(categories).each(function (category) { %>
+      <div class="checkbox-category">
+        <input type="checkbox" value="<%= category %>"> <%= category %>
+      </div>
+    <% }) %>
+    <div class="checkbox-category">
+      <input type="button" class="form-control" value="Add Category">Category
+    </div>
   </div>
 
   <button class="btn btn-success">Done</button>

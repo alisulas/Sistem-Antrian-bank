@@ -22,10 +22,7 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
       success: function () {
         this.model.menus().add(newMenu);
         this.hideForm();
-      }.bind(this),
-      error: function (model, response) {
-        debugger;
-      }
+      }.bind(this)
     })
   },
 
@@ -54,5 +51,6 @@ WaiterUp.Views.MenuForm = Backbone.View.extend({
   hideForm: function () {
     this.formShowing = false;
     this.render();
+    this.$el.prepend($('<a href="javascript:void(0)" class="btn btn-primary add-menu">Create Menu</a>'));
   },
 });

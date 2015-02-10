@@ -36,9 +36,8 @@ WaiterUp.Views.DashboardShow = Backbone.CompositeView.extend({
   },
 
   renderMenuForm: function (menu) {
-    var view = new WaiterUp.Views.MenuForm({
-      model: this.model
-    });
+    var view = new WaiterUp.Views.MenuForm({ model: this.model });
+    this.$('a.add-menu').hide();
     this.addSubview('#menu-form', view);
   }
 });
