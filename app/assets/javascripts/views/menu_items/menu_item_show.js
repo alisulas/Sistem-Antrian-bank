@@ -25,7 +25,7 @@ WaiterUp.Views.MenuItemShow = Backbone.CompositeView.extend({
       this.$('.rating').raty({
         click: this.createRating.bind(this),
         path: 'assets',
-        half: true,
+        half: false,
         noRatedMsg: 'Not rated yet!',
         score: this.model.get('avg_rating')
       });
