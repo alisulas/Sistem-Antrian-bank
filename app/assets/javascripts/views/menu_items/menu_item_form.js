@@ -11,13 +11,35 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
   },
 
   updateTitle: function (event) {
-    this.model.set('title', $(event.currentTarget).val());
-    this.model.save();
+    var $target = $(event.currentTarget);
+    this.model.set('title', $target.val());
+    this.model.save({}, {
+      success: function () {
+        setTimeout(function() {
+          $target.next().toggleClass('animated bounceIn');
+          setTimeout(function () {
+            $target.next().toggleClass('animated bounceIn');
+          }, 1000)
+        }, 50);
+      },
+      silent: true
+    });
   },
 
   updateDescription: function (event) {
-    this.model.set('description', $(event.currentTarget).val());
-    this.model.save()
+    var $target = $(event.currentTarget);
+    this.model.set('description', $target.val());
+    this.model.save({}, {
+      success: function () {
+        setTimeout(function() {
+          $target.next().toggleClass('animated bounceIn');
+          setTimeout(function () {
+            $target.next().toggleClass('animated bounceIn');
+          }, 1000)
+        }, 50);
+      },
+      silent: true
+    })
   },
 
   create: function (event) {

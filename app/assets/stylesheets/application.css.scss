@@ -12,12 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require animate.min
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "jquery.raty.css";
- @import "animate.min.css";
 
  $gray-medium-light: #eaeaea;
 

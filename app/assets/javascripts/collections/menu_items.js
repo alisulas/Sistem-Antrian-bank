@@ -3,27 +3,6 @@ WaiterUp.Collections.MenuItems = Backbone.Collection.extend({
 
   comparator: function () {
       return 5 - this.get("avg_rating");
-  },
-
-  // initialize: function (options) {
-  //   this.category = options.category;
-  // },
-
-  getOrFetch: function (id) {
-    var category = this.get(id);
-
-    if(!category) {
-      category = new WaiterUp.Models.Category({ id: id });
-      category.fetch({
-        success: function () {
-          this.add(category);
-        }.bind(this)
-      });
-    } else {
-      category.fetch();
-    }
-
-    return category;
   }
 });
 

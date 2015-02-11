@@ -33,11 +33,12 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   },
 
   redirectHome: function () {
-    Backbone.history.navigate('/', { trigger: true });
+    window.location.reload();
   },
 
   destroyMenu: function () {
     this.model.destroy();
+    this.redirectHome();
   },
 
   updateMenu: function () {
@@ -46,9 +47,9 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     this.model.save({}, {
       success: function () {
         setTimeout(function() {
-          $('input.menu-title-form').toggleClass('animated slideUp');
+          $('input.menu-title-form').next().toggleClass('animated bounceIn');
           setTimeout(function () {
-            $('input.menu-title-form').toggleClass('animated slideUp');
+            $('input.menu-title-form').next().toggleClass('animated bounceIn');
           }, 1000)
         }, 50);
       },
