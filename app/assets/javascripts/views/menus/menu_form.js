@@ -49,8 +49,12 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
         }
       });
     } else {
-      newCategory = new WaiterUp.Models.Category({ id: checkbox.data('id') })
-      newCategory.destroy();
+      newCategory = new WaiterUp.Models.Category({ id: checkbox.attr('data-id') })
+      newCategory.destroy({
+        success: function () {
+          checkbox.attr('data-id', '');
+        }
+      });
       // destroy category with title checkbox.val()
       this.$(checkbox.next()).empty();
     }
