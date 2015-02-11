@@ -44,7 +44,6 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
       })
       newCategory.save({}, {
         success: function () {
-          console.log(newCategory.id);
           checkbox.attr('data-id', newCategory.id);
         }
       });
