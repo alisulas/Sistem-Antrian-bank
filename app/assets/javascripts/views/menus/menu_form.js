@@ -65,7 +65,6 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   },
 
   updateMenu: function () {
-    // event.preventDefault();
     this.model.set({ title: $('input.menu-title-form').val() });
     this.model.save();
   },
@@ -89,7 +88,8 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
       this.addSubview($target.parent(), categoryView);
 
     }.bind(this));
-    $target.parent().append($('<a href="javascript:void(0)" class="btn btn-primary done-menu">Done</a>'))
+    $target.parent().append($('<a href="javascript:void(0)" class="btn btn-danger destroy-menu">Cancel and Go Back</a>'));
+    $target.parent().append($('<a href="javascript:void(0)" class="btn btn-success done-menu">Done</a>'));
   },
 
   render: function () {
