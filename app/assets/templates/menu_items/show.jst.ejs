@@ -20,7 +20,7 @@
 <% if (!(menu_item.comments().length === 0)) { %>
   <div class="comments-window">
     <div class="comments-heading">
-      <a href="javascript:void(0)">Comments</a>
+      <a href="javascript:void(0)"><span class="glyphicon glyphicon-comment"></span> <%= menu_item.comments().length %> Comments</a>
     </div>
 
     <div class="comments"></div>
