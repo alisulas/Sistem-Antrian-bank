@@ -54,17 +54,8 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
           checkbox.attr('data-id', '');
         }
       });
-      // destroy category with title checkbox.val()
       this.$(checkbox.next()).empty();
     }
-  },
-
-  createCategory: function () {
-
-  },
-
-  destroyCategory: function () {
-
   },
 
   updateMenu: function () {
