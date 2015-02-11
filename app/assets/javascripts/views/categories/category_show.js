@@ -4,8 +4,8 @@ WaiterUp.Views.CategoryShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.menu_items(), 'add', this.addMenuItem);
-    this.listenTo(this.model.menu_items(), 'change:avg_rating', this.render);
+    this.listenTo(this.model.menuItems(), 'add', this.addMenuItem);
+    this.listenTo(this.model.menuItems(), 'change:avg_rating', this.render);
     this.renderMenuItems();
   },
 
@@ -25,11 +25,11 @@ WaiterUp.Views.CategoryShow = Backbone.CompositeView.extend({
   },
 
   renderMenuItems: function () {
-    this.model.menu_items().each(this.addMenuItem.bind(this));
+    this.model.menuItems().each(this.addMenuItem.bind(this));
   },
 
   sortMenuItems: function (collection, options) {
-    this.model.menu_items().sort();
+    this.model.menuItems().sort();
 
     var subs = _(this.subviews()['.menu-items']);
 
