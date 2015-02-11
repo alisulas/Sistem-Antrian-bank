@@ -35,6 +35,13 @@ module Api
       end
     end
 
+    def detroy
+      @menu = Menu.find(params[:id])
+      @menu.destroy()
+
+      render json: nil
+    end
+
     def new
       @menu = Menu.new
       render :new

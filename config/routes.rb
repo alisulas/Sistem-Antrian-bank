@@ -9,9 +9,10 @@ WaiterUp::Application.routes.draw do
     resources :places, only: [:index, :show, :create] do
       get 'search', on: :collection
     end
-    resources :menu_items, only: [:show]
+    resources :menu_items, only: [:show, :destroy, :create, :update]
     resource :rating, only: [:create]
     resources :comments, only: [:create, :destroy]
-    resources :menus
+    resources :categories
+    resources :menus, only: [:create, :update, :destroy]
   end
 end

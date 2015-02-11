@@ -13,5 +13,5 @@ class Menu < ActiveRecord::Base
   validates :title, :place_id, presence: true
 
   belongs_to :place
-  has_many :categories
+  has_many :categories, dependent: :destroy
 end

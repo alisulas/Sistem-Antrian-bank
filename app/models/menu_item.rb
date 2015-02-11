@@ -16,8 +16,8 @@ class MenuItem < ActiveRecord::Base
   validates :title, :category_id, presence: true
 
   belongs_to :category
-  has_one :rating
-  has_many :comments
+  has_one :rating, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def avg_rating
     Rating.where('menu_item_id = ?', self.id).average('score').to_f

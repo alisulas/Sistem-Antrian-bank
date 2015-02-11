@@ -36,7 +36,7 @@ class Place < ActiveRecord::Base
               foreign_key: :owner_id,
               primary_key: :id
 
-  has_many :menus
+  has_many :menus, dependent: :destroy
   has_many :categories, through: :menus, source: :categories
   has_many :menu_items, through: :categories, source: :menu_items
 
