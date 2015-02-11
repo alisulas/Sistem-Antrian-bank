@@ -31,8 +31,6 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
 
   toggleCheckbox: function (event) {
     var checkbox = $(event.currentTarget);
-    // get current category if there's one
-    var newCategory;
     if (checkbox.prop('checked')) {
       // create category with title checkbox.val()
       // newCategory = new WaiterUp.Models.Category({
@@ -46,7 +44,7 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
         }.bind(this)
       });
     } else {
-      newCategory = new WaiterUp.Models.Category({
+      var newCategory = new WaiterUp.Models.Category({
         id: checkbox.attr('data-id')
       })
       newCategory.destroy({

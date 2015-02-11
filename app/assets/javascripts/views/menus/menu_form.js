@@ -8,7 +8,8 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     'click .close': 'hideForm',
     // 'click [type="checkbox"]': 'toggleCheckbox',
     'blur input.exists': 'updateMenu',
-    'click a.done-menu': 'createMenuItems'
+    'click a.done-menu': 'redirectHome',
+    'click a.destroy-menu': 'destroyMenu',
     // 'keyup change input.menu-title-form': 'floatLabel'
   },
 
@@ -39,56 +40,27 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     })
   },
 
-  createMenuItems: function () {
-    this.menuItems = []
+  redirectHome: function () {
+    Backbone.history.navigate('/#', { trigger: true })
   },
 
-  // toggleCheckbox: function (event) {
-  //   var checkbox = $(event.currentTarget);
-  //   // get current category if there's one
-  //   var newCategory;
-  //   if (checkbox.prop('checked')) {
-  //     // create category with title checkbox.val()
-  //     newCategory = new WaiterUp.Models.Category({
-  //       menu_id: this.model.id,
-  //       title: checkbox.val()
-  //     })
-  //     newCategory.save({}, {
-  //       success: function () {
-  //         checkbox.attr('data-id', newCategory.id);
-  //         var view = new WaiterUp.Views.CategoryMenuItems({
-  //           model: newCategory
-  //         });
-  //         checkbox.next().append(view.render().$el);
-  //         // checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-default add-menu-item">add menu item</a>'))
-  //       }
-  //     });
-  //   } else {
-  //     newCategory = new WaiterUp.Models.Category({
-  //       id: checkbox.attr('data-id')
-  //     })
-  //     newCategory.destroy({
-  //       success: function () {
-  //         checkbox.attr('data-id', '');
-  //       }
-  //     });
-  //     this.$(checkbox.next()).empty();
-  //   }
-  // },
+  destroyMenu: function () {
+    // destroy menu
+  },
 
   updateMenu: function () {
     var that = this;
     this.model.set({ title: $('input.menu-title-form').val() });
     this.model.save({}, {
-      success: function () {
-        setTimeout(function() {
-          $('input.menu-title-form').toggleClass('green-bg-flash lightSpeedIn');
-          setTimeout(function () {
-            $('input.menu-title-form').toggleClass('green-bg-flash lightSpeedIn');
-          }, 1000)
-        }, 50);
-      },
-      silent: true
+      // success: function () {
+      //   setTimeout(function() {
+      //     $('input.menu-title-form').toggleClass('green-bg-flash slideUp');
+      //     setTimeout(function () {
+      //       $('input.menu-title-form').toggleClass('green-bg-flash slideUp');
+      //     }, 1000)
+      //   }, 50);
+      // },
+      // silent: true
     });
   },
 
