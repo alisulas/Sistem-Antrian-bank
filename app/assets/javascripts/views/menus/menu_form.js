@@ -61,9 +61,12 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   updateMenu: function () {
     this.model.set({ title: $('input.menu-title-form').val() });
     this.model.save({
-      success: setInterval(function() {
+      success: function () {
         $('input.menu-title-form').toggleClass('green-bg-flash');
-      }, 500)
+        setInterval(function() {
+          $('input.menu-title-form').toggleClass('green-bg-flash');
+        }, 500)
+      }
     });
   },
 
