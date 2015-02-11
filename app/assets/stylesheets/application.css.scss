@@ -17,7 +17,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "jquery.raty.css";
- @import "animate.css";
+ @import "animate.min.css";
 
  $gray-medium-light: #eaeaea;
 
@@ -302,9 +302,9 @@ ul.places, .category-show {
 
 .destroy-menu, .done-menu { margin: 10px 5px; }
 .add-menu-item { margin: 15px 0; }
-.menu-form-field { width: 50%; }
+.menu-item-form-field { width: 50%; }
 
-textarea.menu-form-field { height: 100px!important; }
+textarea.menu-item-form-field { height: 100px!important; }
 
 
 // flaoting labels

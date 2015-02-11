@@ -27,7 +27,7 @@ module Api
       end
     end
 
-    def detroy
+    def destroy
       @menu_item = MenuItem.find(params[:id])
       @menu_item.destroy()
 

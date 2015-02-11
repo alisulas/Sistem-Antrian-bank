@@ -12,7 +12,6 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.menuItems = []
     this.menus = options.menus;
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -34,26 +33,26 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   },
 
   redirectHome: function () {
-    Backbone.history.navigate('/#', { trigger: true })
+    Backbone.history.navigate('/', { trigger: true });
   },
 
   destroyMenu: function () {
-    // destroy menu
+    this.model.destroy();
   },
 
   updateMenu: function () {
     var that = this;
     this.model.set({ title: $('input.menu-title-form').val() });
     this.model.save({}, {
-      // success: function () {
-      //   setTimeout(function() {
-      //     $('input.menu-title-form').toggleClass('green-bg-flash slideUp');
-      //     setTimeout(function () {
-      //       $('input.menu-title-form').toggleClass('green-bg-flash slideUp');
-      //     }, 1000)
-      //   }, 50);
-      // },
-      // silent: true
+      success: function () {
+        setTimeout(function() {
+          $('input.menu-title-form').toggleClass('animated slideUp');
+          setTimeout(function () {
+            $('input.menu-title-form').toggleClass('animated slideUp');
+          }, 1000)
+        }, 50);
+      },
+      silent: true
     });
   },
 

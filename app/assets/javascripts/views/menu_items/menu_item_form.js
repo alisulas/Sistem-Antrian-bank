@@ -7,7 +7,7 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
     'submit' : 'create',
     'click .close': 'hideForm',
     'blur input': 'updateTitle',
-    'blur textarea': 'updateDescription'
+    'blur textarea': 'updateDescription',
   },
 
   updateTitle: function (event) {
@@ -50,6 +50,7 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
   },
 
   hideForm: function () {
+    this.model.destroy();
     this.formShowing = false;
     this.render();
   },
