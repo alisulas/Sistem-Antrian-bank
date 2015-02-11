@@ -1,8 +1,8 @@
 <form class="form">
 
   <div class="form-group">
-    <input data-toggle="floatLabel" data-value="no-js" class="form-control menu-title-form" placeholder="Menu Title">
-    <label for="floatingLabels" style="">Menu Title</label>
+    <input type="text" data-toggle="floatLabel" data-value="no-js" class="form-control menu-title-form" placeholder="Menu Title">
+    <label for="floatingLabels" style="color: #8ac">Menu Title</label>
     <!-- <div class="checkbox-category">
       <input type="button" class="form-control" value="Add Category">Category
     </div> -->
@@ -12,12 +12,3 @@
 
   <a href="javascript:void(0)" class="close close-lg create-menu">&times;</a>
 </form>
-
-
-<script charset="utf-8">
-$(document).ready(function(){
-  $('[data-toggle="floatLabel"]').attr('data-value', $(this).val()).on('keyup change', function() {
-    $(this).attr('data-value', $(this).val());
-  });
-});
-</script>

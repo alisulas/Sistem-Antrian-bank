@@ -10,6 +10,14 @@
   <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vYTae_GpOuNdjgPs1JkKzMFVBIHs7EE">
   </script>
+
+  <script charset="utf-8">
+  $(document).ready(function(){
+    $('[data-toggle="floatLabel"]').attr('data-value', $(this).val()).on('keyup change', function() {
+      $(this).attr('data-value', $(this).val());
+    });
+  });
+  </script>
 </head>
 <body class="login-body">
   <%= render 'layouts/header' %>

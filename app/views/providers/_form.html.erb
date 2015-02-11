@@ -6,36 +6,53 @@
 <%= form_for(provider, url: provider_url) do |f| %>
 <input  type="hidden" name="_method" value="<%= method %>">
 
-  <%= f.label :email %>
-  <%= f.text_field :email, placeholder: placeholder,
-  class: 'form-control' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <label style="display: block">Listing Name
-
+  <div class="form-group">
     <input type="text"
-           name="user[places_attributes][][title]"
-           class="form-control">
-  </label>
+    name="user[email]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="Email">
+    <label for="floatingLabels" style="color: #8ac">Email</label>
+  </div>
 
-  <label style="display: block">Street Address
+  <div class="form-group">
+    <input type="password"
+    name="user[password]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="Password">
+    <label for="floatingLabels" style="color: #8ac">Password</label>
+  </div>
 
+  <div class="form-group">
     <input type="text"
-           name="user[places_attributes][][street_address]"
-           class="form-control">
-  </label>
+    name="user[places_attributes][][title]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="Listing Name">
+    <label for="floatingLabels" style="color: #8ac">Listing Name</label>
+  </div>
 
-  <label>City
-
+  <div class="form-group">
     <input type="text"
-           name="user[places_attributes][][city]"
-           class="form-control">
-  </label>
+    name="user[places_attributes][][street_address]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="Street Address">
+    <label for="floatingLabels" style="color: #8ac">Street Address</label>
+  </div>
 
-  <label>State
+  <div class="form-group">
+    <input type="text"
+    name="user[places_attributes][][city]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="City">
+    <label for="floatingLabels" style="color: #8ac">City</label>
+  </div>
 
+  <label>
     <select class="form-control" name="user[places_attributes][][state]">
       <% us_states.each do |state| %>
       <% if state[1] == "CA" %>
@@ -47,21 +64,24 @@
     </select>
   </label>
 
-  <label>Zipcode
-
+  <label>
     <input type="number"
-           name="user[places_attributes][][zipcode]"
-           class="form-control">
+    name="user[places_attributes][][zipcode]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    placeholder="Zipcode">
   </label>
 
-  <label>Country
-
+  <div class="form-group">
     <input type="text"
-           name="user[places_attributes][][country]"
-           class="form-control"
-           value="United States">
-  </label>
+    name="user[places_attributes][][country]"
+    class="form-control"
+    data-toggle="floatLabel" data-value="no-js"
+    value="United States">
+    <label for="floatingLabels" style="color: #8ac">Country</label>
+  </div>
 
   <br>
+
   <%= f.submit btn_msg, class: "btn btn-primary", style: "width: 100%" %>
 <% end %>
