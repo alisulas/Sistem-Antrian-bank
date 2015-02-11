@@ -299,25 +299,15 @@ ul.places, .category-show {
 }
 
 
-.destroy-menu, .done-menu {
-  margin: 10px 5px;
-}
+.destroy-menu, .done-menu { margin: 10px 5px; }
+.add-menu-item { margin: 15px 0; }
+.menu-form-field { width: 50%; }
 
-
-.green-bg-flash {
-  background-color: #dfffaf;
-  color: green;
-  transition: color .2s;
-  -moz-transition: color .2s;
-  -webkit-transition: color .2s;
-  -o-transition: color .2s;
-}
+textarea.menu-form-field { height: 100px; }
 
 
 // flaoting labels
-.form-group {
-  position: relative;
-}
+.form-group { position: relative; }
 .form-group [data-toggle="floatLabel"] {
   height: 44px;
   padding-top: 16px;
@@ -336,7 +326,7 @@ ul.places, .category-show {
 
 /* Custom Styles */
 .form-group.form-group-textarea {
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border-radius: 1px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin: 20px 15px ;
@@ -369,4 +359,11 @@ ul.places, .category-show {
 .form-group [data-toggle="floatLabel"][data-value=""] + label {
   opacity: 0;
   top: 18px;
+}
+// end of floating labels
+
+
+.green-bg-flash {
+  background-color: #dfffaf!important;
+  color: green;
 }

@@ -8,11 +8,17 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     'click .close': 'hideForm',
     'click [type="checkbox"]': 'toggleCheckbox',
     'blur input.exists': 'updateMenu',
+    // 'keyup change input.menu-title-form': 'floatLabel'
   },
+
+  // floatLabel: function (event) {
+  //   var value = $(event.currentTarget).val()
+  //   $('[data-toggle="floatLabel"]').attr('data-value', value);
+  // },
 
   initialize: function (options) {
     this.menus = options.menus;
-    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.model, 'sync', this.render);
   },
 
   create: function (event) {
@@ -33,10 +39,10 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
 
   toggleCheckbox: function (event) {
     var checkbox = $(event.currentTarget);
-    // need to get current category if there's one
+    // get current category if there's one
     var newCategory;
     if (checkbox.prop('checked')) {
-      checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-primary add-menu-item">add menu item</a>'))
+      checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-default add-menu-item">add menu item</a>'))
       // create category with title checkbox.val()
       newCategory = new WaiterUp.Models.Category({
         menu_id: this.model.id,
@@ -62,10 +68,9 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     this.model.set({ title: $('input.menu-title-form').val() });
     this.model.save({
       success: function () {
-        $('input.menu-title-form').toggleClass('green-bg-flash');
         setInterval(function() {
           $('input.menu-title-form').toggleClass('green-bg-flash');
-        }, 500)
+        }, 500);
       }
     });
   },
