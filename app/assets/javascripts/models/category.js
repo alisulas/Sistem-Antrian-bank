@@ -1,18 +1,18 @@
 WaiterUp.Models.Category = Backbone.Model.extend({
   urlRoot: 'api/categories',
-  menu_items: function () {
-    if(!this._menu_items) {
-      this._menu_items = new WaiterUp.Collections.MenuItems([], {
+  menuItems: function () {
+    if(!this._menuItems) {
+      this._menuItems = new WaiterUp.Collections.MenuItems([], {
         category: this
       });
     }
 
-    return this._menu_items;
+    return this._menuItems;
   },
 
   parse: function (response) {
     if(response.menu_items) {
-      this.menu_items().set(response.menu_items, { parse: true });
+      this.menuItems().set(response.menu_items, { parse: true });
       delete response.menu_items;
     }
 

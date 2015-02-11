@@ -1,5 +1,6 @@
 WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
   initialize: function () {
+    // this.menuItems = options.menuItems;
   },
 
   formShowing: true,
@@ -11,6 +12,7 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
     'submit' : 'create',
     'click .close': 'hideForm',
     'click .add-menu-item': 'renderMenuItemForm',
+    'click [type="checkbox"]': 'toggleCheckbox',
   },
 
   create: function (event) {
@@ -24,14 +26,50 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
         this.model.comments().add(newCategory);
         this.hideForm();
       }.bind(this)
-    })
+    });
+  },
 
+  toggleCheckbox: function (event) {
+    var checkbox = $(event.currentTarget);
+    // get current category if there's one
+    var newCategory;
+    if (checkbox.prop('checked')) {
+      // create category with title checkbox.val()
+      // newCategory = new WaiterUp.Models.Category({
+      //   menu_id: this.model.id,
+      //   title: checkbox.val()
+      // })
+      this.model.save({}, {
+        success: function () {
+          checkbox.attr('data-id', this.model.id);
+          checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-default add-menu-item">add menu item</a>'))
+        }.bind(this)
+      });
+    } else {
+      newCategory = new WaiterUp.Models.Category({
+        id: checkbox.attr('data-id')
+      })
+      newCategory.destroy({
+        success: function () {
+          checkbox.attr('data-id', '');
+        }
+      });
+      this.$(checkbox.next()).empty();
+    }
   },
 
   renderMenuItemForm: function (event) {
     var $target = $(event.currentTarget);
+    var menuItem = new WaiterUp.Models.MenuItem({
+      category_id: this.model.id,
+      title: "Menu Item 1"
+    });
+    menuItem.save();
+
+    this.collection.add(menuItem);
+
     var menuItemView = new WaiterUp.Views.MenuItemForm({
-      model: this.model
+      model: menuItem
     });
     this.addSubview($target.parent(), menuItemView);
   },

@@ -6,8 +6,9 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   events: {
     'click button.create-menu': 'create',
     'click .close': 'hideForm',
-    'click [type="checkbox"]': 'toggleCheckbox',
+    // 'click [type="checkbox"]': 'toggleCheckbox',
     'blur input.exists': 'updateMenu',
+    'click a.done-menu': 'createMenuItems'
     // 'keyup change input.menu-title-form': 'floatLabel'
   },
 
@@ -17,6 +18,7 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   // },
 
   initialize: function (options) {
+    this.menuItems = []
     this.menus = options.menus;
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -37,41 +39,56 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     })
   },
 
-  toggleCheckbox: function (event) {
-    var checkbox = $(event.currentTarget);
-    // get current category if there's one
-    var newCategory;
-    if (checkbox.prop('checked')) {
-      checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-default add-menu-item">add menu item</a>'))
-      // create category with title checkbox.val()
-      newCategory = new WaiterUp.Models.Category({
-        menu_id: this.model.id,
-        title: checkbox.val()
-      })
-      newCategory.save({}, {
-        success: function () {
-          checkbox.attr('data-id', newCategory.id);
-        }
-      });
-    } else {
-      newCategory = new WaiterUp.Models.Category({ id: checkbox.attr('data-id') })
-      newCategory.destroy({
-        success: function () {
-          checkbox.attr('data-id', '');
-        }
-      });
-      this.$(checkbox.next()).empty();
-    }
+  createMenuItems: function () {
+    this.menuItems = []
   },
 
+  // toggleCheckbox: function (event) {
+  //   var checkbox = $(event.currentTarget);
+  //   // get current category if there's one
+  //   var newCategory;
+  //   if (checkbox.prop('checked')) {
+  //     // create category with title checkbox.val()
+  //     newCategory = new WaiterUp.Models.Category({
+  //       menu_id: this.model.id,
+  //       title: checkbox.val()
+  //     })
+  //     newCategory.save({}, {
+  //       success: function () {
+  //         checkbox.attr('data-id', newCategory.id);
+  //         var view = new WaiterUp.Views.CategoryMenuItems({
+  //           model: newCategory
+  //         });
+  //         checkbox.next().append(view.render().$el);
+  //         // checkbox.next().append($('<a href="javascript:void(0)" class="btn btn-default add-menu-item">add menu item</a>'))
+  //       }
+  //     });
+  //   } else {
+  //     newCategory = new WaiterUp.Models.Category({
+  //       id: checkbox.attr('data-id')
+  //     })
+  //     newCategory.destroy({
+  //       success: function () {
+  //         checkbox.attr('data-id', '');
+  //       }
+  //     });
+  //     this.$(checkbox.next()).empty();
+  //   }
+  // },
+
   updateMenu: function () {
+    var that = this;
     this.model.set({ title: $('input.menu-title-form').val() });
-    this.model.save({
+    this.model.save({}, {
       success: function () {
-        setInterval(function() {
-          $('input.menu-title-form').toggleClass('green-bg-flash');
-        }, 500);
-      }
+        setTimeout(function() {
+          $('input.menu-title-form').toggleClass('green-bg-flash lightSpeedIn');
+          setTimeout(function () {
+            $('input.menu-title-form').toggleClass('green-bg-flash lightSpeedIn');
+          }, 1000)
+        }, 50);
+      },
+      silent: true
     });
   },
 
@@ -81,14 +98,18 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     var categories = ["Drinks", "Breakfast", "Lunch",
     "Dinner", "Appetizers", "Dessers"];
 
+
     _(categories).each(function (category) {
       var categoryView;
+      var newCategory = new WaiterUp.Models.Category({
+        menu_id: this.model.id,
+        title: category,
+        menuItems: this.menuItems
+      });
 
       var categoryView = new WaiterUp.Views.CategoryForm({
-        model: new WaiterUp.Models.Category({
-          menu_id: this.model.id,
-          title: category
-        })
+        model: newCategory,
+        collection: newCategory.menuItems()
       });
 
       this.addSubview($target.parent(), categoryView);

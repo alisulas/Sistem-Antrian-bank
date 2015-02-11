@@ -6,6 +6,18 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
   events: {
     'submit' : 'create',
     'click .close': 'hideForm',
+    'blur input': 'updateTitle',
+    'blur textarea': 'updateDescription'
+  },
+
+  updateTitle: function (event) {
+    this.model.set('title', $(event.currentTarget).val());
+    this.model.save();
+  },
+
+  updateDescription: function (event) {
+    this.model.set('description', $(event.currentTarget).val());
+    this.model.save()
   },
 
   create: function (event) {
