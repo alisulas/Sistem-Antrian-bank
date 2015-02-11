@@ -29,7 +29,8 @@
 <% } %>
 
 <div class="add-comment">
-  <a href="javascript:void(0)">Add Comment</a>
-
+  <% if (!CURRENT_USER.provider) { %>
+    <a href="javascript:void(0)">Add Comment</a>
+  <% } %>
   <div id="comment-form"></div>
 </div>
