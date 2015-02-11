@@ -9,6 +9,7 @@ place = provider.places.create(title: "Starbucks",
         country: "United States",
         latitude: 37.7814707,
         longitude: -122.4079559)
+
 provider2 = User.create(email: "provider2", password: "awesome", provider: true)
 place2 = provider2.places.create(title: "Workshop Cafe",
         description: "Coffee shop catering to laptop workers",
@@ -19,6 +20,7 @@ place2 = provider2.places.create(title: "Workshop Cafe",
         country: "United States",
         latitude: 37.790815,
         longitude: -122.402144)
+
 provider3 = User.create(email: "provider3", password: "awesome", provider: true)
 place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         street_address: "8 6th Street",
@@ -43,27 +45,110 @@ place5 = provider3.places.create(title: "Sweet Maple",
         city: "San Francisco",
         state: "CA",
         zipcode: "94115",
-        country: "United States",
-        latitude: 37.7852098,
-        longitude: -122.4315502)
+        country: "United States")
 
 place6 = provider3.places.create(title: "Cafe Flore",
         street_address: "2298 Market Street",
         city: "San Francisco",
         state: "CA",
         zipcode: "94114",
-        country: "United States",
-        latitude: 37.764656,
-        longitude: -122.4329428)
+        country: "United States")
 
-place7 = provider3.places.create(title: "App Academy",
-        street_address: "1061 Market St",
+place7 = provider3.places.create(title: "La Traviata",
+        street_address: "2854 Mission St",
+        description: "Mexican street eats",
         city: "San Francisco",
         state: "CA",
-        zipcode: "94103",
+        zipcode: "94110",
+        country: "United States")
+
+place8 = provider3.places.create(title: "Beretta",
+        street_address: "1199 Valencia St",
+        description: "Lively spot with a modern Italian menu",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place9 = provider3.places.create(title: "Taquerias El Farolito",
+        street_address: "2779 Mission St",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place10 = provider3.places.create(title: "Pollo Campero",
+        street_address: "2740 Mission St",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place11 = provider3.places.create(title: "Ritual Coffee Roasters",
+        description: "Fart-to-cup Cafe",
+        street_address: "1026 Valencia St",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place12 = provider3.places.create(title: "Atlas Cafe",
+        street_address: "3049 20th St",
+        description: "Coffee shop with unique sandwiches",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place13 = provider3.places.create(title: "Dalfina Restaurant",
+        street_address: "3621 18th St",
+        description: "Bustling Italian restaurant",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place14 = provider3.places.create(title: "Rosamunde Sausage Grill",
+        street_address: "2832 Mission St",
+        description: "German sausage specialist",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place8 = provider3.places.create(title: "Foreign Cinema",
+        street_address: "2534 Mission St",
+        description: "Hip outdoor dining & movie screening",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place8 = provider3.places.create(title: "Mission Chinese Food",
+        street_address: "2234 Mission St",
+        description: "Hip Sichuan dining",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94110",
+        country: "United States")
+
+place8 = provider3.places.create(title: "Ruth's Chris Steak House",
+        street_address: "1601 Van Ness Ave",
+        description: "Upscale American steakhouse chain",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94109",
+        country: "United States")
+
+place8 = provider3.places.create(title: "Venticello",
+        street_address: "1257 Taylor St",
+        description: "Northen Italian cooking in a cozy space",
+        city: "San Francisco",
+        state: "CA",
+        zipcode: "94108",
         country: "United States",
-        latitude: 37.7810556,
-        longitude: -122.4114551)
+        latitude: 37.794216,
+        longitude: -122.413246)
 
 workshop_menu =   place2.menus.create(title: "Workshop Cafe's Menu")
 workshop_drinks = workshop_menu.categories.create(title: "Drinks")
