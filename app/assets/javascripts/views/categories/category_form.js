@@ -1,6 +1,7 @@
 WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
-  initialize: function () {
+  initialize: function (options) {
     // this.menuItems = options.menuItems;
+    this.menu_id = options.menu_id
   },
 
   formShowing: true,
@@ -32,11 +33,10 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
   toggleCheckbox: function (event) {
     var checkbox = $(event.currentTarget);
     if (checkbox.prop('checked')) {
-      // create category with title checkbox.val()
-      // newCategory = new WaiterUp.Models.Category({
-      //   menu_id: this.model.id,
-      //   title: checkbox.val()
-      // })
+      this.model = new WaiterUp.Models.Category({
+        menu_id: this.menu_id,
+        title: checkbox.val()
+      })
       this.model.save({}, {
         success: function () {
           checkbox.attr('data-id', this.model.id);
@@ -44,10 +44,7 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
         }.bind(this)
       });
     } else {
-      var newCategory = new WaiterUp.Models.Category({
-        id: checkbox.attr('data-id')
-      })
-      newCategory.destroy({
+      this.model.destroy({
         success: function () {
           checkbox.attr('data-id', '');
         }

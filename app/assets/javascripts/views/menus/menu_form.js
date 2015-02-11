@@ -6,17 +6,10 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
   events: {
     'click button.create-menu': 'create',
     'click .close': 'hideForm',
-    // 'click [type="checkbox"]': 'toggleCheckbox',
     'blur input.exists': 'updateMenu',
     'click a.done-menu': 'redirectHome',
     'click a.destroy-menu': 'destroyMenu',
-    // 'keyup change input.menu-title-form': 'floatLabel'
   },
-
-  // floatLabel: function (event) {
-  //   var value = $(event.currentTarget).val()
-  //   $('[data-toggle="floatLabel"]').attr('data-value', value);
-  // },
 
   initialize: function (options) {
     this.menuItems = []
@@ -81,7 +74,8 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
 
       var categoryView = new WaiterUp.Views.CategoryForm({
         model: newCategory,
-        collection: newCategory.menuItems()
+        collection: newCategory.menuItems(),
+        menu_id: this.model.id
       });
 
       this.addSubview($target.parent(), categoryView);
