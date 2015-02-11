@@ -44,6 +44,7 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
       })
       newCategory.save({}, {
         success: function () {
+          console.log(newCategory.id);
           checkbox.attr('data-id', newCategory.id);
         }
       });
@@ -86,7 +87,9 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
       });
 
       this.addSubview($target.parent(), categoryView);
+
     }.bind(this));
+    $target.parent().append($('<a href="javascript:void(0)" class="btn btn-primary done-menu">Done</a>'))
   },
 
   render: function () {
