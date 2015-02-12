@@ -277,7 +277,7 @@ appetizers = [
   ['Queso & Chips',
   'Smooth and spicy cheese dip. Served with unlimited tortilla chips.', random_price],
 
-  ['Fried Mozzarella',
+  ['Fried Mozzarella 2',
   'Crisp, golden brown, and served with a side of tomato-basil sauce.', random_price],
 
   ['Spinach Artichoke Dip',
@@ -625,7 +625,9 @@ places.each do |place|
   end
 
   breakfast_menu.sample(rand(3..10)).each do |i|
-    br.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item = br.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
   end
 
   lunch_menu.sample(rand(3..10)).each do |i|

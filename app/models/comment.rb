@@ -12,6 +12,7 @@
 
 class Comment < ActiveRecord::Base
   validates :menu_item_id, :body, presence: true
+  validates :body, length: { minimum: 1 }
 
   belongs_to :menu_item
   belongs_to :user

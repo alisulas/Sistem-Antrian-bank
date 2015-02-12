@@ -19,7 +19,7 @@ module Api
       if @comment.save
         render :show
       else
-        render json: @comment.errors.full_messages
+        render json: @comment.errors.full_messages, status: :unprocessable_entity
       end
     end
 
