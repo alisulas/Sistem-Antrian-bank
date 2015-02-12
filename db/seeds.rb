@@ -558,6 +558,10 @@ workshop_lunch.menu_items.create(
   description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.",
   price: random_price)
 
+lunch_menu.sample(10).each do |i|
+  workshop_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
+end
+
 place3.menus.create(title: "Menu")
 tu_lan_br =       place3.menus[0].categories.create(title: "Breakfast")
 tu_lan_lunch =    place3.menus[0].categories.create(title: "Lunch")
