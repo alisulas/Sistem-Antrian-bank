@@ -432,7 +432,9 @@ place6 = provider3.places.create!(title: "Cafe Flore",
         city: "San Francisco",
         state: "CA",
         zipcode: "94114",
-        country: "United States")
+        country: "United States",
+        latitude: 37.764656,
+        longitude: -122.432943)
 
 place7 = provider3.places.create!(title: "La Traviata",
         street_address: "2854 Mission St",
@@ -440,7 +442,9 @@ place7 = provider3.places.create!(title: "La Traviata",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.751276,
+        longitude: -122.418633)
 
 place8 = provider3.places.create!(title: "Beretta",
         street_address: "1199 Valencia St",
@@ -448,21 +452,27 @@ place8 = provider3.places.create!(title: "Beretta",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.75386,
+        longitude: -122.420644)
 
 place9 = provider3.places.create!(title: "Taquerias El Farolito",
         street_address: "2779 Mission St",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.75386,
+        longitude: -122.420644)
 
 place10 = provider3.places.create!(title: "Pollo Campero",
         street_address: "2740 Mission St",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.753127,
+        longitude: -122.418789)
 
 place11 = provider3.places.create!(title: "Ritual Coffee Roasters",
         description: "Fart-to-cup Cafe",
@@ -470,7 +480,9 @@ place11 = provider3.places.create!(title: "Ritual Coffee Roasters",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.753127,
+        longitude: -122.418789)
 
 place12 = provider3.places.create!(title: "Atlas Cafe",
         street_address: "3049 20th St",
@@ -498,7 +510,9 @@ place14 = provider3.places.create!(title: "Rosamunde Sausage Grill",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.753127,
+        longitude: -122.418789)
 
 place15 = provider3.places.create!(title: "Foreign Cinema",
         street_address: "2534 Mission St",
@@ -506,7 +520,9 @@ place15 = provider3.places.create!(title: "Foreign Cinema",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.756456,
+        longitude: -122.419187)
 
 place16 = provider3.places.create!(title: "Mission Chinese Food",
         street_address: "2234 Mission St",
