@@ -59,6 +59,43 @@ lunch_menu = [
 
   ['Creole Catch', 'Flaky, mild white fish seasoned with Creole spices and broiled.', random_price],
 
+  ["Ruby's Classic Burger*",
+    'The American classic, perfected.', random_price],
+
+  ['Avocado Turkey Burger',
+  'Fresh avocado, Swiss cheese, and applewood smoked bacon.', random_price],
+
+  ['Smokehouse Burger*',
+  'New York cheddar, bacon, tangy barbecue sauce, and crisp onion rings.', random_price],
+
+  ['Classic Cheeseburger*', 'With American cheese.', random_price],
+
+  ['Bacon Cheeseburger*', 'With applewood smoked bacon and American cheese.', random_price],
+
+  ['Turkey Burger', 'Premium ground turkey with savory seasonings.', random_price],
+
+  ['Triple Prime Burger*', '100% USDA Prime beef.', random_price],
+
+  ['Triple Prime Bacon Cheddar Burger*',
+  'With aged New York cheddar and applewood smoked bacon.', random_price],
+
+  ['Triple Prime Cheddar Burger*', 'Topped with aged New York cheddar.', random_price],
+
+  ['Prime Burgers',
+  "The best of the best, they're handcrafted from fresh, never frozen USDA Prime beef - only 2% of all beef is graded Prime.", random_price],
+
+  ['Spicy Jalapeño Pretzel Cheeseburger*',
+  'Topped with pepper jack cheese, crispy jalapeños, and chipotle mayonnaise.', random_price],
+
+  ['Portabella Crispy Onion Pretzel Cheeseburger*',
+  'A delicious duo of portabella mushrooms and Swiss. Served with chipotle mayonnaise and crisp onion straws.', random_price],
+
+  ['Bacon Cheese Pretzel Burger*',
+  'Topped with applewood smoked bacon, melted cheddar cheese, and bacon mustard mayonnaise.', random_price],
+
+  ['Black & Blue Bacon Pretzel Burger*',
+  'Blackened, grilled, and topped with blue cheese and applewood smoked bacon. Served with chipotle mayonnaise.', random_price],
+
   [, random_price],
 
   [, random_price],
@@ -94,6 +131,61 @@ dinner_menu = [
 
   ['Parmesan Chicken Pasta',
   'Parmesan-crusted chicken breast over penne pasta tossed in Parmesan cream sauce, then finished with tomato-basil sauce and Swiss.', random_price],
+
+  ['Low Country Shrimp & Grits',
+  'Tender jumbo shrimp and andouille sausage, bacon, mushrooms, and peppers served over six cheese grits in a Parmesan cream sauce.', random_price],
+
+  ['Chicken & Mushroom Alfredo',
+  'Seasoned chicken tossed with linguini pasta, Cajun spices, sautéed baby portabella mushrooms, green peas, and rich Parmesan cream sauce.', random_price],
+
+  ['Chicken & Broccoli Pasta',
+  'Seasoned all-natural chicken and fresh broccoli over penne pasta in Parmesan cream.', random_price],
+
+  ['Half-Rack Barbecue Baby-Back Ribs',
+  'Slow-cooked for hours until they fall off the bone. Served with two sides.', random_price],
+
+  ['Ribs & Crispy Popcorn Shrimp',
+  'Our barbecue half-rack served with crispy popcorn shrimp. Served with two sides.', random_price],
+
+  ['Hickory Bourbon-Glazed Pork Chop',
+  'A tender pork chop finished on the grill, then glazed with a hickory bourbon barbecue sauce. Served with mashed potatoes and green beans.', random_price],
+
+  ['Full-Rack Barbecue Baby-Back Ribs',
+  'Roasted to fall-off-the-bone tenderness. Served with two sides.', random_price],
+
+  ['Ribs & Southern Style Chicken Tenders',
+  'Half-rack of our barbecue baby-back ribs, paired with our hand-breaded chicken tenders. Served with fries.', random_price],
+
+  ['Pressed Cuban',
+  'Slow-roasted pulled pork tossed in a tangy mustard barbecue sauce, pressed Cuban style on a hoagie roll with pickle chips and melted Swiss.', random_price],
+
+  ['Avocado Grilled Chicken Sandwich',
+  'All-natural grilled chicken with Swiss cheese, applewood smoked bacon, and sliced avocado.', random_price],
+
+  ['Chicken BLT',
+  'A Parmesan-crusted chicken breast, with Swiss cheese and applewood smoked bacon.', random_price],
+
+  ['California Turkey BLT',
+  'Not just your standard BLT! Juicy, fried turkey breast topped with avocado, smoky applewood bacon, lettuce, and tomato. Served on sourdough with zesty garlic mayo.', random_price],
+
+  ['Buffalo Chicken Burger',
+  'A southern style chicken breast tossed in spicy Buffalo sauce. Topped with melted Swiss cheese.', random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
 
   [, random_price],
 
@@ -178,6 +270,16 @@ appetizers = [
 
   ['Fire Wings',
   'Some like it hot, some like it mild, and we have both! Crisp chicken wings tossed in mild or hot Buffalo sauce.', random_price],
+
+  ["Fresh Grilled Zucchini", '', random_price],
+  ['Roasted Spaghetti Squash', '', random_price],
+  ['Onion Rings', '', random_price],
+  ['French Fries', '', random_price],
+  ['Fresh Baked Potato', '', random_price],
+  ['Fresh Steamed Broccoli', '', random_price],
+  ['Fresh Green Beans', '', random_price],
+  ['Mashed Potatoes', '', random_price],
+  ['Rice Pilaf', '', random_price],
 
 ]
 
