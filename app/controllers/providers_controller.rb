@@ -16,7 +16,7 @@ class ProvidersController < ApplicationController
     if @provider.save
       flash.now[:notice] = "Success!"
       log_in!(@provider)
-      redirect_to provider_url
+      redirect_to root_url
     else
       flash.now[:errors] = @provider.errors.full_messages
 
