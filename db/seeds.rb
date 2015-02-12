@@ -2,6 +2,58 @@ def random_price
   rand(3.0..15.0).round(2)
 end
 
+breakfast_menu = [
+  ['Awesome Omelettes',
+  'Prepared with three large eggs, served with sides: Choice of hash browns, breakfast potatoes or fruit and choice of three buttermilk or two multigrain nut pancakes, fresh baked Mammoth Muffin®, or whole wheat, white or rye toast.', random_price],
+
+  ['Griddle Greats',
+    "One bite and you'll know why they're called Griddle Greats. Our famous Buttermilk Pancakes, Belgian Waffles and Brioche French Toast are made from scratch and served with Perkins® brand syrups. Sugar Free syrup also available on request.", random_price],
+
+  ['Fresh-Cracked Classics',
+    'Each comes with two large eggs, served with sides: Choice of hash browns, breakfast potatoes or fruit and choice of three buttermilk or two multigrain nut pancakes, fresh baked Mammoth Muffin® or whole wheat, white or rye toast (unless noted "No sides").', random_price],
+
+  ["Old Timer's Breakfast",
+    "Two Eggs* cooked to order with Grits, Sawmill Gravy and Homemade Buttermilk Biscuits along with real Butter and the best Preserves, Jam n' Apple butter available. Served with your choice of Fried Apples or Hashbrown Casserole and Smoked Sausage Patties, Thick-Sliced Bacon, Turkey Sausage Patties or Bacon.", random_price],
+
+  ['Sunrise Sampler',
+    "Two Eggs* cooked to order with Grits, Sawmill Gravy and Homemade Buttermilk Biscuits along with real Butter and the best Preserves, Jam n' Apple Butter available. Served with Fried Apples, Hashbrown Casserole and a sampling of Smoked Sausage, Country Ham and Thick-Sliced Bacon.", random_price],
+
+  ['Country Morning Breakfast',
+    "Two Eggs* cooked to order with Grits, Sawmill Gravy and Homemade Buttermilk Biscuits along with Real Butter and the best Preserves, Jam n' Apple Butter available upon request.", random_price],
+
+  ['Double Meat Breakfast',
+    "Three Eggs* cooked to order with a full order of Bacon and Smoked Sausage Patties. Served with Grits, Sawmill Gravy and Homemade Buttermilk Biscuits along with Real Butter and the best Preserves, Jam n' Apple Butter available upon request.", random_price],
+
+  ["Yogurt Parfait n' Muffin",
+    'A mix of Low-Fat Vanilla Yogurt, Seasonal Fruit topped with our Honey Oat Granola mix of Almonds and Dried Fruit and your choice of Apple Bran Muffin or Wild Maine Blueberry Muffin.', random_price],
+
+  ['Wild Maine Blueberry Pancakes',
+    'Three Buttermilk Pancakes loaded with Wild Maine Blueberries. Served up with our Wild Maine Blueberry Syrup.', random_price],
+
+  ['Pecan Pancakes',
+    'Three Buttermilk Pancakes loaded with pecans and served with real Butter and a warm bottle of 100% Pure Natural Syrup.', random_price],
+
+  ['French Toast',
+    'Four slices of our own Sourdough Bread (regular or whole-wheat) dipped in egg* then grilled to perfection. Served with any Fruit Topping or 100% Pure Natural Syrup.', random_price],
+
+  ['Buttermilk Pancakes with Fruit Toppings',
+    'Three buttermilk pancakes served with your choice of Golden Delicious Apples, Marion Blackberry, or Sweet Peach toppings. Topped with Real Whipped Cream.', random_price],
+
+  ['Bacon Avocado',
+    'Three eggs, hickory-smoked bacon, spinach, tomatoes, Monterey Jack cheese and avocado. With toast or muffin and herbed roasted potatoes.', random_price],
+
+  ['Hashbrowns', '', 3],
+
+  ['Egg White & Veggie',
+    'Open-faced three egg white omelet with spinach, mushrooms, caramelized onions, tomatoes and goat cheese. With mixed fruit (instead of potatoes).', random_price],
+
+  ['Eggs Benedict',
+    'Poached eggs, hickory-smoked ham and Hollandaise on a grilled English muffin. With herbed roasted potatoes.', random_price],
+
+  ['Fried Chicken & Waffles',
+    'Hand-breaded chicken breast & buttermilk waffles.', random_price],
+]
+
 lunch_menu = [
   ['Glazed Atlantic Salmon',
   'Cedar Planked and Glazed with Passion Fruit Infused BBQ Sauce Parmesan Truffle Mashed Potatoes and Grilled Asparagus', 28],
@@ -324,14 +376,6 @@ dessert = [
 
   ['CRÈME BRÛLÉE',
   'creamy tahitian vanilla bean custard served with fresh seasonal berries', random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
 
 ]
 
