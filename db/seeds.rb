@@ -533,7 +533,6 @@ place18 = provider3.places.create(title: "Venticello",
 workshop_menu =   place2.menus.create(title: "Workshop Cafe's Menu")
 workshop_drinks = workshop_menu.categories.create(title: "Drinks")
 workshop_lunch =  workshop_menu.categories.create(title: "Lunch")
-workshop_dinner = workshop_menu.categories.create(title: "Dinner")
 
 workshop_drinks.menu_items.create(title: "Latte",
   image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg",
@@ -544,68 +543,66 @@ workshop_drinks.menu_items.create(title: "Cappucchino",
   price: random_price)
 workshop_drinks.menu_items.create(
   title: "Black Coffee",
-  image_url: nil, description: "What you need to finish your final project",
+  description: "What you need to finish your final project",
   price: random_price)
 workshop_drinks.menu_items.create(title: "Caramel Latte",
-  image_url: nil, price: random_price)
+  price: random_price)
 workshop_drinks.menu_items.create(title: "Tea",
-  image_url: nil, price: random_price)
+  price: random_price)
 
 workshop_lunch.menu_items.create(title: "Club Sandwich",
-  image_url: nil, price: random_price)
+  price: random_price)
 workshop_lunch.menu_items.create(
   title: "BLT Salad",
   image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
   description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.",
   price: random_price)
 
-tu_lan_menu =   place3.menus.create(title: "Menu")
-tu_lan_br =     tu_lan_menu.categories.create(title: "Breakfast")
-tu_lan_lunch =  tu_lan_menu.categories.create(title: "Lunch")
-tu_lan_dinner = tu_lan_menu.categories.create(title: "Dinner")
-tu_lan_dessert = tu_lan_menu.categories.create(title: "Desserts")
+place3.menus.create(title: "Menu")
+tu_lan_br =       place3.menus[0].categories.create(title: "Breakfast")
+tu_lan_lunch =    place3.menus[0].categories.create(title: "Lunch")
+tu_lan_dinner =   place3.menus[0].categories.create(title: "Dinner")
+tu_lan_dessert =  place3.menus[0].categories.create(title: "Desserts")
 
-5.times do
-  item = breakfast_menu.sample
-  tu_lan_br.menu_items
-  .create(title: item[0], description: item[1], price: item[2])
+breakfast_menu.sample(5).each do |i|
+  tu_lan_br.menu_items.create(title: i[0], description: i[1], price: i[2])
 end
 
-9.times do
-  item = lunch_menu.sample
-  tu_lan_lunch.menu_items
-  .create(title: item[0], description: item[1], price: item[2])
+lunch_menu.sample(9).each do |i|
+  tu_lan_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
 end
 
-12.times do
-  item = dinner_menu.sample
-  tu_lan_dinner.menu_items
-  .create(title: item[0], description: item[1], price: item[2])
+dinner_menu.sample(12).each do |i|
+  tu_lan_dinner.menu_items.create(title: i[0], description: i[1], price: i[2])
 end
 
-4.times do
-  item = desserts.sample
-  tu_lan_dessert.menu_items
-  .create(title: item[0], description: item[1], price: item[2])
+desserts.sample(4).each do |i|
+  tu_lan_dessert.menu_items.create(title: i[0], description: i[1], price: i[2])
 end
 
-place4_menu =   place4.menus.create(title: "Menu")
-place4_br =     place4_menu.categories.create(title: "Breakfast")
-place4_lunch =  place4_menu.categories.create(title: "Lunch")
-place4_dinner = place4_menu.categories.create(title: "Dinner")
+place4.menus.create(title: "Menu")
+place4_br =     place4.menus[0].categories.create(title: "Breakfast")
+place4_lunch =  place4.menus[0].categories.create(title: "Lunch")
+place4_ap =     place4.menus[0].categories.create(title: "Appetizers")
+place4_dinner = place4.menus[0].categories.create(title: "Dinner")
 
-place4_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: random_price)
-place4_br.menu_items.create(title: "Toast", image_url: nil, price: random_price)
-place4_br.menu_items.create(title: "Grits", image_url: nil, price: random_price)
-place4_br.menu_items.create(title: "Oats", image_url: nil, price: random_price)
+place4_br.menu_items.create(title: "Hashbrowns", price: random_price)
+place4_br.menu_items.create(title: "Toast",      price: random_price)
+place4_br.menu_items.create(title: "Grits",      price: random_price)
+place4_br.menu_items.create(title: "Oats",       price: random_price)
 
-5.times do
-  item = appetizers.sample
-  place4_br.menu_items
-    .create(title: item[0], description: item[1], price: item[2])
+breakfast_menu.sample(5).each do |i|
+  place4_br.menu_items.create(title: i[0], description: i[1], price: i[2])
 end
 
-place4_dinner.menu_items.create(title: "Crab Cakes",
-  image_url: nil, price: random_price)
-place4_dinner.menu_items.create(title: "Potato Crusted Salmon",
-  image_url: nil, price: random_price)
+lunch_menu.sample(4).each do |i|
+  place4_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
+end
+
+appetizers.sample(5).each do |i|
+  place4_ap.menu_items.create(title: i[0], description: i[1], price: i[2])
+end
+
+dinner_menu.sample(15).each do |i|
+  place4_dinner.menu_items.create(title: i[0], description: i[1], price: i[2])
+end
