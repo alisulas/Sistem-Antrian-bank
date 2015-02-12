@@ -33,7 +33,7 @@
  section { overflow: auto; }
  textarea { resize: vertical; }
  body {
-  //  background-color: #f3f3f4;
+   background-color: #f3f3f4;
    background: image-url("login_bg.jpg") no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -303,7 +303,7 @@ ul.places, .category-show {
 .add-menu-item { margin: 15px 0; }
 .menu-item-form-field { width: 50%; }
 
-textarea.menu-item-form-field { height: 100px!important; }
+textarea.menu-item-form-field { min-height: 100px!important; }
 
 .menus { margin-bottom: 50px; }
 
@@ -371,7 +371,7 @@ textarea.menu-item-form-field { height: 100px!important; }
 }
 
 
-.menu-item-price {
+.menu-item-price-user {
   float: right;
   margin-right: 3%;
   color: black;
