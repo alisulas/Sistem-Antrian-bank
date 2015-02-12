@@ -148,22 +148,6 @@ lunch_menu = [
   ['Black & Blue Bacon Pretzel Burger*',
   'Blackened, grilled, and topped with blue cheese and applewood smoked bacon. Served with chipotle mayonnaise.', random_price],
 
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
 ]
 
 dinner_menu = [
@@ -249,32 +233,6 @@ dinner_menu = [
   ['Blackened Tilapia',
   'Tender tilapia seasoned with creole spices and grilled to perfection.', random_price],
 
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
-  [, random_price],
-
 ]
 
 appetizers = [
@@ -343,7 +301,7 @@ appetizers = [
 
 ]
 
-dessert = [
+desserts = [
   ['Chocolate Dipped Strawberries',
   'Two Fresh Strawberries Dipped in Rich White & Dark Chocolate', 5],
 
@@ -605,29 +563,31 @@ tu_lan_menu =   place3.menus.create(title: "Menu")
 tu_lan_br =     tu_lan_menu.categories.create(title: "Breakfast")
 tu_lan_lunch =  tu_lan_menu.categories.create(title: "Lunch")
 tu_lan_dinner = tu_lan_menu.categories.create(title: "Dinner")
+tu_lan_dessert = tu_lan_menu.categories.create(title: "Desserts")
 
-tu_lan_br.menu_items.create(title: "Eggs and Bacon", image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Toast", image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Grits", image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Hashbrowns",
-  image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Oats",
-  image_url: nil, price: random_price)
+5.times do
+  item = breakfast_menu.sample
+  tu_lan_br.menu_items
+  .create(title: item[0], description: item[1], price: item[2])
+end
 
-tu_lan_lunch.menu_items.create(title: "Fried Calamari",
-  image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Fried Mozzarella",
-  image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Chicken Wings",
-  image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Spinach Pie",
-  description: "Most delicious meal you've ever had.",
-  image_url: nil, price: random_price)
+9.times do
+  item = lunch_menu.sample
+  tu_lan_lunch.menu_items
+  .create(title: item[0], description: item[1], price: item[2])
+end
 
-tu_lan_dinner.menu_items.create(title: "Crab Cakes",
-  image_url: nil, price: random_price)
-tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon",
-  image_url: nil, price: random_price)
+12.times do
+  item = dinner_menu.sample
+  tu_lan_dinner.menu_items
+  .create(title: item[0], description: item[1], price: item[2])
+end
+
+4.times do
+  item = desserts.sample
+  tu_lan_dessert.menu_items
+  .create(title: item[0], description: item[1], price: item[2])
+end
 
 place4_menu =   place4.menus.create(title: "Menu")
 place4_br =     place4_menu.categories.create(title: "Breakfast")
@@ -641,10 +601,8 @@ place4_br.menu_items.create(title: "Oats", image_url: nil, price: random_price)
 
 5.times do
   item = appetizers.sample
-  place4_br.menu_items.create(
-    title: item[0],
-    description: item[1],
-    price: item[2])
+  place4_br.menu_items
+    .create(title: item[0], description: item[1], price: item[2])
 end
 
 place4_dinner.menu_items.create(title: "Crab Cakes",
