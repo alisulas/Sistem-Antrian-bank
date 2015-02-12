@@ -278,8 +278,12 @@ ul.places, .category-show {
   margin-left: 20px;
   position: relative;
   .comment-show {
-    padding: 5px;
-    border-bottom: 1px dashed #eee;
+    padding: 10px;
+    border-bottom: 1px dashed #aaa;
+    &:hover {
+      background-color: #f0f0f0;
+      color: black;
+    }
   }
   div:last-child { border: none; }
   &:hover { background: none; }
