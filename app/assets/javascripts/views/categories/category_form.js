@@ -1,6 +1,5 @@
 WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
   initialize: function (options) {
-    // this.menuItems = options.menuItems;
     this.menu_id = options.menu_id
   },
 
@@ -57,7 +56,8 @@ WaiterUp.Views.CategoryForm = Backbone.CompositeView.extend({
     var $target = $(event.currentTarget);
     var menuItem = new WaiterUp.Models.MenuItem({
       category_id: this.model.id,
-      title: "Menu Item 1"
+      title: "Menu Item 1",
+      price: 0
     });
     menuItem.save();
 

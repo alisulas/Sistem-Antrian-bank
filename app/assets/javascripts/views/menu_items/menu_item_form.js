@@ -6,13 +6,30 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
   events: {
     'submit' : 'create',
     'click .close': 'hideForm',
-    'blur input': 'updateTitle',
+    'blur input.menu-item-name': 'updateTitle',
+    'blur input.menu-item-price': 'updatePrice',
     'blur textarea': 'updateDescription',
   },
 
   updateTitle: function (event) {
     var $target = $(event.currentTarget);
     this.model.set('title', $target.val());
+    this.model.save({}, {
+      success: function () {
+        setTimeout(function() {
+          $target.next().toggleClass('animated bounceIn');
+          setTimeout(function () {
+            $target.next().toggleClass('animated bounceIn');
+          }, 1000)
+        }, 50);
+      },
+      silent: true
+    });
+  },
+
+  updatePrice: function (event) {
+    var $target = $(event.currentTarget);
+    this.model.set('price', $target.val());
     this.model.save({}, {
       success: function () {
         setTimeout(function() {
@@ -45,7 +62,8 @@ WaiterUp.Views.MenuItemForm = Backbone.CompositeView.extend({
   create: function (event) {
     event.preventDefault();
     var newMenuItem = new WaiterUp.Models.MenuItem({
-      title: this.$('input').val(),
+      title: this.$('input.menu-item-name').val(),
+      price: this.$('input.menu-item-price').val(),
       description: this.$('textarea').val()
     });
 
