@@ -31,8 +31,10 @@ place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         latitude: 37.7818066,
         longitude: -122.4104021)
 
-place4 = provider3.places.create(title: "Toast Eatery",
+provider4 = User.create(email: "provider4", password: "awesome", provider: true)
+place4 = provider4.places.create(title: "Toast Eatery",
         street_address: "1601 Polk Street",
+        description: "Homestyle breakfast & lunch spot",
         city: "San Francisco",
         state: "CA",
         zipcode: "94109",
@@ -40,7 +42,8 @@ place4 = provider3.places.create(title: "Toast Eatery",
         latitude: 37.7903671,
         longitude: -122.4201642)
 
-place5 = provider3.places.create(title: "Sweet Maple",
+provider5 = User.create(email: "provider5", password: "awesome", provider: true)
+place5 = provider5.places.create(title: "Sweet Maple",
         street_address: "2101 Sutter Street",
         city: "San Francisco",
         state: "CA",
@@ -157,43 +160,53 @@ workshop_drinks = workshop_menu.categories.create(title: "Drinks")
 workshop_lunch =  workshop_menu.categories.create(title: "Lunch")
 workshop_dinner = workshop_menu.categories.create(title: "Dinner")
 
-workshop_drinks.menu_items.create(title: "Latte", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg", description: "tasty stuff")
-workshop_drinks.menu_items.create(title: "Cappucchino", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q", description: "Like latte but with less milk")
-workshop_drinks.menu_items.create(title: "Black Coffee", image_url: nil, description: "What you need to finish your final project")
-workshop_drinks.menu_items.create(title: "Caramel Latte", image_url: nil)
-workshop_drinks.menu_items.create(title: "Tea", image_url: nil)
+workshop_drinks.menu_items.create(title: "Latte", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg", description: "tasty stuff", price: 10)
+workshop_drinks.menu_items.create(
+  title: "Cappucchino",
+  image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q",
+  description: "Like latte but with less milk",
+  price: 10)
+workshop_drinks.menu_items.create(
+  title: "Black Coffee",
+  image_url: nil, description: "What you need to finish your final project",
+  price: 10)
+workshop_drinks.menu_items.create(title: "Caramel Latte", image_url: nil, price: 10)
+workshop_drinks.menu_items.create(title: "Tea", image_url: nil, price: 10)
 
-workshop_lunch.menu_items.create(title: "Club Sandwich", image_url: nil)
-workshop_lunch.menu_items.create(title: "BLT Salad", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
-  description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.")
+workshop_lunch.menu_items.create(title: "Club Sandwich", image_url: nil, price: 10)
+workshop_lunch.menu_items.create(
+  title: "BLT Salad",
+  image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
+  description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.",
+  price: 10)
 
 tu_lan_menu =   place3.menus.create(title: "Menu")
 tu_lan_br =     tu_lan_menu.categories.create(title: "Breakfast")
 tu_lan_lunch =  tu_lan_menu.categories.create(title: "Lunch")
 tu_lan_dinner = tu_lan_menu.categories.create(title: "Dinner")
 
-tu_lan_br.menu_items.create(title: "Eggs and Bacon", image_url: nil)
-tu_lan_br.menu_items.create(title: "Toast", image_url: nil)
-tu_lan_br.menu_items.create(title: "Grits", image_url: nil)
-tu_lan_br.menu_items.create(title: "Hashbrowns", image_url: nil)
-tu_lan_br.menu_items.create(title: "Oats", image_url: nil)
+tu_lan_br.menu_items.create(title: "Eggs and Bacon", image_url: nil, price: 10)
+tu_lan_br.menu_items.create(title: "Toast", image_url: nil, price: 10)
+tu_lan_br.menu_items.create(title: "Grits", image_url: nil, price: 10)
+tu_lan_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: 10)
+tu_lan_br.menu_items.create(title: "Oats", image_url: nil, price: 10)
 
-tu_lan_lunch.menu_items.create(title: "Fried Calamari", image_url: nil)
-tu_lan_lunch.menu_items.create(title: "Fried Mozzarella", image_url: nil)
-tu_lan_lunch.menu_items.create(title: "Chicken Wings", image_url: nil)
-tu_lan_lunch.menu_items.create(title: "Spinach Pie", description: "Most delicious meal you've ever had.", image_url: nil)
+tu_lan_lunch.menu_items.create(title: "Fried Calamari", image_url: nil, price: 10)
+tu_lan_lunch.menu_items.create(title: "Fried Mozzarella", image_url: nil, price: 10)
+tu_lan_lunch.menu_items.create(title: "Chicken Wings", image_url: nil, price: 10)
+tu_lan_lunch.menu_items.create(title: "Spinach Pie", description: "Most delicious meal you've ever had.", image_url: nil, price: 10)
 
-tu_lan_dinner.menu_items.create(title: "Crab Cakes", image_url: nil)
-tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil)
+tu_lan_dinner.menu_items.create(title: "Crab Cakes", image_url: nil, price: 10)
+tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil, price: 10)
 
 place4_menu =   place4.menus.create(title: "Menu")
 place4_br =     place4_menu.categories.create(title: "Breakfast")
 place4_lunch =  place4_menu.categories.create(title: "Lunch")
 place4_dinner = place4_menu.categories.create(title: "Dinner")
 
-place4_br.menu_items.create(title: "Hashbrowns", image_url: nil)
-place4_br.menu_items.create(title: "Toast", image_url: nil)
-place4_br.menu_items.create(title: "Grits", image_url: nil)
-place4_br.menu_items.create(title: "Oats", image_url: nil)
-place4_dinner.menu_items.create(title: "Crab Cakes", image_url: nil)
-place4_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil)
+place4_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: 10)
+place4_br.menu_items.create(title: "Toast", image_url: nil, price: 10)
+place4_br.menu_items.create(title: "Grits", image_url: nil, price: 10)
+place4_br.menu_items.create(title: "Oats", image_url: nil, price: 10)
+place4_dinner.menu_items.create(title: "Crab Cakes", image_url: nil, price: 10)
+place4_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil, price: 10)
