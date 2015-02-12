@@ -2,6 +2,195 @@ def random_price
   rand(3.0..15.0).round(2)
 end
 
+lunch_menu = [
+  ['Glazed Atlantic Salmon',
+  'Cedar Planked and Glazed with Passion Fruit Infused BBQ Sauce Parmesan Truffle Mashed Potatoes and Grilled Asparagus', 28],
+
+  ['Surf and Turf',
+  '7oz Hand Cut Filet Mignon and Grilled Shrimp Parmesan Truffle Mashed Potatoes and Grilled Asparagus', 40],
+
+  ['Mushroom Crusted New York Strip',
+  '14oz New York Strip Steak with a Grilled Mushroom Duxelle Crust Parmesan Truffle Mashed Potatoes and Grilled Asparagus', 35],
+
+  ['Create Your Own Garden Bar',
+  'Make your very own salad sensation. Spring mix, fresh garden greens, crisp vegetables, premium cheeses and toppings, our famous croutons, and a variety of dressings.', random_price],
+
+  ['Grilled Chicken Salad',
+  'Grilled chicken, fresh salad mix, peas, Parmesan, bacon, tomatoes, cucumbers, carrots, and croutons.', random_price],
+
+  ['Spicy Fish Tacos Combo',
+  'Filled with grilled tilapia, lettuce, cheddar, pico de gallo, sour cream, and cilantro with spicy ranch.', random_price],
+
+  ['Garden Bar & Bowl of Soup',
+  'Enjoy a bowl of chicken noodle, chicken tortilla, or broccoli & cheese.', random_price],
+
+  ['Veggie Trio Combo',
+  'Choose three of our delicious sides to create your own fresh meal.', random_price],
+
+  ['Jumbo Lump Crab Cake Combo',
+  'Made from fresh, premium jumbo lump crab meat and seared to a golden brown.', random_price],
+
+  ['Santa Fe Chicken Quesadilla Combo',
+  'Seasoned chicken with grilled peppers and onions, feta, and Swiss with chile sauce.', random_price],
+
+  ['Baja Chicken Tacos Combo',
+  'Seasoned chicken with feta and Swiss, grilled peppers and onions with our spicy ranch.', random_price],
+
+  ['Chicken Fresco',
+  'A juicy, all-natural grilled chicken breast with vine-ripened tomatoes, lemon butter, and a splash of balsamic vinaigrette. Served with your choice of two sides or one side paired with our Garden Bar.', random_price],
+
+  ['Hickory Bourbon Chicken',
+  'A tender chicken breast topped with a hickory bourbon barbecue glaze with a sweet, smoky taste. Served with choice of two sides or one side paired with our Garden Bar.', random_price],
+
+  ['Smoky Mountain Chicken',
+  'Fresh grilled chicken smothered with smoky barbecue sauce and topped with Swiss, cheddar, and applewood bacon. Served with choice of two sides or one side paired with our Garden Bar.', random_price],
+
+  ['Chicken Bella',
+  'Sautéed baby portabella mushrooms and artichokes in a Parmesan cream sauce over a fresh, grilled chicken breast. Served with your choice of two sides or one side paired with our Garden Bar.', random_price],
+
+  ['Southern Style Chicken Tender Dinner',
+  'All white-meat chicken, dipped in our signature batter and fried to a crisp golden brown. Served with fries and a side of honey mustard.', random_price],
+
+  ['Chicken Fresco',
+  'All-natural grilled chicken finished with vine-ripened tomatoes, lemon butter, and balsamic vinaigrette.', random_price],
+
+  ['Parmesan Shrimp Pasta',
+  'Tender, spicy shrimp are sautéed and served over penne tossed in Parmesan cream sauce with diced tomatoes.', random_price],
+
+  ['Creole Catch', 'Flaky, mild white fish seasoned with Creole spices and broiled.', random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+]
+
+dinner_menu = [
+  ['Asiago Peppercorn Sirloin*',
+  'Top sirloin perfectly seasoned and flavored with cracked peppercorns, Parmesan cream sauce, and shaved Asiago cheese.', random_price],
+
+  ['Top Sirloin*', 'Seared to perfection.', random_price],
+
+  ['Cajun Jambalaya Pasta',
+  'Shrimp, chicken, and andouille sausage sautéed with onions and peppers in a spicy Cajun cream sauce.', random_price],
+
+  ['Baked Ravioli',
+  'Jumbo cheese-stuffed ravioli tossed in a light tomato cream sauce with baby spinach and the perfect crunchy, cheese crust.', random_price],
+
+  ['Parmesan Shrimp Pasta',
+  'Spicy sautéed shrimp over penne in Parmesan cream with tomatoes.', random_price],
+
+  ['Parmesan Chicken Pasta',
+  'Parmesan-crusted chicken breast over penne pasta tossed in Parmesan cream sauce, then finished with tomato-basil sauce and Swiss.', random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+]
+
+appetizers = [
+  ['Shrimp Fondue',
+  'A blend of spicy shrimp, cheese, and fresh pico de gallo, with unlimited tortilla chips.', random_price],
+
+  ['Thai Phoon Shrimp',
+  'A half pound of tender, crispy shrimp tossed in a sweet and spicy chile sauce.', random_price],
+
+  ['Big Dipper Sampler',
+  'Southern style chicken tenders, cheese fries, Thai spring rolls, and fried mozzarella.', random_price],
+
+  ['Four Way Sampler',
+  'Southern style chicken tenders, fire wings, Thai spring rolls, and fried mozzarella.', random_price],
+
+  ['Southern Style Chicken Tenders',
+  'All white-meat chicken, dipped in our signature batter and fried golden brown. Choose classic, mild, or hot Buffalo sauce.', random_price],
+
+  ['Santa Fe Chicken Quesadilla',
+  'Seasoned chicken with grilled peppers and onions, feta, and Swiss cheese. Grilled then topped with our chile sauce.', random_price],
+
+  ['Barbecue Chicken Flatbread',
+  'Crispy flatbread crust with red onions, fresh cilantro, and smoky cheddar.', random_price],
+
+  ['6-Cheese & Tomato Sauce Flatbread',
+  'Crispy flatbread crust topped with tomato-basil sauce and a six cheese blend. Classico!', random_price],
+
+  ['Strawberry Salad',
+  'Orange Supremes, Strawberries, Goat Cheese, Candied Pecans Lemon Poppy Seed Vinaigrette', 5],
+
+  ['Shrimp Bisque', 'Grilled Shrimp and Chive Oil', 5],
+
+  ['Cheese Fries',
+  'Layered with spicy queso, bacon bits, and shredded cheese. Served with ranch.', random_price],
+
+  ['Tempura Green Beans',
+  'Dipped in beer batter and flash fried golden brown. Served with sweet teriyaki sauce.', random_price],
+
+  ['Cheese Fries',
+  'Layered with spicy queso, bacon bits, and shredded cheese. Served with ranch.', random_price],
+
+  ['Queso & Chips',
+  'Smooth and spicy cheese dip. Served with unlimited tortilla chips.', random_price],
+
+  ['Fried Mozzarella',
+  'Crisp, golden brown, and served with a side of tomato-basil sauce.', random_price],
+
+  ['Spinach Artichoke Dip',
+  'Made with tender artichoke hearts and creamy Parmesan cheese. Served with unlimited crisp tortilla chips.', random_price],
+
+  ['Fried Mozzarella',
+  'Crisp, golden brown, and served with a side of tomato-basil sauce.', random_price],
+
+  ['Fire Wings',
+  'Some like it hot, some like it mild, and we have both! Crisp chicken wings tossed in mild or hot Buffalo sauce.', random_price],
+
+]
+
+dessert = [
+  ['Chocolate Dipped Strawberries',
+  'Two Fresh Strawberries Dipped in Rich White & Dark Chocolate', 5],
+]
+
+drinks = [
+  ['Strawberry Martini',
+  'Absolut Vanilla, Godiva Liquer, Monin Strawberry Syrup and Cream', 13]
+]
+
 user = User.create(email: "user", password: "awesome")
 provider = User.create(email: "provider", password: "awesome", provider: true)
 place = provider.places.create(title: "Starbucks",
@@ -225,6 +414,15 @@ place4_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: random_p
 place4_br.menu_items.create(title: "Toast", image_url: nil, price: random_price)
 place4_br.menu_items.create(title: "Grits", image_url: nil, price: random_price)
 place4_br.menu_items.create(title: "Oats", image_url: nil, price: random_price)
+
+5.times do
+  item = appetizers.sample
+  place4_br.menu_items.create(
+    title: item[0],
+    description: item[1],
+    price: item[2])
+end
+
 place4_dinner.menu_items.create(title: "Crab Cakes",
   image_url: nil, price: random_price)
 place4_dinner.menu_items.create(title: "Potato Crusted Salmon",
