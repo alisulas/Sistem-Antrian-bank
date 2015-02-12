@@ -62,7 +62,7 @@ WaiterUp.Views.MenuForm = Backbone.CompositeView.extend({
     var $target = $(event.currentTarget);
 
     var categories = ["Drinks", "Breakfast", "Lunch",
-    "Dinner", "Appetizers", "Entrees", "Dessers"];
+    "Dinner", "Appetizers", "Entrees", "Dessers", "Alcohol & Wines"];
 
 
     _(categories).each(function (category) {

@@ -171,23 +171,31 @@ dinner_menu = [
   ['Buffalo Chicken Burger',
   'A southern style chicken breast tossed in spicy Buffalo sauce. Topped with melted Swiss cheese.', random_price],
 
-  [, random_price],
+  ['Herb-Crusted Tilapia', 'Crusted with panko bread crumbs and topped with lemon-butter sauce.', random_price],
 
-  [, random_price],
+  ['Grilled Salmon',
+  'Flavorful, fresh salmon that is lightly seasoned and grilled to perfection.', random_price],
 
-  [, random_price],
+  ['New Orleans Seafood',
+  'Mild and flaky tilapia, creole-seasoned then topped with sautéed shrimp and Parmesan cream.', random_price],
 
-  [, random_price],
+  ['Jumbo Skewered Shrimp',
+  'Jumbo shrimp grilled and brushed with seasoned scampi butter.', random_price],
 
-  [, random_price],
+  ['Hickory Bourbon Salmon',
+  'A fresh, grilled salmon filet glazed with bourbon barbecue sauce.', random_price],
 
-  [, random_price],
+  ['Crab Cake Dinner',
+  'Crab cakes made from fresh, premium jumbo lump crab meat and seared to a golden brown.', random_price],
 
-  [, random_price],
+  ['Crispy Popcorn Shrimp',
+  'A generous serving of shrimp fried to a golden brown and served with our sweet and spicy chile sauce.', random_price],
 
-  [, random_price],
+  ['Coastal Trio',
+  'Tender lobster tail and jumbo skewered shrimp brushed with garlic scampi butter paired with light, flaky tilapia topped with your choice of creole seasoning or a lemon-Parmesan crust.', random_price],
 
-  [, random_price],
+  ['Blackened Tilapia',
+  'Tender tilapia seasoned with creole spices and grilled to perfection.', random_price],
 
   [, random_price],
 
@@ -286,11 +294,81 @@ appetizers = [
 dessert = [
   ['Chocolate Dipped Strawberries',
   'Two Fresh Strawberries Dipped in Rich White & Dark Chocolate', 5],
+
+  ['Tiramisu',
+  'Lady finger cookies soaked in coffee liqueur and rum, layered between mascarpone and whipped cream with creamy icing.', random_price],
+
+  ['Double Chocolate Cake',
+  'With a molten heart of chocolate. Served with a scoop of creamy vanilla ice cream and accented with strawberry sauce.', random_price],
+
+  ['Gourmet Cupcakes',
+  'Moist, delicious and the perfect size to satisfy your craving for something sweet. Scrumptious Red Velvet and yummy Carrot Cake, both topped with a vanilla cream icing.', random_price],
+
+  ['New York Cheesecake',
+  'Thick, rich, and creamy. Topped with a generous blanket of berry sauce. ', random_price],
+
+  ['Blondie',
+  'A warm blonde brownie with chunks of chocolate and crunchy nuts. Served with vanilla ice cream.', random_price],
+
+  ['White Chocolate Cherry Cheesecake',
+  'Rich and creamy cheesecake with chocolate chunks layered with a white chocolate cherry mousse, all atop a chocolate crumb crust.', random_price],
+
+  ['FRESH BERRIES & CHANTILLY CREAM',
+  'seasonal berries served with a side of housemade whipped cream', random_price],
+
+  ['CARROT CAKE',
+  'three layer cake with cream cheese frosting topped with a drizzle of dark rum caramel', random_price],
+
+  ['WALNUT TURTLE PIE',
+  'housemade caramel, walnuts and chocolate baked in a chocolate pie crust', random_price],
+
+  ['CRÈME BRÛLÉE',
+  'creamy tahitian vanilla bean custard served with fresh seasonal berries', random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
+  [, random_price],
+
 ]
 
 drinks = [
   ['Strawberry Martini',
-  'Absolut Vanilla, Godiva Liquer, Monin Strawberry Syrup and Cream', 13]
+  'Absolut Vanilla, Godiva Liquer, Monin Strawberry Syrup and Cream', 13],
+
+  ['Blanc de Blanc', 'Green apple, peach, lemon curd, and hazelnut surface on a vibrant nose', 6.75],
+
+  ['Mascato', 'Highly aromatic with flavors of candied lemon, ripe melon, and honey notes', 6.75],
+
+  ['PROSECCO', 'Mionetto, Italy', 9],
+  ['BOURGOGNE', 'Jean-Claude Boisset, France', 9],
+  ['RIOJA', 'Bodegas Izadi, Spain', 9],
+  ['BORDEAUX', 'Chateau Blaignan, Medoc', 9],
+  ['WINTER CHAI MULE', 'Mionetto, Italy', 9],
+  ['PROSECCO', 'Svedka Vanilla Vodka', 9],
+  ['SPICED MANGO SMASH', 'Kraken Black Spiced Rum', 9],
+  ['BOURBON PEACH MARTINI', 'Maker’s Mark Bourbon', 9],
+  ['CHOCOLATE LAVA MILKSHAKE', 'Bulleit Rye Whiskey', 9],
+  ['HOUSEMADE BURRATA', '', 8],
+  ['LOBSTER LETTUCE WRAPS', '', 8],
+  ['FILET MIGNON FLATBREAD', '', 8],
+  ['AHI TUNA TACOS', '', 8],
+  ['SHORT RIB EMPANADAS', '', 8],
+  ['THE PRIME BURGER', '', 8],
+  ['WARM CINNAMON-DUSTED DONUTS', '', 8],
+  ['DECONSTRUCTED BALVENIE S’MORE', '', 8],
+  ['FRENCH 75', 'Plymouth Gin, Mas fi Cava', 10],
+  ['HALF MOON RUDY', 'Half Moon Orchard Gin, Jack Rudy Small Batch Tonic', 10],
+  ['BLUEBERRY LEMON DROP', 'Pinnacle Blueberry Vodka', 7],
+  ['FARMER’S DAUGHTER', 'Hangar One Vodka', 6],
+  ['BLACKBERRY BRAMBLE', 'Bombay Sapphire Gin', 7],
+  ['MAI TAI', 'Mount Gay Eclipse Rum, Kraken Black Spiced Rum', 6],
+  ['WARD 8', 'Buffalo Trace Bourbon', 8],
+  ['OMISSION PALE ALE', 'Portland, Oregon (Gluten Free)', 8],
+  ['REDHOOK IPA', 'Seattle, Washington', 8],
 ]
 
 user = User.create(email: "user", password: "awesome")
