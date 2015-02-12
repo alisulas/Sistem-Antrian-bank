@@ -271,7 +271,7 @@ appetizers = [
   ['Tempura Green Beans',
   'Dipped in beer batter and flash fried golden brown. Served with sweet teriyaki sauce.', random_price],
 
-  ['Cheese Fries',
+  ['House Cheese Fries',
   'Layered with spicy queso, bacon bits, and shredded cheese. Served with ranch.', random_price],
 
   ['Queso & Chips',
@@ -423,7 +423,9 @@ place5 = provider5.places.create!(title: "Sweet Maple",
         city: "San Francisco",
         state: "CA",
         zipcode: "94115",
-        country: "United States")
+        country: "United States",
+        latitude: 37.785727,
+        longitude: -122.4350462)
 
 place6 = provider3.places.create!(title: "Cafe Flore",
         street_address: "2298 Market Street",
@@ -476,7 +478,9 @@ place12 = provider3.places.create!(title: "Atlas Cafe",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.758981,
+        longitude: -122.411465)
 
 place13 = provider3.places.create!(title: "Dalfina Restaurant",
         street_address: "3621 18th St",
@@ -484,7 +488,9 @@ place13 = provider3.places.create!(title: "Dalfina Restaurant",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.761428,
+        longitude: -122.424276)
 
 place14 = provider3.places.create!(title: "Rosamunde Sausage Grill",
         street_address: "2832 Mission St",
@@ -607,29 +613,7 @@ dinner_menu.sample(15).each do |i|
   dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
-
-# place5.menus.create!(title: "Menu")
-# menu_names = ["Lunch", "Appetizers", "Dinner", "Desserts"]
-#
-# lch, app, dnr, dsrt = menu_names.map { |name| place5.menus[0].categories.create!(title: name) }
-#
-# lunch_menu.sample(10).each do |i|
-#   lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# appetizers.sample(2).each do |i|
-#   app.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# dinner_menu.sample(10).each do |i|
-#   dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# desserts.sample(5).each do |i|
-#   dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-
-places = [place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
+places = [place, place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
 
 
 places.each do |place|
@@ -640,23 +624,23 @@ places.each do |place|
     place.menus[0].categories.create!(title: name)
   end
 
-  breakfast_menu.each do |i|
+  breakfast_menu.sample(rand(3..10)).each do |i|
     br.menu_items.create!(title: i[0], description: i[1], price: i[2])
   end
-  
-  lunch_menu.sample(5).each do |i|
+
+  lunch_menu.sample(rand(3..10)).each do |i|
     lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
   end
 
-  appetizers.sample(2).each do |i|
+  appetizers.sample(rand(3..10)).each do |i|
     app.menu_items.create!(title: i[0], description: i[1], price: i[2])
   end
 
-  dinner_menu.sample(7).each do |i|
+  dinner_menu.sample(rand(3..10)).each do |i|
     dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
   end
 
-  desserts.sample(5).each do |i|
+  desserts.sample(rand(3..10)).each do |i|
     dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
   end
 end
