@@ -345,7 +345,7 @@ drinks = [
 
   ['Mascato', 'Highly aromatic with flavors of candied lemon, ripe melon, and honey notes', 6.75],
 
-  ['PROSECCO', 'Mionetto, Italy', 9],
+  ['OLD PROSECCO', 'Mionetto, Italy', 9],
   ['BOURGOGNE', 'Jean-Claude Boisset, France', 9],
   ['RIOJA', 'Bodegas Izadi, Spain', 9],
   ['BORDEAUX', 'Chateau Blaignan, Medoc', 9],
@@ -514,7 +514,9 @@ place16 = provider3.places.create!(title: "Mission Chinese Food",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
-        country: "United States")
+        country: "United States",
+        latitude: 37.761215,
+        longitude: -122.419652)
 
 place17 = provider3.places.create!(title: "Ruth's Chris Steak House",
         street_address: "1601 Van Ness Ave",
@@ -547,10 +549,13 @@ workshop_drinks.menu_items.create!(title: "Cappucchino",
   image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q",
   description: "Like latte but with less milk",
   price: random_price)
-workshop_drinks.menu_items.create!(
+item = workshop_drinks.menu_items.create!(
   title: "Black Coffee",
   description: "What you need to finish your final project",
   price: random_price)
+rand(50).times do
+  item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+end
 workshop_drinks.menu_items.create!(title: "Caramel Latte",
   price: random_price)
 workshop_drinks.menu_items.create!(title: "Tea",
@@ -591,58 +596,78 @@ desserts.sample(4).each do |i|
   tu_lan_dessert.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
+#
+# place4.menus.create!(title: "Menu")
+# menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner"]
+#
+# br, lch, app, dnr = menu_names.map { |name| place4.menus[0].categories.create!(title: name) }
+#
+# breakfast_menu.sample(5).each do |i|
+#   br.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# lunch_menu.sample(4).each do |i|
+#   lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# appetizers.sample(5).each do |i|
+#   app.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# dinner_menu.sample(15).each do |i|
+#   dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
 
-place4.menus.create!(title: "Menu")
-menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner"]
-
-br, lch, app, dnr = menu_names.map { |name| place4.menus[0].categories.create!(title: name) }
-
-breakfast_menu.sample(5).each do |i|
-  br.menu_items.create!(title: i[0], description: i[1], price: i[2])
-end
-
-lunch_menu.sample(4).each do |i|
-  lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
-end
-
-appetizers.sample(5).each do |i|
-  app.menu_items.create!(title: i[0], description: i[1], price: i[2])
-end
-
-dinner_menu.sample(15).each do |i|
-  dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
-end
-
-places = [place, place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
+places = [place, place4, place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
 
 
 places.each do |place|
   place.menus.create!(title: "Menu")
-  menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner", "Desserts"]
+  menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner", "Desserts", "Drinks"]
 
-  br, lch, app, dnr, dsrt = menu_names.map do |name|
+  br, lch, app, dnr, dsrt, dr = menu_names.map do |name|
     place.menus[0].categories.create!(title: name)
   end
 
   breakfast_menu.sample(rand(3..10)).each do |i|
     item = br.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
-    item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
   end
 
   lunch_menu.sample(rand(3..10)).each do |i|
-    lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item = lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
   end
 
   appetizers.sample(rand(3..10)).each do |i|
-    app.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item = app.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
   end
 
   dinner_menu.sample(rand(3..10)).each do |i|
-    dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item = dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
   end
 
   desserts.sample(rand(3..10)).each do |i|
-    dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    item = dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
+  end
+
+  drinks.sample(rand(3..10)).each do |i|
+    item = dr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+    rand(50).times do
+      item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
+    end
   end
 end
