@@ -77,7 +77,7 @@ lunch_menu = [
   'Enjoy a bowl of chicken noodle, chicken tortilla, or broccoli & cheese.', random_price],
 
   ['Veggie Trio Combo',
-  'Choose three of our delicious sides to create your own fresh meal.', random_price],
+  'Choose three of our delicious sides to create! your own fresh meal.', random_price],
 
   ['Jumbo Lump Crab Cake Combo',
   'Made from fresh, premium jumbo lump crab meat and seared to a golden brown.', random_price],
@@ -103,7 +103,7 @@ lunch_menu = [
   ['Southern Style Chicken Tender Dinner',
   'All white-meat chicken, dipped in our signature batter and fried to a crisp golden brown. Served with fries and a side of honey mustard.', random_price],
 
-  ['Chicken Fresco',
+  ['Awesome Chicken Fresco',
   'All-natural grilled chicken finished with vine-ripened tomatoes, lemon butter, and balsamic vinaigrette.', random_price],
 
   ['Parmesan Shrimp Pasta',
@@ -373,9 +373,9 @@ drinks = [
   ['REDHOOK IPA', 'Seattle, Washington', 8],
 ]
 
-user = User.create(email: "user", password: "awesome")
-provider = User.create(email: "provider", password: "awesome", provider: true)
-place = provider.places.create(title: "Starbucks",
+user = User.create!(email: "user", password: "awesome")
+provider = User.create!(email: "provider", password: "awesome", provider: true)
+place = provider.places.create!(title: "Starbucks",
         description: "Iconic Seattle-base coffeehouse chain",
         street_address: "1231 Market Street",
         city: "San Francisco",
@@ -385,8 +385,8 @@ place = provider.places.create(title: "Starbucks",
         latitude: 37.7814707,
         longitude: -122.4079559)
 
-provider2 = User.create(email: "provider2", password: "awesome", provider: true)
-place2 = provider2.places.create(title: "Workshop Cafe",
+provider2 = User.create!(email: "provider2", password: "awesome", provider: true)
+place2 = provider2.places.create!(title: "Workshop Cafe",
         description: "Coffee shop catering to laptop workers",
         street_address: "180 Montgomery Street #100",
         city: "San Francisco",
@@ -396,8 +396,8 @@ place2 = provider2.places.create(title: "Workshop Cafe",
         latitude: 37.790815,
         longitude: -122.402144)
 
-provider3 = User.create(email: "provider3", password: "awesome", provider: true)
-place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
+provider3 = User.create!(email: "provider3", password: "awesome", provider: true)
+place3 = provider3.places.create!(title: "Tu Lan Vietnamese Restaurant",
         street_address: "8 6th Street",
         city: "San Francisco",
         state: "CA",
@@ -406,8 +406,8 @@ place3 = provider3.places.create(title: "Tu Lan Vietnamese Restaurant",
         latitude: 37.7818066,
         longitude: -122.4104021)
 
-provider4 = User.create(email: "provider4", password: "awesome", provider: true)
-place4 = provider4.places.create(title: "Toast Eatery",
+provider4 = User.create!(email: "provider4", password: "awesome", provider: true)
+place4 = provider4.places.create!(title: "Toast Eatery",
         street_address: "1601 Polk Street",
         description: "Homestyle breakfast & lunch spot",
         city: "San Francisco",
@@ -417,22 +417,22 @@ place4 = provider4.places.create(title: "Toast Eatery",
         latitude: 37.7903671,
         longitude: -122.4201642)
 
-provider5 = User.create(email: "provider5", password: "awesome", provider: true)
-place5 = provider5.places.create(title: "Sweet Maple",
+provider5 = User.create!(email: "provider5", password: "awesome", provider: true)
+place5 = provider5.places.create!(title: "Sweet Maple",
         street_address: "2101 Sutter Street",
         city: "San Francisco",
         state: "CA",
         zipcode: "94115",
         country: "United States")
 
-place6 = provider3.places.create(title: "Cafe Flore",
+place6 = provider3.places.create!(title: "Cafe Flore",
         street_address: "2298 Market Street",
         city: "San Francisco",
         state: "CA",
         zipcode: "94114",
         country: "United States")
 
-place7 = provider3.places.create(title: "La Traviata",
+place7 = provider3.places.create!(title: "La Traviata",
         street_address: "2854 Mission St",
         description: "Mexican street eats",
         city: "San Francisco",
@@ -440,7 +440,7 @@ place7 = provider3.places.create(title: "La Traviata",
         zipcode: "94110",
         country: "United States")
 
-place8 = provider3.places.create(title: "Beretta",
+place8 = provider3.places.create!(title: "Beretta",
         street_address: "1199 Valencia St",
         description: "Lively spot with a modern Italian menu",
         city: "San Francisco",
@@ -448,21 +448,21 @@ place8 = provider3.places.create(title: "Beretta",
         zipcode: "94110",
         country: "United States")
 
-place9 = provider3.places.create(title: "Taquerias El Farolito",
+place9 = provider3.places.create!(title: "Taquerias El Farolito",
         street_address: "2779 Mission St",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
         country: "United States")
 
-place10 = provider3.places.create(title: "Pollo Campero",
+place10 = provider3.places.create!(title: "Pollo Campero",
         street_address: "2740 Mission St",
         city: "San Francisco",
         state: "CA",
         zipcode: "94110",
         country: "United States")
 
-place11 = provider3.places.create(title: "Ritual Coffee Roasters",
+place11 = provider3.places.create!(title: "Ritual Coffee Roasters",
         description: "Fart-to-cup Cafe",
         street_address: "1026 Valencia St",
         city: "San Francisco",
@@ -470,7 +470,7 @@ place11 = provider3.places.create(title: "Ritual Coffee Roasters",
         zipcode: "94110",
         country: "United States")
 
-place12 = provider3.places.create(title: "Atlas Cafe",
+place12 = provider3.places.create!(title: "Atlas Cafe",
         street_address: "3049 20th St",
         description: "Coffee shop with unique sandwiches",
         city: "San Francisco",
@@ -478,7 +478,7 @@ place12 = provider3.places.create(title: "Atlas Cafe",
         zipcode: "94110",
         country: "United States")
 
-place13 = provider3.places.create(title: "Dalfina Restaurant",
+place13 = provider3.places.create!(title: "Dalfina Restaurant",
         street_address: "3621 18th St",
         description: "Bustling Italian restaurant",
         city: "San Francisco",
@@ -486,7 +486,7 @@ place13 = provider3.places.create(title: "Dalfina Restaurant",
         zipcode: "94110",
         country: "United States")
 
-place14 = provider3.places.create(title: "Rosamunde Sausage Grill",
+place14 = provider3.places.create!(title: "Rosamunde Sausage Grill",
         street_address: "2832 Mission St",
         description: "German sausage specialist",
         city: "San Francisco",
@@ -494,7 +494,7 @@ place14 = provider3.places.create(title: "Rosamunde Sausage Grill",
         zipcode: "94110",
         country: "United States")
 
-place15 = provider3.places.create(title: "Foreign Cinema",
+place15 = provider3.places.create!(title: "Foreign Cinema",
         street_address: "2534 Mission St",
         description: "Hip outdoor dining & movie screening",
         city: "San Francisco",
@@ -502,7 +502,7 @@ place15 = provider3.places.create(title: "Foreign Cinema",
         zipcode: "94110",
         country: "United States")
 
-place16 = provider3.places.create(title: "Mission Chinese Food",
+place16 = provider3.places.create!(title: "Mission Chinese Food",
         street_address: "2234 Mission St",
         description: "Hip Sichuan dining",
         city: "San Francisco",
@@ -510,7 +510,7 @@ place16 = provider3.places.create(title: "Mission Chinese Food",
         zipcode: "94110",
         country: "United States")
 
-place17 = provider3.places.create(title: "Ruth's Chris Steak House",
+place17 = provider3.places.create!(title: "Ruth's Chris Steak House",
         street_address: "1601 Van Ness Ave",
         description: "Upscale American steakhouse chain",
         city: "San Francisco",
@@ -520,7 +520,7 @@ place17 = provider3.places.create(title: "Ruth's Chris Steak House",
         latitude: 37.790517,
         longitude: -122.42265)
 
-place18 = provider3.places.create(title: "Venticello",
+place18 = provider3.places.create!(title: "Venticello",
         street_address: "1257 Taylor St",
         description: "Northen Italian cooking in a cozy space",
         city: "San Francisco",
@@ -530,83 +530,133 @@ place18 = provider3.places.create(title: "Venticello",
         latitude: 37.794216,
         longitude: -122.413246)
 
-workshop_menu =   place2.menus.create(title: "Workshop Cafe's Menu")
-workshop_drinks = workshop_menu.categories.create(title: "Drinks")
-workshop_lunch =  workshop_menu.categories.create(title: "Lunch")
+workshop_menu =   place2.menus.create!(title: "Workshop Cafe's Menu")
+workshop_drinks = workshop_menu.categories.create!(title: "Drinks")
+workshop_lunch =  workshop_menu.categories.create!(title: "Lunch")
 
-workshop_drinks.menu_items.create(title: "Latte",
+workshop_drinks.menu_items.create!(title: "Latte",
   image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg",
   description: "tasty stuff", price: random_price)
-workshop_drinks.menu_items.create(title: "Cappucchino",
+workshop_drinks.menu_items.create!(title: "Cappucchino",
   image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q",
   description: "Like latte but with less milk",
   price: random_price)
-workshop_drinks.menu_items.create(
+workshop_drinks.menu_items.create!(
   title: "Black Coffee",
   description: "What you need to finish your final project",
   price: random_price)
-workshop_drinks.menu_items.create(title: "Caramel Latte",
+workshop_drinks.menu_items.create!(title: "Caramel Latte",
   price: random_price)
-workshop_drinks.menu_items.create(title: "Tea",
+workshop_drinks.menu_items.create!(title: "Tea",
   price: random_price)
 
-workshop_lunch.menu_items.create(title: "Club Sandwich",
+workshop_lunch.menu_items.create!(title: "Club Sandwich",
   price: random_price)
-workshop_lunch.menu_items.create(
+workshop_lunch.menu_items.create!(
   title: "BLT Salad",
   image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
   description: "Your usual BLT but with less bread. This is SF, we take healthy to another level.",
   price: random_price)
 
 lunch_menu.sample(10).each do |i|
-  workshop_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
+  workshop_lunch.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
-place3.menus.create(title: "Menu")
-tu_lan_br =       place3.menus[0].categories.create(title: "Breakfast")
-tu_lan_lunch =    place3.menus[0].categories.create(title: "Lunch")
-tu_lan_dinner =   place3.menus[0].categories.create(title: "Dinner")
-tu_lan_dessert =  place3.menus[0].categories.create(title: "Desserts")
+
+place3.menus.create!(title: "Menu")
+tu_lan_br =       place3.menus[0].categories.create!(title: "Breakfast")
+tu_lan_lunch =    place3.menus[0].categories.create!(title: "Lunch")
+tu_lan_dinner =   place3.menus[0].categories.create!(title: "Dinner")
+tu_lan_dessert =  place3.menus[0].categories.create!(title: "Desserts")
 
 breakfast_menu.sample(5).each do |i|
-  tu_lan_br.menu_items.create(title: i[0], description: i[1], price: i[2])
+  tu_lan_br.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 lunch_menu.sample(9).each do |i|
-  tu_lan_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
+  tu_lan_lunch.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 dinner_menu.sample(12).each do |i|
-  tu_lan_dinner.menu_items.create(title: i[0], description: i[1], price: i[2])
+  tu_lan_dinner.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 desserts.sample(4).each do |i|
-  tu_lan_dessert.menu_items.create(title: i[0], description: i[1], price: i[2])
+  tu_lan_dessert.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
-place4.menus.create(title: "Menu")
-place4_br =     place4.menus[0].categories.create(title: "Breakfast")
-place4_lunch =  place4.menus[0].categories.create(title: "Lunch")
-place4_ap =     place4.menus[0].categories.create(title: "Appetizers")
-place4_dinner = place4.menus[0].categories.create(title: "Dinner")
 
-place4_br.menu_items.create(title: "Hashbrowns", price: random_price)
-place4_br.menu_items.create(title: "Toast",      price: random_price)
-place4_br.menu_items.create(title: "Grits",      price: random_price)
-place4_br.menu_items.create(title: "Oats",       price: random_price)
+place4.menus.create!(title: "Menu")
+menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner"]
+
+br, lch, app, dnr = menu_names.map { |name| place4.menus[0].categories.create!(title: name) }
 
 breakfast_menu.sample(5).each do |i|
-  place4_br.menu_items.create(title: i[0], description: i[1], price: i[2])
+  br.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 lunch_menu.sample(4).each do |i|
-  place4_lunch.menu_items.create(title: i[0], description: i[1], price: i[2])
+  lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 appetizers.sample(5).each do |i|
-  place4_ap.menu_items.create(title: i[0], description: i[1], price: i[2])
+  app.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
 dinner_menu.sample(15).each do |i|
-  place4_dinner.menu_items.create(title: i[0], description: i[1], price: i[2])
+  dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+end
+
+
+# place5.menus.create!(title: "Menu")
+# menu_names = ["Lunch", "Appetizers", "Dinner", "Desserts"]
+#
+# lch, app, dnr, dsrt = menu_names.map { |name| place5.menus[0].categories.create!(title: name) }
+#
+# lunch_menu.sample(10).each do |i|
+#   lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# appetizers.sample(2).each do |i|
+#   app.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# dinner_menu.sample(10).each do |i|
+#   dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+#
+# desserts.sample(5).each do |i|
+#   dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
+# end
+
+places = [place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
+
+
+places.each do |place|
+  place.menus.create!(title: "Menu")
+  menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner", "Desserts"]
+
+  br, lch, app, dnr, dsrt = menu_names.map do |name|
+    place.menus[0].categories.create!(title: name)
+  end
+
+  breakfast_menu.each do |i|
+    br.menu_items.create!(title: i[0], description: i[1], price: i[2])
+  end
+  
+  lunch_menu.sample(5).each do |i|
+    lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
+  end
+
+  appetizers.sample(2).each do |i|
+    app.menu_items.create!(title: i[0], description: i[1], price: i[2])
+  end
+
+  dinner_menu.sample(7).each do |i|
+    dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
+  end
+
+  desserts.sample(5).each do |i|
+    dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
+  end
 end
