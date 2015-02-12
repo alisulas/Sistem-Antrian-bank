@@ -11,7 +11,8 @@
        data-score="<%= menu_item.escape('rating') %>">
   </div>
 
-  <strong><%= menu_item.escape('title') %></strong> <%= menu_item.escape('price') %>
+  <strong><%= menu_item.escape('title') %></strong>
+  <span class='menu-item-price'>$<%= menu_item.escape('price') %></span>
   <br>
   <%= menu_item.escape('description') %>
 </div>
