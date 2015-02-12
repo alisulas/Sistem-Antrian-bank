@@ -138,7 +138,9 @@ place8 = provider3.places.create(title: "Ruth's Chris Steak House",
         city: "San Francisco",
         state: "CA",
         zipcode: "94109",
-        country: "United States")
+        country: "United States",
+        latitude: 37.790517,
+        longitude: -122.42265)
 
 place8 = provider3.places.create(title: "Venticello",
         street_address: "1257 Taylor St",
