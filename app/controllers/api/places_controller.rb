@@ -26,10 +26,10 @@ module Api
       if params[:id] == "0"
         @place = current_user
           .places
-          .includes(menus: {categories: {menu_items: :comments} })
+          .includes(menus: {categories: {menu_items: { comments: :user }} })
           .first
       else
-        @place = Place.includes(menus: {categories: {menu_items: :comments} })
+        @place = Place.includes(menus: {categories: {menu_items: {comments: :user}} })
                   .find(params[:id])
       end
       render :show

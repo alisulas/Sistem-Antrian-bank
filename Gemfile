@@ -30,6 +30,7 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
 gem 'faker'
+gem "uniform_notifier"
 # Use Unicorn as the app server
 # gem 'unicorn'
 
