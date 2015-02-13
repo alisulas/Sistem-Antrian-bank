@@ -569,7 +569,7 @@ item = workshop_drinks.menu_items.create!(
   title: "Black Coffee",
   description: "What you need to finish your final project",
   price: random_price)
-rand(50).times do
+rand(10).times do
   item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
 end
 workshop_drinks.menu_items.create!(title: "Caramel Latte",
@@ -625,44 +625,44 @@ places.each do |place|
     place.menus[0].categories.create!(title: name)
   end
 
-  breakfast_menu.sample(rand(3..10)).each do |i|
+  breakfast_menu.sample(rand(3..8)).each do |i|
     item = br.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
 
-  lunch_menu.sample(rand(3..10)).each do |i|
+  lunch_menu.sample(rand(3..8)).each do |i|
     item = lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
 
-  appetizers.sample(rand(3..10)).each do |i|
+  appetizers.sample(rand(3..8)).each do |i|
     item = app.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
 
-  dinner_menu.sample(rand(3..10)).each do |i|
+  dinner_menu.sample(rand(3..8)).each do |i|
     item = dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
 
-  desserts.sample(rand(3..10)).each do |i|
+  desserts.sample(rand(3..8)).each do |i|
     item = dsrt.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
 
-  drinks.sample(rand(3..10)).each do |i|
+  drinks.sample(rand(3..8)).each do |i|
     item = dr.menu_items.create!(title: i[0], description: i[1], price: i[2])
-    rand(50).times do
+    rand(10).times do
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
