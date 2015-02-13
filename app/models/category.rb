@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string           not null
-#  menu_id    :string           not null
+#  menu_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

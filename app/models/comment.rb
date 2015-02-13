@@ -3,8 +3,8 @@
 # Table name: comments
 #
 #  id           :integer          not null, primary key
-#  menu_item_id :string           not null
-#  user_id      :string           not null
+#  menu_item_id :integer          not null
+#  user_id      :integer          not null
 #  body         :text             not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -16,8 +16,4 @@ class Comment < ActiveRecord::Base
 
   belongs_to :menu_item
   belongs_to :user
-
-  # def email
-  #   self.user.email
-  # end
 end

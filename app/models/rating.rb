@@ -19,4 +19,10 @@ class Rating < ActiveRecord::Base
     foreign_key: :rater_id,
     primary_key: :id
 
+  after_save :update_menu_item
+
+  def update_menu_item
+    menu_item.ensure_average_rating
+    menu_item.save!
+  end
 end

@@ -3,7 +3,7 @@
 # Table name: places
 #
 #  id             :integer          not null, primary key
-#  owner_id       :string           not null
+#  owner_id       :integer          not null
 #  title          :string           not null
 #  street_address :string           not null
 #  city           :string           not null
