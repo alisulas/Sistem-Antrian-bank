@@ -34,7 +34,7 @@
  textarea { resize: vertical; }
  body {
    background-color: #f3f3f4;
-   background: image-url("login_bg.jpg") no-repeat center center fixed;
+   background: image-url("waiterup_bg.png") no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -89,6 +89,10 @@
  .login {
    top: 100px;
    left: 60px;
+   padding: 50px;
+   background-color: rgba(245, 245, 245, .9);
+   border-radius: 10px;
+   h3 { margin-top: 0; }
  }
 
  .form-control { margin-bottom: 20px; }
