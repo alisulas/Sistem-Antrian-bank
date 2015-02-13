@@ -385,3 +385,14 @@ textarea.menu-item-form-field { min-height: 100px!important; }
   color: black;
   font-weight: bold;
 }
+
+
+.errors-box {
+  margin: 20px;
+  width: 500px;
+  position: absolute;
+  }
+
+.field-with-error { margin: 0 0 18px 0; }
+
+.alert-danger { background-color: rgba(242, 222, 222, .9); }

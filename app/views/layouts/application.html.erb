@@ -7,8 +7,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
-  <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vYTae_GpOuNdjgPs1JkKzMFVBIHs7EE">
+  <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7vYTae_GpOuNdjgPs1JkKzMFVBIHs7EE">
   </script>
 
   <script charset="utf-8">
@@ -29,12 +28,22 @@
         <% end %>
 
         <% if flash[:errors] %>
-        <ul>
-          <% flash[:errors].each do |err| %>
-          <li><%= err %></li>
-          <% end %>
-        </ul>
+          <div class='errors-box'>
+            <div class="alert alert-danger" role="alert">
+              <% flash[:errors].each do |err| %>
+              <div class='field-with-error'>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <%= err %>
+              </div>
+              <% end %>
+            </div>
+          </div>
         <% end %>
+
+
+
+
 
         <%= yield %>
       </div>
