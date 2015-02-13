@@ -612,30 +612,10 @@ desserts.sample(4).each do |i|
   tu_lan_dessert.menu_items.create!(title: i[0], description: i[1], price: i[2])
 end
 
-#
-# place4.menus.create!(title: "Menu")
-# menu_names = ["Breakfast", "Lunch", "Appetizers", "Dinner"]
-#
-# br, lch, app, dnr = menu_names.map { |name| place4.menus[0].categories.create!(title: name) }
-#
-# breakfast_menu.sample(5).each do |i|
-#   br.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# lunch_menu.sample(4).each do |i|
-#   lch.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# appetizers.sample(5).each do |i|
-#   app.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
-#
-# dinner_menu.sample(15).each do |i|
-#   dnr.menu_items.create!(title: i[0], description: i[1], price: i[2])
-# end
 
-places = [place, place4, place5, place6, place7, place8, place9, place10, place11, place12, place13, place14, place15, place16, place17, place18]
-
+places = [place, place4, place5, place6, place7, place8,
+          place9, place10, place11, place12, place13, place14,
+          place15, place16, place17, place18]
 
 places.each do |place|
   place.menus.create!(title: "Menu")
@@ -686,4 +666,8 @@ places.each do |place|
       item.comments.create(user_id: user.id, body: Faker::Lorem.paragraph)
     end
   end
+end
+
+MenuItem.all.each do |menu_item|
+  Rating.create(menu_item_id: menu_item.id, rater_id: user.id, score: rand(5))
 end
