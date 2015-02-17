@@ -670,5 +670,5 @@ places.each do |place|
 end
 
 MenuItem.all.each do |menu_item|
-  Rating.create(menu_item_id: menu_item.id, rater_id: user.id, score: rand(5))
+  Rating.create(menu_item_id: menu_item.id, rater_id: user.id, score: rand(1.0..5.0))
 end
