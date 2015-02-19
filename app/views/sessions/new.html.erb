@@ -7,7 +7,7 @@
            name="authenticity_token"
            value="<%=form_authenticity_token%>" >
 
-     <div class="form-group">
+     <div class="form-group email-field">
        <input type="text"
        id="email"
        name="session[email]"
@@ -17,7 +17,7 @@
        <label for="floatingLabels" style="color: #8ac">Email</label>
      </div>
 
-     <div class="form-group">
+     <div class="form-group password-field">
        <input type="password"
        id="password"
        name="session[password]"
@@ -31,8 +31,38 @@
 
     <button style="width: 100%;"
             name="submit"
-            class="btn btn-primary">Login
+            class="btn btn-primary form-control submit-button">Login
+    </button>
+
+    <br>
+    <br>
+    <br>
+
+    <button style="width: 100%;"
+            name="submit"
+            class="user_guest_login btn btn-info form-control">Guest User
+    </button>
+
+    <button style="width: 100%;"
+            name="submit"
+            class="provider_guest_login btn btn-info form-control">Guest Provider
     </button>
 
   </form>
 </div>
+
+<script>
+  $(function () {
+    $('.user_guest_login').on('click', function () {
+      $('.email-field input').val('user');
+      $('.password-field input').val('awesome');
+      $('.submit-button').click();
+    })
+
+    $('.provider_guest_login').on('click', function () {
+      $('.email-field input').val('provider');
+      $('.password-field input').val('awesome');
+      $('.submit-button').click();
+    })
+  })
+</script>
