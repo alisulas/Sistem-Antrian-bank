@@ -123,7 +123,7 @@ place14 = provider3.places.create(title: "Rosamunde Sausage Grill",
         zipcode: "94110",
         country: "United States")
 
-place8 = provider3.places.create(title: "Foreign Cinema",
+place15 = provider3.places.create(title: "Foreign Cinema",
         street_address: "2534 Mission St",
         description: "Hip outdoor dining & movie screening",
         city: "San Francisco",
@@ -131,7 +131,7 @@ place8 = provider3.places.create(title: "Foreign Cinema",
         zipcode: "94110",
         country: "United States")
 
-place8 = provider3.places.create(title: "Mission Chinese Food",
+place16 = provider3.places.create(title: "Mission Chinese Food",
         street_address: "2234 Mission St",
         description: "Hip Sichuan dining",
         city: "San Francisco",
@@ -139,7 +139,7 @@ place8 = provider3.places.create(title: "Mission Chinese Food",
         zipcode: "94110",
         country: "United States")
 
-place8 = provider3.places.create(title: "Ruth's Chris Steak House",
+place17 = provider3.places.create(title: "Ruth's Chris Steak House",
         street_address: "1601 Van Ness Ave",
         description: "Upscale American steakhouse chain",
         city: "San Francisco",
@@ -149,7 +149,7 @@ place8 = provider3.places.create(title: "Ruth's Chris Steak House",
         latitude: 37.790517,
         longitude: -122.42265)
 
-place8 = provider3.places.create(title: "Venticello",
+place18 = provider3.places.create(title: "Venticello",
         street_address: "1257 Taylor St",
         description: "Northen Italian cooking in a cozy space",
         city: "San Francisco",
@@ -164,9 +164,10 @@ workshop_drinks = workshop_menu.categories.create(title: "Drinks")
 workshop_lunch =  workshop_menu.categories.create(title: "Lunch")
 workshop_dinner = workshop_menu.categories.create(title: "Dinner")
 
-workshop_drinks.menu_items.create(title: "Latte", image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg", description: "tasty stuff", price: random_price)
-workshop_drinks.menu_items.create(
-  title: "Cappucchino",
+workshop_drinks.menu_items.create(title: "Latte",
+  image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR21VIkWLju-dQ8BYA5Bk9K_5LeCnaOHK_n2FTDGfE1HAlyJ8ocyg",
+  description: "tasty stuff", price: random_price)
+workshop_drinks.menu_items.create(title: "Cappucchino",
   image_url: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRKQsNNDY4tpKMM4iCmsLH5H1qVbWnAsywb0gwFqikY9md1KDCOahU03Q",
   description: "Like latte but with less milk",
   price: random_price)
@@ -174,10 +175,13 @@ workshop_drinks.menu_items.create(
   title: "Black Coffee",
   image_url: nil, description: "What you need to finish your final project",
   price: random_price)
-workshop_drinks.menu_items.create(title: "Caramel Latte", image_url: nil, price: random_price)
-workshop_drinks.menu_items.create(title: "Tea", image_url: nil, price: random_price)
+workshop_drinks.menu_items.create(title: "Caramel Latte",
+  image_url: nil, price: random_price)
+workshop_drinks.menu_items.create(title: "Tea",
+  image_url: nil, price: random_price)
 
-workshop_lunch.menu_items.create(title: "Club Sandwich", image_url: nil, price: random_price)
+workshop_lunch.menu_items.create(title: "Club Sandwich",
+  image_url: nil, price: random_price)
 workshop_lunch.menu_items.create(
   title: "BLT Salad",
   image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSwefCN_R51TSjJc7UGcp0lrB0vQB9MGoKMFe3qZj9FtjXp8SWHIA5A",
@@ -192,16 +196,25 @@ tu_lan_dinner = tu_lan_menu.categories.create(title: "Dinner")
 tu_lan_br.menu_items.create(title: "Eggs and Bacon", image_url: nil, price: random_price)
 tu_lan_br.menu_items.create(title: "Toast", image_url: nil, price: random_price)
 tu_lan_br.menu_items.create(title: "Grits", image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: random_price)
-tu_lan_br.menu_items.create(title: "Oats", image_url: nil, price: random_price)
+tu_lan_br.menu_items.create(title: "Hashbrowns",
+  image_url: nil, price: random_price)
+tu_lan_br.menu_items.create(title: "Oats",
+  image_url: nil, price: random_price)
 
-tu_lan_lunch.menu_items.create(title: "Fried Calamari", image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Fried Mozzarella", image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Chicken Wings", image_url: nil, price: random_price)
-tu_lan_lunch.menu_items.create(title: "Spinach Pie", description: "Most delicious meal you've ever had.", image_url: nil, price: random_price)
+tu_lan_lunch.menu_items.create(title: "Fried Calamari",
+  image_url: nil, price: random_price)
+tu_lan_lunch.menu_items.create(title: "Fried Mozzarella",
+  image_url: nil, price: random_price)
+tu_lan_lunch.menu_items.create(title: "Chicken Wings",
+  image_url: nil, price: random_price)
+tu_lan_lunch.menu_items.create(title: "Spinach Pie",
+  description: "Most delicious meal you've ever had.",
+  image_url: nil, price: random_price)
 
-tu_lan_dinner.menu_items.create(title: "Crab Cakes", image_url: nil, price: random_price)
-tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil, price: random_price)
+tu_lan_dinner.menu_items.create(title: "Crab Cakes",
+  image_url: nil, price: random_price)
+tu_lan_dinner.menu_items.create(title: "Potato Crusted Salmon",
+  image_url: nil, price: random_price)
 
 place4_menu =   place4.menus.create(title: "Menu")
 place4_br =     place4_menu.categories.create(title: "Breakfast")
@@ -212,5 +225,7 @@ place4_br.menu_items.create(title: "Hashbrowns", image_url: nil, price: random_p
 place4_br.menu_items.create(title: "Toast", image_url: nil, price: random_price)
 place4_br.menu_items.create(title: "Grits", image_url: nil, price: random_price)
 place4_br.menu_items.create(title: "Oats", image_url: nil, price: random_price)
-place4_dinner.menu_items.create(title: "Crab Cakes", image_url: nil, price: random_price)
-place4_dinner.menu_items.create(title: "Potato Crusted Salmon", image_url: nil, price: random_price)
+place4_dinner.menu_items.create(title: "Crab Cakes",
+  image_url: nil, price: random_price)
+place4_dinner.menu_items.create(title: "Potato Crusted Salmon",
+  image_url: nil, price: random_price)
