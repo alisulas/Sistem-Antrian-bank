@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.raty.js
 //= require underscore
+//= require typed
 //= require backbone
 //= require waiter_up
 //= require_tree ../templates

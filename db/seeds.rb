@@ -374,7 +374,8 @@ drinks = [
 ]
 
 user = User.create!(email: "user", password: "awesome")
-provider = User.create!(email: "provider", password: "awesome", provider: true)
+User.create!(email: "velina@awesome.com", password: "awesome")
+provider = User.create!(email: "provider@example.com", password: "awesome", provider: true)
 place = provider.places.create!(title: "Starbucks",
         description: "Iconic Seattle-base coffeehouse chain",
         street_address: "1231 Market Street",

@@ -31,6 +31,7 @@
 
     <button style="width: 100%;"
             name="submit"
+            type="submit"
             class="btn btn-primary form-control submit-button">Login
     </button>
 
@@ -40,11 +41,13 @@
 
     <button style="width: 100%;"
             name="submit"
+            type="button"
             class="user_guest_login btn btn-info form-control">Guest User
     </button>
 
     <button style="width: 100%;"
             name="submit"
+            type="button"
             class="provider_guest_login btn btn-info form-control">Guest Provider
     </button>
 
@@ -53,16 +56,51 @@
 
 <script>
   $(function () {
+
     $('.user_guest_login').on('click', function () {
-      $('.email-field input').val('user');
-      $('.password-field input').val('awesome');
-      $('.submit-button').click();
+      $(".email-field input").typed({
+        strings: ["jeff^200@^200usern", "^500C^200J^200@^200username.com^500", "velina@awesome.com"],
+        typeSpeed: 50,
+        startDelay: 10,
+        backSpeed: 20,
+        backspace: function(curString, curStrPos){
+          setTimeout(function() {
+            if (self.arrayPos == 1){
+              self.stopNum = 3;
+            }
+            else{
+              self.stopNum = 0;
+            }
+          });
+        },
+        callback: function() {
+          $(".password-field input").typed({
+            strings: ["awesome"],
+            typeSpeed: 1,
+            startDelay: 1,
+            callback: function () {
+              $('.submit-button').click();
+            }
+          });
+        },
+      });
     })
 
     $('.provider_guest_login').on('click', function () {
-      $('.email-field input').val('provider');
-      $('.password-field input').val('awesome');
-      $('.submit-button').click();
+      $(".email-field input").typed({
+        strings: ["provider@example.com"],
+        typeSpeed: 50,
+        callback: function() {
+          $(".password-field input").typed({
+            strings: ["awesome"],
+            typeSpeed: 1,
+            startDelay: 1,
+            callback: function () {
+              $('.submit-button').click();
+            }
+          });
+        },
+      });
     })
   })
 </script>
