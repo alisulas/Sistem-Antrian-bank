@@ -24,7 +24,7 @@
     <div class="row">
       <div>
         <% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
+          <p><%= flash[:notice] %></p>
         <% end %>
 
         <% if flash[:errors] %>
@@ -32,7 +32,8 @@
             <div class="alert alert-danger" role="alert">
               <% flash[:errors].each do |err| %>
               <div class='field-with-error'>
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-exclamation-sign"
+                      aria-hidden="true"></span>
                 <span class="sr-only">Error:</span>
                 <%= err %>
               </div>
