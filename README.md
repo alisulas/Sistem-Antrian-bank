@@ -11,7 +11,7 @@ Clients can:
 - [x] Create accounts (new client)
 - [x] Create sessions (log in)
 - [ ] Enter payment information
-- [ ] Search places (restaurants, coffee shops, etc)
+- [x] Search places (restaurants, coffee shops, etc)
 - [x] Create comments for category items
 - [x] Rating category items
 
