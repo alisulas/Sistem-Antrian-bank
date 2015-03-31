@@ -4,7 +4,7 @@ WaiterUp.Collections.Categories = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var menu = this.get(id);
 
-    if(!menu) {
+    if (!menu) {
       menu = new WaiterUp.Models.Menu({ id: id });
       menu.fetch({
         success: function () {
