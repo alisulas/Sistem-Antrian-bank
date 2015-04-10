@@ -257,6 +257,7 @@ ul.places, .category-show {
 }
 .places a {
   text-decoration: none;
+  
   li {
     list-style: none;
     background-color: rgba(245, 245, 245, .9);
@@ -265,14 +266,26 @@ ul.places, .category-show {
     height: 60px;
     .place-description { color: #555; }
   }
+
   li:hover {
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, .9) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(245, 245, 245, .9)));
+    background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(245, 245, 245, .9) 100%
+    );
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0%, rgba(255, 255, 255, 1)),
+      color-stop(100%, rgba(245, 245, 245, .9))
+    );
   }
 
 }
 
 .container { width: 100%; }
+
 .navbar { margin-bottom: 0; }
 
 .comments-heading {
@@ -312,9 +325,10 @@ ul.places, .category-show {
   background-image: -o-linear-gradient(left, #def, transparent);
 }
 
-
 .destroy-menu, .done-menu { margin: 10px 5px; }
+
 .add-menu-item { margin: 15px 0; }
+
 .menu-item-form-field { width: 50%; }
 
 textarea.menu-item-form-field { min-height: 100px!important; }
@@ -324,10 +338,12 @@ textarea.menu-item-form-field { min-height: 100px!important; }
 
 // flaoting labels
 .form-group { position: relative; }
+
 .form-group [data-toggle="floatLabel"] {
   height: 44px;
   padding-top: 16px;
 }
+
 .form-group [data-toggle="floatLabel"] + label {
   font-size: 12px;
   left: 12px;
@@ -336,6 +352,7 @@ textarea.menu-item-form-field { min-height: 100px!important; }
   top: 3px;
   transition: all 0.3s ease-in-out;
 }
+
 .form-group [data-toggle="floatLabel"]:required + label {
   color: rgb(255, 0, 0);
 }
@@ -349,29 +366,30 @@ textarea.menu-item-form-field { min-height: 100px!important; }
   padding: 10px 0px 2px;
   position: relative;
 }
+
 .form-group.form-group-textarea textarea {
   height: 34px;
   resize: none;
 }
+
 .form-group.form-group-textarea label {
   color: rgb(160, 160, 160);
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 500;
 }
+
 .form-group.form-group-textarea .form-control {
   border-radius: 0px;
   border-width: 0px;
   box-shadow: none;
 }
-.form-group.form-group-textarea [data-toggle="floatLabel"] + label {
-  top: 5px;
-}
+
+.form-group.form-group-textarea [data-toggle="floatLabel"] + label { top: 5px; }
 
 /* Positioning */
-.form-group [data-toggle="floatLabel"][data-value=""] {
-  padding-top: 6px;
-}
+.form-group [data-toggle="floatLabel"][data-value=""] { padding-top: 6px; }
+
 .form-group [data-toggle="floatLabel"][data-value=""] + label {
   opacity: 0;
   top: 18px;
@@ -384,14 +402,12 @@ textarea.menu-item-form-field { min-height: 100px!important; }
   color: green;
 }
 
-
 .menu-item-price-user {
   float: right;
   margin-right: 3%;
   color: black;
   font-weight: bold;
 }
-
 
 .errors-box {
   margin: 20px;
