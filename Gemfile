@@ -12,8 +12,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'pry-rails'
 gem 'annotate'
-gem 'better_errors'
-gem 'binding_of_caller'
 gem 'bootstrap-sass'
 gem 'backbone-on-rails'
 
@@ -38,6 +36,8 @@ gem "uniform_notifier"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
