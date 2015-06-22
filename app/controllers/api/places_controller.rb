@@ -2,22 +2,16 @@ module Api
   class PlacesController < ApiController
 
     def index
-      @places = Place.all
       # parameters = { term: params[:term], limit: 16 }
       # render json: Yelp.client.search('San Francisco', parameters)
-
-      @search = Place.search do
-        fulltext params[:search] do
-        end
-        # order_by_geodist(:location, *Geocoder.coordinates(params[:loc]))
+      if params[:search].nil? || params[:search].empty?
+        @places = Place.all
+      else
+        @places = Place.search(params[:search])
       end
-
-      # @search = Place.search(include: [:title, :street_address]) do
-      #   keywords(params[:search])
+        # order_by_geodist(:location, *Geocoder.coordinates(params[:loc]))
       # end
 
-      # render json: @search.results
-      @places = @search.results
 
       render json: @places
     end
@@ -26,11 +20,12 @@ module Api
       if params[:id] == "0"
         @place = current_user
           .places
-          .includes(menus: {categories: {menu_items: { comments: :user }} })
+          .includes(menus: { categories: { menu_items: { comments: :user }}})
           .first
       else
-        @place = Place.includes(menus: {categories: {menu_items: {comments: :user}} })
-                  .find(params[:id])
+        @place = Place
+          .includes(menus: { categories: { menu_items: { comments: :user }}})
+          .find(params[:id])
       end
       render :show
     end
@@ -63,13 +58,6 @@ module Api
     # def search
     #   parameters = { term: params[:term], limit: 16 }
     #   render json: Yelp.client.search('San Francisco', parameters)
-    # end
-    # def search
-    #   @search = Place.search(include: [:title, :street_address]) do
-    #     keywords(params[:q])
-    #   end
-    #   # fail
-    #   render :search
     # end
 
     private

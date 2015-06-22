@@ -18,15 +18,15 @@
 #
 
 class Place < ActiveRecord::Base
-  searchable do
-    text :title, :street_address, :zipcode
-    text :categories do
-      categories.map { |category| category.title }
-    end
-    text :menu_items do
-      menu_items.map { |menu| menu.title }
-    end
-  end
+  # searchable do
+  #   text :title, :street_address, :zipcode
+  #   text :categories do
+  #     categories.map { |category| category.title }
+  #   end
+  #   text :menu_items do
+  #     menu_items.map { |menu| menu.title }
+  #   end
+  # end
 
   geocoded_by :address
   before_validation :geocode
@@ -43,6 +43,20 @@ class Place < ActiveRecord::Base
   validates :owner, :title, :street_address, :city,
             :state, :zipcode, :country, :longitude, :latitude, presence: true
   validates :zipcode, length: { is: 5 }
+
+  def self.search(query)
+    where_sql = <<-SQL
+      LOWER(places.title) LIKE LOWER(:query) OR
+      LOWER(places.description) LIKE LOWER(:query) OR
+      LOWER(places.street_address) LIKE LOWER(:query) OR
+      LOWER(menu_items.title) LIKE LOWER(:query) OR
+      LOWER(menu_items.description) LIKE LOWER(:query)
+    SQL
+
+    Place.includes(menus: { categories: :menu_items })
+      .where(where_sql, query: "%#{query.downcase}%")
+      .references(:places, :menus, :menu_items)
+  end
 
   def address
     [street_address, city, state, zipcode, country].compact.join(', ')

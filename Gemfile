@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
-gem 'pry-rails'
 gem 'annotate'
 gem 'bootstrap-sass'
 gem 'backbone-on-rails'
@@ -21,14 +20,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'newrelic_rpm'
 gem 'figaro'
 gem 'pusher'
-gem 'yelp', require: 'yelp'
+# gem 'yelp', require: 'yelp'
 gem 'geocoder'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
 gem 'progress_bar'
-gem 'faker'
 gem "uniform_notifier"
+gem 'faker'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -36,6 +35,7 @@ gem "uniform_notifier"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
